@@ -1,0 +1,359 @@
+Peak Table,,,,,,,,,,,
+Software Package: SoftGenetics GeneMarker 1.95,,,,,,,,,,,
+Date/Time: 12/5/2017 11:50:45 AM,,,,,,,,,,,
+,,,,,,,,,,,
+Project: E:\Microsat files\F82\F82.SGF,,,,,,,,,,,
+Panel: F82,,,,,,,,,,,
+Size: GS500,,,,,,,,,,,
+Analysis Type: Fragment (Animal),,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 1: A01_1E5_541106.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+A01_1E5_541106.fsa,Green,138.5,1675,11711,138,138,0.2,Pass,175.8,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 2: A10_1A1_539673.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+A10_1A1_539673.fsa,Green,129.7,12421,73950,130,130,0,Pass,500,,
+A10_1A1_539673.fsa,Green,138.5,9097,55854,138,138,0.2,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 3: A10_1B8_541082.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+A10_1B8_541082.fsa,Green,131.6,15468,108632,132,132,0.2,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+A10_1B8_541082.fsa,Green,140.5,15106,110366,141,141,0.3,Pass,500,[<Confirmed>],
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 4: A11_1C7_541090.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+A11_1C7_541090.fsa,Green,131.9,11203,69878,132,132,0.1,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 5: A12_1D6_541098.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+A12_1D6_541098.fsa,Green,131.7,14357,93414,132,132,0.1,Pass,500,,
+A12_1D6_541098.fsa,Green,140.7,14172,97679,141,141,0.1,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 6: A02_1F4_541114.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+A02_1F4_541114.fsa,Green,138.2,14380,101532,138,138,0.1,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 7: A09_1A9_541074.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+A09_1A9_541074.fsa,Green,138.3,4878,31466,138,138,0,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 8: B01_1E6_541107.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+B01_1E6_541107.fsa,Green,138.4,7449,52218,138,138,0.1,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 9: B10_1B9_541083.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+B10_1B9_541083.fsa,Green,131.6,14438,100897,132,132,0.2,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+B10_1B9_541083.fsa,Green,140.5,14291,104356,141,141,0.3,Pass,500,[<Confirmed>],
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 10: B10_1A2_539674.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+B10_1A2_539674.fsa,Green,129.7,7810,46800,130,130,0,Pass,500,,
+B10_1A2_539674.fsa,Green,138.5,5910,37426,138,138,0.2,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 11: B11_1C8_541091.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+B11_1C8_541091.fsa,Green,136.3,14187,96091,136,136,0.2,Pass,500,[<Confirmed>],
+B11_1C8_541091.fsa,Green,138.3,12529,103096,138,138,0,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 12: B12_1D7_541099.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+B12_1D7_541099.fsa,Green,131.7,14597,98750,132,132,0.1,Pass,500,,
+B12_1D7_541099.fsa,Green,138.3,14051,90635,138,138,0,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 13: B02_1F5_541115.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+B02_1F5_541115.fsa,Green,138.2,7081,44090,138,138,0.1,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 14: B09_1B1_541075.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+B09_1B1_541075.fsa,Green,136.2,11665,89995,136,136,0.1,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+B09_1B1_541075.fsa,Green,138.5,11016,71702,138,138,0.2,Pass,500,[<Confirmed>],
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 15: C01_1E7_541108.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+C01_1E7_541108.fsa,Green,138.4,8992,57811,138,138,0.1,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 16: C10_1A3_539675.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 17: C10_1C1_541084.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+C10_1C1_541084.fsa,Green,131.6,16629,126054,132,132,0.2,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+C10_1C1_541084.fsa,Green,140.5,16088,127164,141,141,0.3,Pass,500,[<Confirmed>],
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 18: C11_1C9_541092.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+C11_1C9_541092.fsa,Green,131.9,14973,103598,132,132,0.1,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+C11_1C9_541092.fsa,Green,140.9,14020,100140,141,141,0.1,Pass,500,[<Confirmed>],
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 19: C12_1D8_541100.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+C12_1D8_541100.fsa,Green,138.2,17467,124278,138,138,0.1,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 20: C02_1F6_541116.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+C02_1F6_541116.fsa,Green,138.2,10955,70276,138,138,0.1,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 21: C09_1B2_541076.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+C09_1B2_541076.fsa,Green,140.8,12808,95545,141,141,0,Pass,500,[<Confirmed>],
+C09_1B2_541076.fsa,Green,143.2,15106,123570,143,143,0,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 22: D01_1E8_541109.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+D01_1E8_541109.fsa,Green,138.3,4683,29827,138,138,0,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 23: D10_1C2_541085.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+D10_1C2_541085.fsa,Green,138.1,13878,104355,138,138,0.2,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+D10_1C2_541085.fsa,Green,140.4,12602,92821,141,141,0.4,Pass,500,[<Confirmed>],
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 24: D11_1D1_541093.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+D11_1D1_541093.fsa,Green,127.4,1848,12467,127,127,0,Pass,315.6,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 25: D12_1D9_541101.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+D12_1D9_541101.fsa,Green,138.1,15034,107343,138,138,0.2,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 26: D02_1F7_541117.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+D02_1F7_541117.fsa,Green,138.3,6468,41858,138,138,0,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 27: D08_1A4_541069.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 28: D09_1B3_541077.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+D09_1B3_541077.fsa,Green,136.1,16376,126826,136,136,0,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+D09_1B3_541077.fsa,Green,138.4,15544,110151,138,138,0.1,Pass,500,[<Confirmed>],
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 29: E01_1E9_541110.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+E01_1E9_541110.fsa,Green,138.4,8641,56706,138,138,0.1,Pass,500,,
+E01_1E9_541110.fsa,Green,143.3,6102,42611,143,143,0.1,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 30: E10_1C3_541086.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+E10_1C3_541086.fsa,Green,138.2,14532,110458,138,138,0.1,Pass,500,,
+E10_1C3_541086.fsa,Green,140.5,12779,90896,141,141,0.3,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 31: E11_1D2_541094.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+E11_1D2_541094.fsa,Green,129.6,13889,103654,130,130,0.1,Pass,500,[<Confirmed>],
+E11_1D2_541094.fsa,Green,131.6,14699,127020,132,132,0.2,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 32: E12_1E1_541102.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+E12_1E1_541102.fsa,Green,138.3,28697,205180,138,138,0,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 33: E02_1F8_541118.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+E02_1F8_541118.fsa,Green,138.1,4945,32300,138,138,0.2,Pass,500,,
+E02_1F8_541118.fsa,Green,142.9,3892,26732,143,143,0.3,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 34: E08_1A5_541070.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+E08_1A5_541070.fsa,Green,131.6,15159,103260,132,132,0.2,Pass,500,,
+E08_1A5_541070.fsa,Green,138.2,13831,89267,138,138,0.1,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 35: E09_1B4_541078.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+E09_1B4_541078.fsa,Green,138.3,14382,112558,138,138,0,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+E09_1B4_541078.fsa,Green,143.2,14314,107746,143,143,0,Pass,500,[<Confirmed>],
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 36: F01_1F1_541111.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+F01_1F1_541111.fsa,Green,138.4,5227,33603,138,138,0.1,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 37: F10_1C4_541087.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+F10_1C4_541087.fsa,Green,131.6,12982,87044,132,132,0.2,Pass,500,,
+F10_1C4_541087.fsa,Green,138.2,11291,78175,138,138,0.1,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 38: F11_1D3_541095.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+F11_1D3_541095.fsa,Green,129.7,14116,99177,130,130,0,Pass,500,[<Confirmed>],
+F11_1D3_541095.fsa,Green,131.8,15531,128486,132,132,0,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 39: F12_1E2_541103.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+F12_1E2_541103.fsa,Green,136,25875,205070,136,136,0.1,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+F12_1E2_541103.fsa,Green,138,27617,240091,138,138,0.3,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 40: F02_1F9_541119.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+F02_1F9_541119.fsa,Green,138.2,5241,34104,138,138,0.1,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 41: F08_1A6_541071.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+F08_1A6_541071.fsa,Green,131.6,14306,95957,132,132,0.2,Pass,500,,
+F08_1A6_541071.fsa,Green,143,11630,85720,143,143,0.2,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 42: F09_1B5_541079.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 43: G01_1F2_541112.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+G01_1F2_541112.fsa,Green,138.5,5613,35027,138,138,0.2,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 44: G10_1C5_541088.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+G10_1C5_541088.fsa,Green,129.5,15384,110557,130,130,0.2,Pass,500,,
+G10_1C5_541088.fsa,Green,131.6,12952,83650,132,132,0.2,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 45: G11_1D4_541096.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+G11_1D4_541096.fsa,Green,127.5,14889,106286,127,127,0.1,Pass,500,,
+G11_1D4_541096.fsa,Green,138.5,14399,99173,138,138,0.2,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 46: G12_1E3_541104.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+G12_1E3_541104.fsa,Green,138.4,14791,97451,138,138,0.1,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 47: G08_1A7_541072.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+G08_1A7_541072.fsa,Green,131.5,9157,59118,132,132,0.3,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 48: G09_1B6_541080.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+G09_1B6_541080.fsa,Green,138.5,14113,101521,138,138,0.2,Pass,500,,
+G09_1B6_541080.fsa,Green,143.3,11063,83164,143,143,0.1,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 49: H01_1F3_541113.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+H01_1F3_541113.fsa,Green,138.4,14705,98402,138,138,0.1,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 50: H10_1C6_541089.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+H10_1C6_541089.fsa,Green,127.2,12409,95815,127,127,0.2,Pass,500,,
+H10_1C6_541089.fsa,Green,131.5,13918,87956,132,132,0.3,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 51: H11_1D5_541097.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+H11_1D5_541097.fsa,Green,129.7,13382,98492,130,130,0,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+H11_1D5_541097.fsa,Green,140.8,13763,98304,141,141,0,Pass,500,[<Confirmed>],
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 52: H12_1E4_541105.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+H12_1E4_541105.fsa,Green,136.2,14267,98398,136,136,0.1,Pass,500,[<Confirmed>],
+H12_1E4_541105.fsa,Green,138.3,17407,127960,138,138,0,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 53: H08_1A8_541073.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 54: H09_1B7_541081.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+H09_1B7_541081.fsa,Green,129.5,12759,83836,130,130,0.2,Pass,500,,
+H09_1B7_541081.fsa,Green,140.7,10361,76768,141,141,0.1,Pass,500,,

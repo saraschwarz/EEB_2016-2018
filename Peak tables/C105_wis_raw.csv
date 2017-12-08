@@ -1,0 +1,92 @@
+Peak Table,,,,,,,,,,,
+Software Package: SoftGenetics GeneMarker 1.95,,,,,,,,,,,
+Date/Time: 11/27/2017 11:54:01 AM,,,,,,,,,,,
+,,,,,,,,,,,
+Project: E:\Microsat files\WIS\C105\C105_wis.SGF,,,,,,,,,,,
+Panel: Pc C105,,,,,,,,,,,
+Size: GS500,,,,,,,,,,,
+Analysis Type: Fragment (Animal),,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 1: A07_PCP1_543929.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+A07_PCP1_543929.fsa,Green,283.1,20089,152024,283,283,0.3,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+A07_PCP1_543929.fsa,Green,316.9,14984,116110,316,316,0.8,Pass,500,[<Confirmed>],
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 2: A08_PWO7_543937.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+A08_PWO7_543937.fsa,Green,283.2,2325,16225,283,283,0.2,Pass,423.2,,
+A08_PWO7_543937.fsa,Green,290.7,1272,8861,291,291,1,Pass,163.5,[<Confirmed><Inserted>],
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 3: B07_PCP2_543930.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+B07_PCP2_543930.fsa,Green,287,2349,16232,287,287,0.1,Pass,437.3,,
+B07_PCP2_543930.fsa,Green,314.7,947,8690,315,315,1,Pass,51.6,[<Confirmed><Inserted>],
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 4: B08_PWO8_543938.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+B08_PWO8_543938.fsa,Green,249.7,18375,178111,,249,1,Pass,500,[<SAT (Repaired)><Edited><Confirmed>],SR
+B08_PWO8_543938.fsa,Green,257.5,23925,210445,,258,1,Pass,500,[<SAT (Repaired)><Edited><Confirmed>],SR
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 5: C07_PWO1_543931.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+C07_PWO1_543931.fsa,Green,279.5,9783,66563,280,280,0.3,Pass,500,,
+C07_PWO1_543931.fsa,Green,283.3,7661,55114,283,283,0.1,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 6: C08_PWO9_543939.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+C08_PWO9_543939.fsa,Green,283.1,16421,138466,283,283,0.3,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+C08_PWO9_543939.fsa,Green,301.9,14185,134681,302,302,0.2,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 7: D07_PWO2_543932.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+D07_PWO2_543932.fsa,Green,279.5,19547,179828,280,280,0.3,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+D07_PWO2_543932.fsa,Green,283.1,16764,141382,283,283,0.3,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 8: D08_PWO10_543940.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+D08_PWO10_543940.fsa,Green,283.3,10188,68842,283,283,0.1,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 9: E07_PWO3_543933.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+E07_PWO3_543933.fsa,Green,275.7,19675,165764,276,276,0.7,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+E07_PWO3_543933.fsa,Green,286.8,18762,155428,287,287,0.3,Pass,500,[<Confirmed>],
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 10: F07_PWO4_543934.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+F07_PWO4_543934.fsa,Green,261.5,18104,158627,262,262,0.1,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+F07_PWO4_543934.fsa,Green,310.1,13404,122003,310,310,0.4,Pass,500,[<Confirmed>],
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 11: G07_PWO5_543935.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+G07_PWO5_543935.fsa,Green,279.6,1505,11129,280,280,0.2,Pass,203.3,,
+G07_PWO5_543935.fsa,Green,314.6,4480,36265,315,315,0.1,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 12: H07_PWO6_543936.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+H07_PWO6_543936.fsa,Green,290.6,5668,38669,291,291,0.2,Pass,500,,
+H07_PWO6_543936.fsa,Green,314.4,2891,22579,315,315,0.1,Pass,437.3,,

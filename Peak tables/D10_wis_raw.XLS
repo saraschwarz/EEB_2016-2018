@@ -1,0 +1,92 @@
+Peak Table
+Software Package: SoftGenetics GeneMarker 1.95
+Date/Time: 11/27/2017 11:55:39 AM
+
+Project: E:\Microsat files\WIS\D10\D10_wis.SGF
+Panel: Pc D10
+Size: GS500
+Analysis Type: Fragment (Animal)
+
+
+
+Sample: 1: A10_PCP1_543953.fsa
+
+Sample	Dye	Size	Height	Area	Marker	Allele	Difference	Quality	Score	Comments	Quality Reasons	
+A10_PCP1_543953.fsa	Green	193.9	14348	100891	194	194	0.2	Pass	500.0	[<Confirmed>]		
+A10_PCP1_543953.fsa	Green	205.4	18726	292922	206	206	0.6	Pass	500.0	[<SAT (Repaired)><Confirmed>]	SR	
+
+
+Sample: 2: A11_PWO7_543961.fsa
+
+Sample	Dye	Size	Height	Area	Marker	Allele	Difference	Quality	Score	Comments	Quality Reasons	
+A11_PWO7_543961.fsa	Green	223.7	16343	139077	224	224	0.5	Pass	500.0	[<SAT (Repaired)><Confirmed>]	SR	
+A11_PWO7_543961.fsa	Green	232.4	21727	147857	232	232	0.1	Pass	500.0	[<SAT (Repaired)><Confirmed>]	SR	
+
+
+Sample: 3: B10_PCP2_543954.fsa
+
+Sample	Dye	Size	Height	Area	Marker	Allele	Difference	Quality	Score	Comments	Quality Reasons	
+B10_PCP2_543954.fsa	Green	201.2	15688	114453	201	201	0.2	Pass	500.0			
+B10_PCP2_543954.fsa	Green	205.5	15795	110399	206	206	0.5	Pass	500.0			
+
+
+Sample: 4: B11_PWO8_543962.fsa
+
+Sample	Dye	Size	Height	Area	Marker	Allele	Difference	Quality	Score	Comments	Quality Reasons	
+B11_PWO8_543962.fsa	Green	207.1	14592	264468	206	206	1.1	Pass	500.0	[<SAT><Confirmed>]	SR	
+B11_PWO8_543962.fsa	Green	232.3	17732	318706	232	232	0.0	Pass	500.0	[<SAT (Repaired)><Confirmed>]	SR	
+
+
+Sample: 5: C10_PWO1_543955.fsa
+
+Sample	Dye	Size	Height	Area	Marker	Allele	Difference	Quality	Score	Comments	Quality Reasons	
+C10_PWO1_543955.fsa	Green	205.3	15310	126045	206	206	0.7	Pass	500.0			
+C10_PWO1_543955.fsa	Green	222.4	17399	121993	224	224	1.8	Pass	500.0			
+
+
+Sample: 6: C11_PWO9_543963.fsa
+
+Sample	Dye	Size	Height	Area	Marker	Allele	Difference	Quality	Score	Comments	Quality Reasons	
+C11_PWO9_543963.fsa	Green	232.2	21324	356525	232	232	0.1	Pass	500.0	[<SAT (Repaired)><Confirmed>]	SR	
+
+
+Sample: 7: D10_PWO2_543956.fsa
+
+Sample	Dye	Size	Height	Area	Marker	Allele	Difference	Quality	Score	Comments	Quality Reasons	
+D10_PWO2_543956.fsa	Green	200.9	20934	148601	201	201	0.5	Pass	500.0			
+D10_PWO2_543956.fsa	Green	226.7	16681	121889	228	228	0.9	Pass	500.0			
+
+
+Sample: 8: D11_PWO10_543964.fsa
+
+Sample	Dye	Size	Height	Area	Marker	Allele	Difference	Quality	Score	Comments	Quality Reasons	
+D11_PWO10_543964.fsa	Green	201.6	10507	77469	201	201	0.2	Pass	500.0			
+D11_PWO10_543964.fsa	Green	206.0	8973	65589	206	206	0.0	Pass	500.0			
+
+
+Sample: 9: E10_PWO3_543957.fsa
+
+Sample	Dye	Size	Height	Area	Marker	Allele	Difference	Quality	Score	Comments	Quality Reasons	
+E10_PWO3_543957.fsa	Green	192.7	20621	145477	194	194	1.0	Pass	500.0	[<SAT (Repaired)><Confirmed>]	SR	
+
+
+Sample: 10: F10_PWO4_543958.fsa
+
+Sample	Dye	Size	Height	Area	Marker	Allele	Difference	Quality	Score	Comments	Quality Reasons	
+F10_PWO4_543958.fsa	Green	200.8	18536	132645	201	201	0.6	Pass	500.0			
+F10_PWO4_543958.fsa	Green	230.9	14172	104093	232	232	1.4	Pass	500.0			
+
+
+Sample: 11: G10_PWO5_543959.fsa
+
+Sample	Dye	Size	Height	Area	Marker	Allele	Difference	Quality	Score	Comments	Quality Reasons	
+G10_PWO5_543959.fsa	Green	201.0	18406	145337	201	201	0.4	Pass	500.0			
+G10_PWO5_543959.fsa	Green	230.9	15984	120015	232	232	1.4	Pass	500.0			
+
+
+Sample: 12: H10_PWO6_543960.fsa
+
+Sample	Dye	Size	Height	Area	Marker	Allele	Difference	Quality	Score	Comments	Quality Reasons	
+H10_PWO6_543960.fsa	Green	200.9	11187	73324	201	201	0.5	Pass	500.0			
+H10_PWO6_543960.fsa	Green	230.9	8876	60744	232	232	1.4	Pass	500.0			
+
