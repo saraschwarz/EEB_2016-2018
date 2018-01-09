@@ -27,7 +27,7 @@ if (!require("stringr")) install.packages("stringr")
 library(stringr)
 ```
 
-# Converting raw data by locus
+# Converting raw data from Genemarker into complete dataset by locus
 
 ## A103
 ```{r}
@@ -44,7 +44,7 @@ A103 <- A103[order(A103$Sample_ID),]
 View(A103)
 ```
 
-## Converting raw data A115
+## A115
 ```{r}
 A115_raw <- read.table("A115_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 A115 <- A115_raw[,-c(2:6)] #cut out unnecessary columns
@@ -59,7 +59,7 @@ View(A115)
 ```
 
 
-## Converting raw data C1
+## C1
 ```{r}
 C1_raw <- read.table("C1_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 C1 <- C1_raw[,-c(2:6)] #cut out unnecessary columns
@@ -75,7 +75,7 @@ View(C1)
 ```
 
 
-## Converting raw data C6
+## C6
 ```{r}
 C6_raw <- read.table("C6_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 C6 <- C6_raw[,-c(2:6)] #cut out unnecessary columns
@@ -91,7 +91,7 @@ View(C6)
 ```
 
 
-## Converting raw data C105
+## C105
 ```{r}
 C105_raw <- read.table("C105_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 C105 <- C105_raw[,-c(2:6)] #cut out unnecessary columns
@@ -317,7 +317,7 @@ View(D125)
 #write.table(C1, "C1_final", sep = ",", row.names = F)
 ```
 
-# Converting data from Wisconsin samples
+# Converting data from Genemarker for 12 Wisconsin samples
 
 ## A103 
 ```{r}
