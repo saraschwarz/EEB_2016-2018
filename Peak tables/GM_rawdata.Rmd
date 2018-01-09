@@ -34,7 +34,7 @@ library(stringr)
 A103_raw <- read.table("A103_raw.csv", sep = ",", na.strings = c("", "NA"))
 A103 <- A103_raw[,-c(2:6)] #cut out unnecessary columns
 A103 <- A103[,-c(3:8)] #cut out unnecessary columns
-names(A103) <- c("Sample_ID", "Allele") #rename columns
+names(A103) <- c("Sample_ID", "A103") #rename columns
 A103[A103 == "Sample"] <- NA #convert sample to NAs so they can be omitted
 A103 = A103 %>% na.omit() #omit all NAs
 A103$Sample_ID <- str_sub(A103$Sample, 5, 17) #Remove lane name and underscore
@@ -49,7 +49,7 @@ View(A103)
 A115_raw <- read.table("A115_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 A115 <- A115_raw[,-c(2:6)] #cut out unnecessary columns
 A115 <- A115[,-c(3:8)] #cut out unnecessary columns
-names(A115) <- c("Sample_ID", "Allele") #rename columns
+names(A115) <- c("Sample_ID", "A115") #rename columns
 A115[A115 == "Sample"] <- NA #convert sample to NAs so they can be omitted
 A115 = A115 %>% na.omit() #omit NAs again
 A115$Sample_ID <- str_sub(A115$Sample, 5, 18) #Remove lane name and underscore
@@ -64,7 +64,7 @@ View(A115)
 A120_raw <- read.table("A120_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 A120 <- A120_raw[,-c(2:6)] #cut out unnecessary columns
 A120 <- A120[,-c(3:8)] #cut out unnecessary columns
-names(A120) <- c("Sample_ID", "Allele") #rename columns
+names(A120) <- c("Sample_ID", "A120") #rename columns
 A120[A120 == "Sample"] <- NA #convert sample to NAs so they can be omitted
 A120 = A120 %>% na.omit() #omit NAs again
 A120$Sample_ID <- str_sub(A120$Sample, 5, 18) #Remove lane name and underscore
@@ -80,7 +80,7 @@ View(A120)
 C1_raw <- read.table("C1_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 C1 <- C1_raw[,-c(2:6)] #cut out unnecessary columns
 C1 <- C1[,-c(3:8)] #cut out unnecessary columns
-names(C1) <- c("Sample_ID", "Allele") #rename columns
+names(C1) <- c("Sample_ID", "C1") #rename columns
 C1[C1 == "Sample"] <- NA #convert sample to NAs so they can be omitted
 C1 = C1 %>% na.omit() #omit NAs again
 C1$Sample_ID <- str_sub(C1$Sample, 5, 18) #Remove lane name and underscore
@@ -96,7 +96,7 @@ View(C1)
 C6_raw <- read.table("C6_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 C6 <- C6_raw[,-c(2:6)] #cut out unnecessary columns
 C6 <- C6[,-c(3:8)] #cut out unnecessary columns
-names(C6) <- c("Sample_ID", "Allele") #rename columns
+names(C6) <- c("Sample_ID", "C6") #rename columns
 C6[C6 == "Sample"] <- NA #convert sample to NAs so they can be omitted
 C6 = C6 %>% na.omit() #omit NAs again
 C6$Sample_ID <- str_sub(C6$Sample, 5, 18) #Remove lane name and underscore
@@ -112,7 +112,7 @@ View(C6)
 C105_raw <- read.table("C105_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 C105 <- C105_raw[,-c(2:6)] #cut out unnecessary columns
 C105 <- C105[,-c(3:8)] #cut out unnecessary columns
-names(C105) <- c("Sample_ID", "Allele") #rename columns
+names(C105) <- c("Sample_ID", "C105") #rename columns
 C105[C105 == "Sample"] <- NA #convert sample to NAs so they can be omitted
 C105 = C105 %>% na.omit() #omit NAs again
 C105$Sample_ID <- str_sub(C105$Sample, 5, 18) #Remove lane name and underscore
@@ -128,7 +128,7 @@ View(C105)
 C125_raw <- read.table("C125_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 C125 <- C125_raw[,-c(2:6)] #cut out unnecessary columns
 C125 <- C125[,-c(3:8)] #cut out unnecessary columns
-names(C125) <- c("Sample_ID", "Allele") #rename columns
+names(C125) <- c("Sample_ID", "C125") #rename columns
 C125[C125 == "Sample"] <- NA #convert sample to NAs so they can be omitted
 C125 = C125 %>% na.omit() #omit NAs again
 C125$Sample_ID <- str_sub(C125$Sample, 5, 18) #Remove lane name and underscore
@@ -144,7 +144,7 @@ View(C125)
 D4_raw <- read.table("D4_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 D4 <- D4_raw[,-c(2:6)] #cut out unnecessary columns
 D4 <- D4[,-c(3:8)] #cut out unnecessary columns
-names(D4) <- c("Sample_ID", "Allele") #rename columns
+names(D4) <- c("Sample_ID", "D4") #rename columns
 D4[D4 == "Sample"] <- NA #convert sample to NAs so they can be omitted
 D4 = D4 %>% na.omit() #omit NAs again
 D4$Sample_ID <- str_sub(D4$Sample, 5, 18) #Remove lane name and underscore
@@ -160,7 +160,7 @@ View(D4)
 D10_raw <- read.table("D10_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 D10 <- D10_raw[,-c(2:6)] #cut out unnecessary columns
 D10 <- D10[,-c(3:8)] #cut out unnecessary columns
-names(D10) <- c("Sample_ID", "Allele") #rename columns
+names(D10) <- c("Sample_ID", "D10") #rename columns
 D10[D10 == "Sample"] <- NA #convert sample to NAs so they can be omitted
 D10 = D10 %>% na.omit() #omit NAs again
 D10$Sample_ID <- str_sub(D10$Sample, 5, 18) #Remove lane name and underscore
@@ -176,7 +176,7 @@ View(D10)
 D106_raw <- read.table("D106_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 D106 <- D106_raw[,-c(2:6)] #cut out unnecessary columns
 D106 <- D106[,-c(3:8)] #cut out unnecessary columns
-names(D106) <- c("Sample_ID", "Allele") #rename columns
+names(D106) <- c("Sample_ID", "D106") #rename columns
 D106[D106 == "Sample"] <- NA #convert sample to NAs so they can be omitted
 D106 = D106 %>% na.omit() #omit NAs again
 D106$Sample_ID <- str_sub(D106$Sample, 5, 18) #Remove lane name and underscore
@@ -192,7 +192,7 @@ View(D106)
 D113_raw <- read.table("D113_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 D113 <- D113_raw[,-c(2:6)] #cut out unnecessary columns
 D113 <- D113[,-c(3:8)] #cut out unnecessary columns
-names(D113) <- c("Sample_ID", "Allele") #rename columns
+names(D113) <- c("Sample_ID", "D113") #rename columns
 D113[D113 == "Sample"] <- NA #convert sample to NAs so they can be omitted
 D113 = D113 %>% na.omit() #omit NAs again
 D113$Sample_ID <- str_sub(D113$Sample, 5, 18) #Remove lane name and underscore
@@ -207,7 +207,7 @@ View(D113)
 D114_raw <- read.table("D114_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 D114 <- D114_raw[,-c(2:6)] #cut out unnecessary columns
 D114 <- D114[,-c(3:8)] #cut out unnecessary columns
-names(D114) <- c("Sample_ID", "Allele") #rename columns
+names(D114) <- c("Sample_ID", "D114") #rename columns
 D114[D114 == "Sample"] <- NA #convert sample to NAs so they can be omitted
 D114 = D114 %>% na.omit() #omit NAs again
 D114$Sample_ID <- str_sub(D114$Sample, 5, 18) #Remove lane name and underscore
@@ -222,7 +222,7 @@ View(D114)
 D119_raw <- read.table("D119_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 D119 <- D119_raw[,-c(2:6)] #cut out unnecessary columns
 D119 <- D119[,-c(3:8)] #cut out unnecessary columns
-names(D119) <- c("Sample_ID", "Allele") #rename columns
+names(D119) <- c("Sample_ID", "D119") #rename columns
 D119[D119 == "Sample"] <- NA #convert sample to NAs so they can be omitted
 D119 = D119 %>% na.omit() #omit NAs again
 D119$Sample_ID <- str_sub(D119$Sample, 5, 18) #Remove lane name and underscore
@@ -238,7 +238,7 @@ View(D119)
 D125_raw <- read.table("D125_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 D125 <- D125_raw[,-c(2:6)] #cut out unnecessary columns
 D125 <- D125[,-c(3:8)] #cut out unnecessary columns
-names(D125) <- c("Sample_ID", "Allele") #rename columns
+names(D125) <- c("Sample_ID", "D125") #rename columns
 D125[D125 == "Sample"] <- NA #convert sample to NAs so they can be omitted
 D125 = D125 %>% na.omit() #omit NAs again
 D125$Sample_ID <- str_sub(D125$Sample, 5, 18) #Remove lane name and underscore
@@ -255,7 +255,7 @@ View(D125)
 A103_wisraw <- read.table("A103_wis_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 A103_wis <- A103_wisraw[,-c(2:6)] #cut out unnecessary columns
 A103_wis <- A103_wis[,-c(3:8)] #cut out unnecessary columns
-names(A103_wis) <- c("Sample_ID", "Allele") #rename columns
+names(A103_wis) <- c("Sample_ID", "A103") #rename columns
 A103_wis[A103_wis == "Sample"] <- NA #convert sample to NAs so they can be omitted
 A103_wis[A103_wis == "OL"] <- NA #convert sample to NAs so they can be omitted
 A103_wis = A103_wis %>% na.omit() #omit NAs again
@@ -272,7 +272,7 @@ View(A103_wis)
 A120_wisraw <- read.table("A120_wis_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 A120_wis <- A120_wisraw[,-c(2:6)] #cut out unnecessary columns
 A120_wis <- A120_wis[,-c(3:8)] #cut out unnecessary columns
-names(A120_wis) <- c("Sample_ID", "Allele") #rename columns
+names(A120_wis) <- c("Sample_ID", "A120") #rename columns
 A120_wis[A120_wis == "Sample"] <- NA #convert sample to NAs so they can be omitted
 A120_wis = A120_wis %>% na.omit() #omit NAs again
 A120_wis$Sample_ID <- str_sub(A120_wis$Sample, 5, 18) #Remove lane name and underscore
@@ -288,7 +288,7 @@ View(A120_wis)
 C1_wisraw <- read.table("C1_wis_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 C1_wis <- C1_wisraw[,-c(2:5)] #cut out unnecessary columns
 C1_wis <- C1_wis[,-c(4:8)] #cut out unnecessary columns
-names(C1_wis) <- c("Sample_ID", "Allele") #rename columns
+names(C1_wis) <- c("Sample_ID", "C1") #rename columns
 C1_wis[C1_wis == "Sample"] <- NA #convert sample to NAs so they can be omitted
 C1_wis = C1_wis %>% na.omit() #omit all NAs
 C1_wis$Sample_ID <- str_sub(C1_wis$Sample, 5, 18) #Remove lane name and underscore
@@ -304,7 +304,7 @@ View(C1)
 C6_wisraw <- read.table("C6_wis_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 C6_wis <- C6_wisraw[,-c(2:6)] #cut out unnecessary columns
 C6_wis <- C6_wis[,-c(3:8)] #cut out unnecessary columns
-names(C6_wis) <- c("Sample_ID", "Allele") #rename columns
+names(C6_wis) <- c("Sample_ID", "C6") #rename columns
 C6_wis[C6_wis == "Sample"] <- NA #convert sample to NAs so they can be omitted
 C6_wis = C6_wis %>% na.omit() #omit NAs again
 C6_wis$Sample_ID <- str_sub(C6_wis$Sample, 5, 18) #Remove lane name and underscore
@@ -320,7 +320,7 @@ View(C6_wis)
 C105_wisraw <- read.table("C105_wis_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 C105_wis <- C105_wisraw[,-c(2:6)] #cut out unnecessary columns
 C105_wis <- C105_wis[,-c(3:8)] #cut out unnecessary columns
-names(C105_wis) <- c("Sample_ID", "Allele") #rename columns
+names(C105_wis) <- c("Sample_ID", "C105") #rename columns
 C105_wis[C105_wis == "Sample"] <- NA #convert sample to NAs so they can be omitted
 C105_wis = C105_wis %>% na.omit() #omit NAs again
 C105_wis$Sample_ID <- str_sub(C105_wis$Sample, 5, 18) #Remove lane name and underscore
@@ -336,7 +336,7 @@ View(C105_wis)
 D4_wisraw <- read.table("D4_wis_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 D4_wis <- D4_wisraw[,-c(2:6)] #cut out unnecessary columns
 D4_wis <- D4_wis[,-c(3:8)] #cut out unnecessary columns
-names(D4_wis) <- c("Sample_ID", "Allele") #rename columns
+names(D4_wis) <- c("Sample_ID", "D4") #rename columns
 D4_wis[D4_wis == "Sample"] <- NA #convert sample to NAs so they can be omitted
 D4_wis = D4_wis %>% na.omit() #omit all NAs
 D4_wis$Sample_ID <- str_sub(D4_wis$Sample, 5, 18) #Remove lane name and underscore
@@ -352,7 +352,7 @@ View(D4_wis)
 D10_wisraw <- read.table("D10_wis_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 D10_wis <- D10_wisraw[,-c(2:6)] #cut out unnecessary columns
 D10_wis <- D10_wis[,-c(3:8)] #cut out unnecessary columns
-names(D10_wis) <- c("Sample_ID", "Allele") #rename columns
+names(D10_wis) <- c("Sample_ID", "D10") #rename columns
 D10_wis[D10_wis == "Sample"] <- NA #convert sample to NAs so they can be omitted
 D10_wis = D10_wis %>% na.omit() #omit NAs again
 D10_wis$Sample_ID <- str_sub(D10_wis$Sample, 5, 18) #Remove lane name and underscore
@@ -368,7 +368,7 @@ View(D10_wis)
 D106_wisraw <- read.table("D106_wis_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
 D106_wis <- D106_wisraw[,-c(2:6)] #cut out unnecessary columns
 D106_wis <- D106_wis[,-c(3:8)] #cut out unnecessary columns
-names(D106_wis) <- c("Sample_ID", "Allele") #rename columns
+names(D106_wis) <- c("Sample_ID", "D106") #rename columns
 D106_wis[D106_wis == "Sample"] <- NA #convert sample to NAs so they can be omitted
 D106_wis = D106_wis %>% na.omit() #omit NAs again
 D106_wis$Sample_ID <- str_sub(D106_wis$Sample, 5, 18) #Remove lane name and underscore
