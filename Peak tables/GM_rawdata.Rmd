@@ -1,9 +1,4 @@
----
-output: html_document
-editor_options: 
-  chunk_output_type: inline
----
-
+# This code was used for data manipulation from the raw data output from Genemarker to the input data file for GenAlex.
 
 ## Set working directory
 setwd("C:/Users/Sara/Documents/EEB_2016-2018/Peak tables/Intermediate_files")
@@ -295,7 +290,7 @@ C1_wis$Sample_ID <- str_sub(C1_wis$Sample, 5, 18) #Remove lane name and undersco
 C1_wis$Sample_ID <- strapplyc(C1_wis$Sample_ID, "(.*)_", simplify = T) #Reomve lab ID after underscore
 C1_wis <- C1_wis[order(C1_wis$Sample_ID),]
 
-View(C1)
+View(C1_wis)
 ```
 
 
@@ -379,64 +374,38 @@ View(D106_wis)
 ```
 
 
-## Format data for merge
+## Merge loci genotypes together and edit data
 ```{r}
-A103_merge <- A103[,-c(2)] 
-names(A103_merge) <- c("Sample_ID", "A103")
-write.table(A103_merge, "A103_wis_final.csv", sep = ",", row.names = F)
+# Merge genos of a few and edit before adding more
+genos <- merge(A103, A115, all= T, sort=T) 
+genos <- merge(genos, A120, by="Sample_ID", all=T)
+genos <- merge(genos, C1, by="Sample_ID", all=T)
+genos <- merge(genos, C6, by="Sample_ID", all=T)
+genos <- merge(genos, C105, by="Sample_ID", all=T)
+genos <- merge(genos, C125, by="Sample_ID", all=T)
+# Remove duplicates
+genos1 <- genos[duplicated(genos,)]
+genos <- merge(genos, D4, by="Sample_ID", all=T)
+genos <- merge(genos, D10, by="Sample_ID", all=T)
+genos <- merge(genos, D106, by="Sample_ID", all=T)
+genos <- merge(genos, D113, by="Sample_ID", all=T)
+genos <- merge(genos, D114, by="Sample_ID", all=T)
+genos <- merge(genos, D119, by="Sample_ID", all=T)
+genos <- merge(genos, D125, by="Sample_ID", all=T)
 
-A115_merge <- A115[,-c(2)] 
-names(A115_merge) <- c("Sample_ID", "A115")
-write.table(A115_merge, "A115_final.csv", sep = ",", row.names = F)
+#genos <- merge(genos, A103_wis, by="Sample_ID", all=T)
+#genos <- merge(genos, A120_wis, by="Sample_ID", all=T)
+#genos <- merge(genos, C1_wis, by="Sample_ID", all=T)
+#genos <- merge(genos, C6_wis, by="Sample_ID", all=T)
+#genos <- merge(genos, C105_wis, by="Sample_ID", all=T)
+#genos <- merge(genos, D4_wis, by="Sample_ID", all=T)
+#genos <- merge(genos, D10_wis, by="Sample_ID", all=T)
+#genos <- merge(genos, D106_wis, by="Sample_ID", all=T)
 
-C1_merge <- C1[,-c(2)]
-names(C1_merge) <- c("Sample_ID", "C1")
-write.table(C1_merge, "C1_wis_final.csv", sep = ",", row.names = F)
-
-C6_merge <- C6[,-c(2)]
-names(C6_merge) <- c("Sample_ID", "C6")
-write.table(C6_merge, "C6_wis_final.csv", sep = ",", row.names = F)
-
-C105_merge <- C105[,-c(2)]
-names(C105_merge) <- c("Sample_ID", "C105")
-write.table(C105_merge, "C105_wis_final.csv", sep = ",", row.names = F)
-
-C125_merge <- C125[,-c(2)]
-names(C125_merge) <- c("Sample_ID", "C125")
-write.table(C125_merge, "C125_final.csv", sep = ",", row.names = F)
-
-D4_merge <- D4[,-c(2)]
-names(D4_merge) <- c("Sample_ID", "D4")
-write.table(D4_merge, "D4_wis_final.csv", sep = ",", row.names = F)
-
-D10_merge <- D10[,-c(2)]
-names(D10_merge) <- c("Sample_ID", "D10")
-write.table(D10_merge, "D10_wis_final.csv", sep = ",", row.names = F)
-
-D106_merge <- D106[,-c(2)]
-names(D106_merge) <- c("Sample_ID", "D106")
-write.table(D106_merge, "D106_wis_final.csv", sep = ",", row.names = F)
-
-D113_merge <- D113[,-c(2)]
-names(D113_merge) <- c("Sample_ID", "D113")
-write.table(D113_merge, "D113_final.csv", sep = ",", row.names = F)
-
-D114_merge <- D114[,-c(2)]
-names(D114_merge) <- c("Sample_ID", "D114")
-write.table(D114_merge, "D114_final.csv", sep = ",", row.names = F)
-
-D119_merge <- D119[,-c(2)]
-names(D119_merge) <- c("Sample_ID", "D119")
-write.table(D119_merge, "D119_final.csv", sep = ",", row.names = F)
-
-A120_merge <- A120[,-c(2)]
-names(A120_merge) <- c("Sample_ID", "A120")
-write.table(A120_merge, "A120_wis_final.csv", sep = ",", row.names = F)
-
-D125_merge <- D125[,-c(2)]
-names(D125_merge) <- c("Sample_ID", "D125")
-write.table(D125_merge, "D125_final.csv", sep = ",", row.names = F)
+View(genos)
+#genos[is.na(genos)] <- 0
 
 ```
+
 
 
