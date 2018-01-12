@@ -1,4 +1,4 @@
-# This code was used for data manipulation from the raw data output from Genemarker to the input data file for GenAlex.
+# This code was used manipulate data from the raw data output from Genemarker to the input data file for GenAlex.
 
 ## Set working directory
 setwd("C:/Users/Sara/Documents/EEB_2016-2018/Peak tables/Intermediate_files")
@@ -20,6 +20,9 @@ library(gsubfn)
 
 if (!require("stringr")) install.packages("stringr")
 library(stringr)
+
+if (!require("tidyr")) install.packages("tidyr")
+library(tidyr)
 ```
 
 # Converting raw data from Genemarker into complete dataset by locus
@@ -406,6 +409,101 @@ View(genos)
 #genos[is.na(genos)] <- 0
 
 ```
+
+
+```{r}
+# subset each dataframe so that the duplicates (from reamps) are removed
+
+
+# Add duplicate row for second homozygous allele
+# Must be done at each locus
+A103[(nrow(A103)+1),] <- c("ALL3", "244")
+A103[(nrow(A103)+1),] <- c("ALL10", "242")
+A103[(nrow(A103)+1),] <- c("ALL11", "242")
+A103[(nrow(A103)+1),] <- c("ALL4", "242")
+A103[(nrow(A103)+1),] <- c("ALL7", "244")
+A103[(nrow(A103)+1),] <- c("BEF-07212-01", "244")
+A103[(nrow(A103)+1),] <- c("C041", "251")
+#need to remove CHip5+16244
+A103[(nrow(A103)+1),] <- c("INHS-25558", "246")
+A103[(nrow(A103)+1),] <- c("m-07-07", "257")
+A103[(nrow(A103)+1),] <- c("MS33", "244")
+A103[(nrow(A103)+1),] <- c("MS36", "249")
+A103[(nrow(A103)+1),] <- c("Pcyph-TN-2", "240")
+A103 <- A103[order(A103$Sample_ID),]
+# Remove Chip 5 OL call
+A103 <- A103[-c(94),]
+# Remove INHS-16244 duplicate
+A103 <- A103[-c(129),]
+
+A115[(nrow(A115)+1),] <- c("130-3", "310")
+A115[(nrow(A115)+1),] <- c("237-1", "301")
+A115[(nrow(A115)+1),] <- c("C024", "301")
+A115[(nrow(A115)+1),] <- c("Chip-04", "292")
+A115[(nrow(A115)+1),] <- c("Chip-10", "303")
+A115[(nrow(A115)+1),] <- c("Chip-14", "310")
+A115[(nrow(A115)+1),] <- c("Chip6_537304", "285")
+A115[(nrow(A115)+1),] <- c("m-07-05", "292")
+A115[(nrow(A115)+1),] <- c("Meramec-A", "292")
+A115[(nrow(A115)+1),] <- c("Meramec-B", "285")
+A115[(nrow(A115)+1),] <- c("MS17", "299")
+A115[(nrow(A115)+1),] <- c("MS2", "301")
+A115[(nrow(A115)+1),] <- c("MS20", "301")
+A115[(nrow(A115)+1),] <- c("MS22", "285")
+A115[(nrow(A115)+1),] <- c("MS23", "285")
+A115[(nrow(A115)+1),] <- c("MS25", "292")
+A115[(nrow(A115)+1),] <- c("MS27", "292")
+A115[(nrow(A115)+1),] <- c("MS28", "299")
+A115[(nrow(A115)+1),] <- c("MS3", "285")
+A115[(nrow(A115)+1),] <- c("MS37", "301")
+A115[(nrow(A115)+1),] <- c("MS23", "285")
+A115[(nrow(A115)+1),] <- c("MS39", "292")
+A115[(nrow(A115)+1),] <- c("MS41", "299")
+A115[(nrow(A115)+1),] <- c("MS6", "292")
+A115[(nrow(A115)+1),] <- c("MS8", "299")
+A115[(nrow(A115)+1),] <- c("PBH-3A", "297")
+A115[(nrow(A115)+1),] <- c("MS23", "285")
+
+
+
+A115 <- A115[-c(169,170),]
+A115 <- A115[-c(172,173),]
+A115 <- A115[-c(178,179),]
+A115 <- A115[-c(180,181),]
+A115 <- A115[-c(184,185),]
+A115 <- A115[-c(195,196),]
+
+###########test <- A115[-c(220,221),] DUplicate of PBH5A
+
+A115[(nrow(A115)+1),] <- c("Meramec-B", "285")
+A115[(nrow(A115)+1),] <- c("Chip-14", "310")dummy <- c("high", "low")
+A103$high_low <- rep.int(dummy, nrow(A103)/2)
+A103$new_genos <- paste(A103$loci, "_", A103$high_low)
+test <- gather(A103, key = "loci", value = "genotypes",
+                      colnames(A103[,-1]))
+
+                
+test2 <- test[,-c(2,4)]
+test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
