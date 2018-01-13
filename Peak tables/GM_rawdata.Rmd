@@ -661,20 +661,465 @@ C105[(nrow(C105)+1),] <- c("MS8", "287")
 C105[(nrow(C105)+1),] <- c("PBH-4A", "295")
 C105[(nrow(C105)+1),] <- c("PMC-7", "283")
 C105[(nrow(C105)+1),] <- c("MS5", "287")
-
 # Change incorrect Sample_IDs
 C105$Sample_ID <- gsub("CHIP19_537805", "Chip19", C105$Sample_ID)
 C105$Sample_ID <- gsub("Chip6_537804", "Chip6", C105$Sample_ID)
 C105$Sample_ID <- gsub("Oil-City-B-", "Oil-City-B", C105$Sample_ID)
 C105$Sample_ID <- gsub("PBH-2A_537803", "PBH-2A", C105$Sample_ID)
-
 # Remove duplicates
 C105 <- C105[-c(97),] # Chip-05
 C105 <- C105[-c(127),] # Chip6
-
 ########Remove A1, BEF-07212-03, MS30, MS33, MS34, MS36, MS38, MS42, PBH-5A, WV1 duplicate!
 # Order spreadsheet
 C105 <- C105[order(C105$Sample_ID),]
+#Spread data
+#A115$high_low <- rep.int(dummy, nrow(A115)/2)
+#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
+#test <- gather(A115, key = "loci", value = "genotypes",
+                      #colnames(A115[,-1]))
+#test2 <- test[,-c(2,4)]
+#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+
+# C125
+C125[(nrow(C125)+1),] <- c("238-4", "253")
+C125[(nrow(C125)+1),] <- c("ALL11", "261")
+C125[(nrow(C125)+1),] <- c("Chip-02", "249")
+C125[(nrow(C125)+1),] <- c("Chip-15", "249")
+C125[(nrow(C125)+1),] <- c("Chip-20", "249")
+C125[(nrow(C125)+1),] <- c("m-07-06", "264")
+C125[(nrow(C125)+1),] <- c("MER2", "257")
+C125[(nrow(C125)+1),] <- c("Meramec-B", "249")
+C125[(nrow(C125)+1),] <- c("MS1", "245")
+C125[(nrow(C125)+1),] <- c("MS13", "253")
+C125[(nrow(C125)+1),] <- c("MS16", "249")
+C125[(nrow(C125)+1),] <- c("MS19", "249")
+C125[(nrow(C125)+1),] <- c("MS26", "249")
+C125[(nrow(C125)+1),] <- c("MS31", "249")
+C125[(nrow(C125)+1),] <- c("MS33", "249")
+C125[(nrow(C125)+1),] <- c("MS34", "264")
+C125[(nrow(C125)+1),] <- c("MS37", "245")
+C125[(nrow(C125)+1),] <- c("MS38", "249")
+C125[(nrow(C125)+1),] <- c("MS44", "249")
+C125[(nrow(C125)+1),] <- c("MS7", "232")
+C125[(nrow(C125)+1),] <- c("PBH-3A", "227")
+C125[(nrow(C125)+1),] <- c("PBH-4A", "249")
+C125[(nrow(C125)+1),] <- c("PMC-6", "249")
+C125[(nrow(C125)+1),] <- c("PMC-8", "249")
+C125[(nrow(C125)+1),] <- c("TIPP4", "264")
+# Change incorrect Sample_IDs
+C125$Sample_ID <- gsub("CHIP-19", "Chip19", C125$Sample_ID)
+C125$Sample_ID <- gsub("Oil-City-B-", "Oil-City-B", C125$Sample_ID)
+C125$Sample_ID <- gsub("TN2", "Pcyph-TN-2", C125$Sample_ID)
+########Remove  duplicate!
+# Order spreadsheet
+C125 <- C125[order(C125$Sample_ID),]
+#Spread data
+#A115$high_low <- rep.int(dummy, nrow(A115)/2)
+#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
+#test <- gather(A115, key = "loci", value = "genotypes",
+                      #colnames(A115[,-1]))
+#test2 <- test[,-c(2,4)]
+#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+
+
+# D4
+D4[(nrow(D4)+1),] <- c("ALL16", "273")
+D4[(nrow(D4)+1),] <- c("ALL19", "281")
+D4[(nrow(D4)+1),] <- c("ALL6", "273")
+D4[(nrow(D4)+1),] <- c("Chip-10", "297")
+D4[(nrow(D4)+1),] <- c("Chip-15", "297")
+D4[(nrow(D4)+1),] <- c("INHS-22893", "297")
+D4[(nrow(D4)+1),] <- c("INHS-30476", "273")
+D4[(nrow(D4)+1),] <- c("m-07-04", "285")
+D4[(nrow(D4)+1),] <- c("MER2", "313")
+D4[(nrow(D4)+1),] <- c("MS21", "242")
+D4[(nrow(D4)+1),] <- c("MS27", "270")
+D4[(nrow(D4)+1),] <- c("MS29", "242")
+D4[(nrow(D4)+1),] <- c("MS3", "317")
+D4[(nrow(D4)+1),] <- c("MS5", "273")
+D4[(nrow(D4)+1),] <- c("PMC-10", "289")
+D4[(nrow(D4)+1),] <- c("PMC-8", "289")
+D4[(nrow(D4)+1),] <- c("PMC-9", "270")
+D4[(nrow(D4)+1),] <- c("MS27", "270")
+D4[(nrow(D4)+1),] <- c("MS27", "270")
+# Change incorrect Sample_IDs
+D4$Sample_ID <- gsub("CHIP19", "Chip19", D4$Sample_ID)
+D4$Sample_ID <- gsub("MER4", "MER2", D4$Sample_ID)
+D4$Sample_ID <- gsub("MS3_536151", "MS3", D4$Sample_ID)
+D4$Sample_ID <- gsub("Oil-City-B-", "Oil-City-B", D4$Sample_ID)
+D4$Sample_ID <- gsub("TIPP5", "TIPP4", D4$Sample_ID)
+D4$Sample_ID <- gsub("TIPP8", "TIPP6", D4$Sample_ID)
+D4$Sample_ID <- gsub("TN7", "TN8", D4$Sample_ID)
+# Remove duplicates
+D4 <- D4[-c(43,44),] # ALL15
+D4 <- D4[-c(55:59),] # ALL20
+D4 <- D4[-c(65,66),] # ALL7
+D4 <- D4[-c(125,126),] # Chip19
+D4 <- D4[-c(127,128),] # Chip6
+D4 <- D4[-c(165,166),] # MS16
+D4 <- D4[-c(313:318),] # MS16
+########Remove MS17, MS25, MS41, MS7,PBH4A duplicate!
+# Order spreadsheet
+D4 <- D4[order(D4$Sample_ID),]
+#Spread data
+#A115$high_low <- rep.int(dummy, nrow(A115)/2)
+#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
+#test <- gather(A115, key = "loci", value = "genotypes",
+                      #colnames(A115[,-1]))
+#test2 <- test[,-c(2,4)]
+#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+
+
+# D10
+D10[(nrow(D10)+1),] <- c("130-1", "201")
+D10[(nrow(D10)+1),] <- c("130-3", "201")
+D10[(nrow(D10)+1),] <- c("236-1", "201")
+D10[(nrow(D10)+1),] <- c("236-2", "201")
+D10[(nrow(D10)+1),] <- c("237-3", "201")
+D10[(nrow(D10)+1),] <- c("238-1", "201")
+D10[(nrow(D10)+1),] <- c("238-2", "201")
+D10[(nrow(D10)+1),] <- c("238-4", "201")
+D10[(nrow(D10)+1),] <- c("A2", "206")
+D10[(nrow(D10)+1),] <- c("ALL1", "201")
+D10[(nrow(D10)+1),] <- c("ALL10", "201")
+D10[(nrow(D10)+1),] <- c("ALL11", "201")
+D10[(nrow(D10)+1),] <- c("ALL12", "201")
+D10[(nrow(D10)+1),] <- c("ALL13", "201")
+D10[(nrow(D10)+1),] <- c("ALL14", "201")
+D10[(nrow(D10)+1),] <- c("ALL15", "201")
+D10[(nrow(D10)+1),] <- c("ALL16", "201")
+D10[(nrow(D10)+1),] <- c("ALL17", "201")
+D10[(nrow(D10)+1),] <- c("ALL18", "201")
+D10[(nrow(D10)+1),] <- c("ALL19", "201")
+D10[(nrow(D10)+1),] <- c("ALL2", "201")
+D10[(nrow(D10)+1),] <- c("ALL20", "201")
+D10[(nrow(D10)+1),] <- c("ALL3", "201")
+D10[(nrow(D10)+1),] <- c("ALL4", "201")
+D10[(nrow(D10)+1),] <- c("ALL5", "201")
+D10[(nrow(D10)+1),] <- c("ALL6", "201")
+D10[(nrow(D10)+1),] <- c("ALL7", "201")
+D10[(nrow(D10)+1),] <- c("ALL8", "201")
+D10[(nrow(D10)+1),] <- c("ALL9", "201")
+D10[(nrow(D10)+1),] <- c("BEF-07212-01", "201")
+D10[(nrow(D10)+1),] <- c("BEF-07212-02", "201")
+D10[(nrow(D10)+1),] <- c("BEF-07212-03", "201")
+D10[(nrow(D10)+1),] <- c("BEF-07212-05", "201")
+D10[(nrow(D10)+1),] <- c("C024", "197")
+D10[(nrow(D10)+1),] <- c("C041", "197")
+D10[(nrow(D10)+1),] <- c("C219", "197")
+D10[(nrow(D10)+1),] <- c("Chip-07", "201")
+D10[(nrow(D10)+1),] <- c("Chip-12", "232")
+D10[(nrow(D10)+1),] <- c("Chip-13", "232")
+D10[(nrow(D10)+1),] <- c("Chip-16", "201")
+D10[(nrow(D10)+1),] <- c("INHS-3531", "197")
+D10[(nrow(D10)+1),] <- c("MS10", "232")
+D10[(nrow(D10)+1),] <- c("MS16", "206")
+D10[(nrow(D10)+1),] <- c("MS17", "206")
+D10[(nrow(D10)+1),] <- c("MS20", "206")
+D10[(nrow(D10)+1),] <- c("MS26", "206")
+D10[(nrow(D10)+1),] <- c("MS27", "206")
+D10[(nrow(D10)+1),] <- c("MS29", "201")
+D10[(nrow(D10)+1),] <- c("MS30", "201")
+D10[(nrow(D10)+1),] <- c("MS31", "201")
+D10[(nrow(D10)+1),] <- c("MS33", "201")
+D10[(nrow(D10)+1),] <- c("MS38", "201")
+D10[(nrow(D10)+1),] <- c("MS43", "201")
+D10[(nrow(D10)+1),] <- c("MS44", "194")
+D10[(nrow(D10)+1),] <- c("MS5", "206")
+D10[(nrow(D10)+1),] <- c("MS7", "206")
+D10[(nrow(D10)+1),] <- c("Oil-City-A", "201")
+D10[(nrow(D10)+1),] <- c("Oil-City-B", "201")
+D10[(nrow(D10)+1),] <- c("PBH-1A", "201")
+D10[(nrow(D10)+1),] <- c("PBH-2A", "201")
+D10[(nrow(D10)+1),] <- c("PBH-3A", "201")
+D10[(nrow(D10)+1),] <- c("PBH-4A", "232")
+D10[(nrow(D10)+1),] <- c("Pcyph-TN-1", "197")
+D10[(nrow(D10)+1),] <- c("PMC-1", "228")
+D10[(nrow(D10)+1),] <- c("PMC-5", "241")
+D10[(nrow(D10)+1),] <- c("PMC-7", "232")
+D10[(nrow(D10)+1),] <- c("PMC-8", "232")
+D10[(nrow(D10)+1),] <- c("PMX-2", "232")
+D10[(nrow(D10)+1),] <- c("TIPP4", "201")
+D10[(nrow(D10)+1),] <- c("TIPP6", "201")
+D10[(nrow(D10)+1),] <- c("Pcyph-TN-2", "197")
+D10[(nrow(D10)+1),] <- c("TN8", "197")
+D10[(nrow(D10)+1),] <- c("UAUC3157", "197")
+D10[(nrow(D10)+1),] <- c("WI95", "232")
+D10[(nrow(D10)+1),] <- c("WV1", "201")
+# Change incorrect Sample_IDs
+D10$Sample_ID <- gsub("CHIP-19", "Chip19", D10$Sample_ID)
+D10$Sample_ID <- gsub("Oil-City-B-", "Oil-City-B", D10$Sample_ID)
+D10$Sample_ID <- gsub("TN2", "Pcyph-TN-2", D10$Sample_ID)
+
+# Remove duplicates
+D10 <- D10[-c(90),] # Chip-05
+D10 <- D10[-c(269,270),] # PMC-3
+D10 <- D10[-c(294),] # TIPP6
+########Remove 14795,6271, duplicate!
+# Order spreadsheet
+D10 <- D10[order(D10$Sample_ID),]
+#Spread data
+#A115$high_low <- rep.int(dummy, nrow(A115)/2)
+#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
+#test <- gather(A115, key = "loci", value = "genotypes",
+                      #colnames(A115[,-1]))
+#test2 <- test[,-c(2,4)]
+#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+
+# D106
+D106[(nrow(D106)+1),] <- c("236-1", "272")
+D106[(nrow(D106)+1),] <- c("237-1", "272")
+D106[(nrow(D106)+1),] <- c("ALL14", "280")
+D106[(nrow(D106)+1),] <- c("ALL15", "291")
+D106[(nrow(D106)+1),] <- c("ALL18", "291")
+D106[(nrow(D106)+1),] <- c("ALL3", "260")
+D106[(nrow(D106)+1),] <- c("ALL6", "280")
+D106[(nrow(D106)+1),] <- c("ALL8", "256")
+D106[(nrow(D106)+1),] <- c("ALL9", "272")
+D106[(nrow(D106)+1),] <- c("BEF-07212-02", "276")
+D106[(nrow(D106)+1),] <- c("BEF-07212-05", "254")
+D106[(nrow(D106)+1),] <- c("Chip-02", "260")
+D106[(nrow(D106)+1),] <- c("Chip-07", "291")
+D106[(nrow(D106)+1),] <- c("Chip-11", "291")
+D106[(nrow(D106)+1),] <- c("Chip-15", "284")
+D106[(nrow(D106)+1),] <- c("Chip-16", "272")
+D106[(nrow(D106)+1),] <- c("m-07-04", "284")
+D106[(nrow(D106)+1),] <- c("MS1", "276")
+D106[(nrow(D106)+1),] <- c("MS12", "284")
+D106[(nrow(D106)+1),] <- c("MS13", "284")
+D106[(nrow(D106)+1),] <- c("MS14", "284")
+D106[(nrow(D106)+1),] <- c("MS17", "294")
+D106[(nrow(D106)+1),] <- c("MS18", "276")
+D106[(nrow(D106)+1),] <- c("MS20", "260")
+D106[(nrow(D106)+1),] <- c("MS27", "260")
+D106[(nrow(D106)+1),] <- c("MS28", "256")
+D106[(nrow(D106)+1),] <- c("MS31", "280")
+D106[(nrow(D106)+1),] <- c("MS40", "284")
+D106[(nrow(D106)+1),] <- c("PBH-2A", "242")
+D106[(nrow(D106)+1),] <- c("PBH-3A", "242")
+D106[(nrow(D106)+1),] <- c("PBH-4A", "276")
+D106[(nrow(D106)+1),] <- c("PMC-9", "276")
+D106[(nrow(D106)+1),] <- c("WI92", "280")
+D106[(nrow(D106)+1),] <- c("WI94", "284")
+# Change incorrect Sample_IDs
+D106$Sample_ID <- gsub("CHIP-19", "Chip19", D106$Sample_ID)
+D106$Sample_ID <- gsub("Oil-City-B-", "Oil-City-B", D106$Sample_ID)
+D106$Sample_ID <- gsub("TN2", "Pcyph-TN-2", D106$Sample_ID)
+# Remove duplicates
+D106 <- D106[-c(150),] # MS13
+D106 <- D106[-c(9),] # 236-1
+########Remove duplicate!
+# Order spreadsheet
+D106 <- D106[order(D106$Sample_ID),]
+#Spread data
+#A115$high_low <- rep.int(dummy, nrow(A115)/2)
+#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
+#test <- gather(A115, key = "loci", value = "genotypes",
+                      #colnames(A115[,-1]))
+#test2 <- test[,-c(2,4)]
+#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+
+# D113
+D113[(nrow(D113)+1),] <- c("236-1", "274")
+D113[(nrow(D113)+1),] <- c("236-2", "289")
+D113[(nrow(D113)+1),] <- c("237-1", "572")
+D113[(nrow(D113)+1),] <- c("237-2", "289")
+D113[(nrow(D113)+1),] <- c("238-3", "281")
+D113[(nrow(D113)+1),] <- c("238-4", "289")
+D113[(nrow(D113)+1),] <- c("A2", "296")
+D113[(nrow(D113)+1),] <- c("ALL11", "281")
+D113[(nrow(D113)+1),] <- c("ALL12", "277")
+D113[(nrow(D113)+1),] <- c("ALL14", "277")
+D113[(nrow(D113)+1),] <- c("ALL17", "269")
+D113[(nrow(D113)+1),] <- c("ALL18", "289")
+D113[(nrow(D113)+1),] <- c("ALL6", "296")
+D113[(nrow(D113)+1),] <- c("ALL7", "296")
+D113[(nrow(D113)+1),] <- c("BEF-07212-01", "484")
+D113[(nrow(D113)+1),] <- c("C024", "300")
+D113[(nrow(D113)+1),] <- c("C033", "285")
+D113[(nrow(D113)+1),] <- c("Chip-05", "296")
+D113[(nrow(D113)+1),] <- c("Chip-11", "296")
+D113[(nrow(D113)+1),] <- c("Chip-12", "296")
+D113[(nrow(D113)+1),] <- c("Chip-13", "296")
+D113[(nrow(D113)+1),] <- c("Chip-20", "296")
+D113[(nrow(D113)+1),] <- c("INHS-16244", "296")
+D113[(nrow(D113)+1),] <- c("INHS-25558", "296")
+D113[(nrow(D113)+1),] <- c("INHS-3531", "277")
+D113[(nrow(D113)+1),] <- c("INHS-6271", "277")
+D113[(nrow(D113)+1),] <- c("m-07-05", "376")
+D113[(nrow(D113)+1),] <- c("Meramec-A", "399")
+D113[(nrow(D113)+1),] <- c("Meramec-B", "407")
+D113[(nrow(D113)+1),] <- c("MS1", "300")
+D113[(nrow(D113)+1),] <- c("MS10", "296")
+D113[(nrow(D113)+1),] <- c("MS13", "296")
+D113[(nrow(D113)+1),] <- c("MS14", "300")
+D113[(nrow(D113)+1),] <- c("MS16", "296")
+D113[(nrow(D113)+1),] <- c("MS18", "296")
+D113[(nrow(D113)+1),] <- c("MS23", "296")
+D113[(nrow(D113)+1),] <- c("MS26", "300")
+D113[(nrow(D113)+1),] <- c("MS27", "296")
+D113[(nrow(D113)+1),] <- c("MS3", "296")
+D113[(nrow(D113)+1),] <- c("MS31", "296")
+D113[(nrow(D113)+1),] <- c("MS32", "296")
+D113[(nrow(D113)+1),] <- c("MS4", "296")
+D113[(nrow(D113)+1),] <- c("MS42", "296")
+D113[(nrow(D113)+1),] <- c("MS43", "296")
+D113[(nrow(D113)+1),] <- c("MS5", "296")
+D113[(nrow(D113)+1),] <- c("MS6", "296")
+D113[(nrow(D113)+1),] <- c("MS8", "296")
+D113[(nrow(D113)+1),] <- c("MS9", "296")
+D113[(nrow(D113)+1),] <- c("Oil-City-A", "325")
+D113[(nrow(D113)+1),] <- c("Oil-City-B", "293")
+D113[(nrow(D113)+1),] <- c("PBH-3A", "321")
+D113[(nrow(D113)+1),] <- c("PMC-10", "380")
+D113[(nrow(D113)+1),] <- c("PMC-2", "321")
+D113[(nrow(D113)+1),] <- c("PMC-3", "346")
+D113[(nrow(D113)+1),] <- c("PMC-6", "325")
+D113[(nrow(D113)+1),] <- c("PMC-7", "403")
+D113[(nrow(D113)+1),] <- c("PMC-8", "321")
+D113[(nrow(D113)+1),] <- c("PMC-9", "317")
+D113[(nrow(D113)+1),] <- c("PMX-1", "317")
+D113[(nrow(D113)+1),] <- c("WI92", "300")
+D113[(nrow(D113)+1),] <- c("WV1", "277")
+# Change incorrect Sample_IDs
+D113$Sample_ID <- gsub("CHIP-19", "Chip19", D113$Sample_ID)
+D113$Sample_ID <- gsub("Oil-City-B-", "Oil-City-B", D113$Sample_ID)
+D113$Sample_ID <- gsub("TN2", "Pcyph-TN-2", D113$Sample_ID)
+# Remove duplicates
+D113 <- D113[-c(209,210),] # MS33
+D113 <- D113[-c(211,212),] # MS34
+D113 <- D113[-c(287,288),] # TIPP4
+D113 <- D113[-c(291,292),] # Pcyph-TN-2
+D113 <- D113[-c(293,294),] # TN8
+########Remove 9470 duplicate!
+# Order spreadsheet
+D113 <- D113[order(D113$Sample_ID),]
+#Spread data
+#A115$high_low <- rep.int(dummy, nrow(A115)/2)
+#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
+#test <- gather(A115, key = "loci", value = "genotypes",
+                      #colnames(A115[,-1]))
+#test2 <- test[,-c(2,4)]
+#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+
+# D114
+D114[(nrow(D114)+1),] <- c("ALL12", "244")
+D114[(nrow(D114)+1),] <- c("ALL16", "244")
+D114[(nrow(D114)+1),] <- c("ALL8", "244")
+D114[(nrow(D114)+1),] <- c("BEF-07212-01", "244")
+D114[(nrow(D114)+1),] <- c("Chip-07", "244")
+D114[(nrow(D114)+1),] <- c("Chip-09", "244")
+D114[(nrow(D114)+1),] <- c("Chip-11", "244")
+D114[(nrow(D114)+1),] <- c("Chip-13", "244")
+D114[(nrow(D114)+1),] <- c("Chip-15", "244")
+D114[(nrow(D114)+1),] <- c("Chip-17", "244")
+D114[(nrow(D114)+1),] <- c("Chip-18", "240")
+D114[(nrow(D114)+1),] <- c("Chip6", "244")
+D114[(nrow(D114)+1),] <- c("INHS-16244", "244")
+D114[(nrow(D114)+1),] <- c("INHS-3531", "244")
+D114[(nrow(D114)+1),] <- c("m-07-06", "249")
+D114[(nrow(D114)+1),] <- c("Meramec-B", "240")
+D114[(nrow(D114)+1),] <- c("MS10", "240")
+D114[(nrow(D114)+1),] <- c("MS13", "244")
+D114[(nrow(D114)+1),] <- c("MS19", "244")
+D114[(nrow(D114)+1),] <- c("MS27", "244")
+D114[(nrow(D114)+1),] <- c("MS30", "240")
+D114[(nrow(D114)+1),] <- c("MS5", "244")
+D114[(nrow(D114)+1),] <- c("Oil-City-A", "261")
+D114[(nrow(D114)+1),] <- c("Oil-City-B", "244")
+D114[(nrow(D114)+1),] <- c("PBH-1A", "254")
+D114[(nrow(D114)+1),] <- c("PBH-3A", "254")
+D114[(nrow(D114)+1),] <- c("Pcyph-TN-1", "244")
+D114[(nrow(D114)+1),] <- c("PMC-2", "240")
+D114[(nrow(D114)+1),] <- c("PMC-3", "236")
+D114[(nrow(D114)+1),] <- c("PMX-3", "249")
+D114[(nrow(D114)+1),] <- c("Pcyph-TN-2", "236")
+D114[(nrow(D114)+1),] <- c("WI92", "249")
+# Change incorrect Sample_IDs
+D114$Sample_ID <- gsub("CHIP-19", "Chip19", D114$Sample_ID)
+D114$Sample_ID <- gsub("Oil-City-B-", "Oil-City-B", D114$Sample_ID)
+D114$Sample_ID <- gsub("TN2", "Pcyph-TN-2", D114$Sample_ID)
+# Remove duplicates
+D114 <- D114[-c(94),] # Chip-05
+D114 <- D114[-c(149),] # m-07-07
+########Remove 6271 duplicate!
+# Order spreadsheet
+D114 <- D114[order(D114$Sample_ID),]
+#Spread data
+#A115$high_low <- rep.int(dummy, nrow(A115)/2)
+#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
+#test <- gather(A115, key = "loci", value = "genotypes",
+                      #colnames(A115[,-1]))
+#test2 <- test[,-c(2,4)]
+#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+
+# D119
+D119[(nrow(D119)+1),] <- c("130-3", "298")
+D119[(nrow(D119)+1),] <- c("238-1", "306")
+D119[(nrow(D119)+1),] <- c("ALL10", "302")
+D119[(nrow(D119)+1),] <- c("ALL12", "327")
+D119[(nrow(D119)+1),] <- c("ALL12", "244")
+D119[(nrow(D119)+1),] <- c("ALL2", "298")
+D119[(nrow(D119)+1),] <- c("ALL3", "294")
+D119[(nrow(D119)+1),] <- c("BEF-07212-05", "302")
+D119[(nrow(D119)+1),] <- c("Chip-08", "306")
+D119[(nrow(D119)+1),] <- c("Chip-12", "298")
+D119[(nrow(D119)+1),] <- c("Chip-20", "306")
+D119[(nrow(D119)+1),] <- c("MS18", "302")
+D119[(nrow(D119)+1),] <- c("MS20", "306")
+D119[(nrow(D119)+1),] <- c("MS23", "310")
+D119[(nrow(D119)+1),] <- c("MS25", "310")
+D119[(nrow(D119)+1),] <- c("MS29", "310")
+D119[(nrow(D119)+1),] <- c("MS33", "302")
+D119[(nrow(D119)+1),] <- c("MS42", "302")
+D119[(nrow(D119)+1),] <- c("PBH-1A", "332")
+D119[(nrow(D119)+1),] <- c("PMC-2", "306")
+D119[(nrow(D119)+1),] <- c("PMC-8", "298")
+D119[(nrow(D119)+1),] <- c("PMX-5", "302")
+D119[(nrow(D119)+1),] <- c("WV1", "306")
+# Change incorrect Sample_IDs
+D119$Sample_ID <- gsub("CHIP-19", "Chip19", D119$Sample_ID)
+D119$Sample_ID <- gsub("Oil-City-B-", "Oil-City-B", D119$Sample_ID)
+D119$Sample_ID <- gsub("TN2", "Pcyph-TN-2", D119$Sample_ID)
+# Order spreadsheet
+D119 <- D119[order(D119$Sample_ID),]
+#Spread data
+#A115$high_low <- rep.int(dummy, nrow(A115)/2)
+#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
+#test <- gather(A115, key = "loci", value = "genotypes",
+                      #colnames(A115[,-1]))
+#test2 <- test[,-c(2,4)]
+#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+
+# D125
+D125[(nrow(D125)+1),] <- c("130-1", "278")
+D125[(nrow(D125)+1),] <- c("236-2", "260")
+D125[(nrow(D125)+1),] <- c("Chip-03", "249")
+D125[(nrow(D125)+1),] <- c("Chip-10", "245")
+D125[(nrow(D125)+1),] <- c("Chip-11", "264")
+D125[(nrow(D125)+1),] <- c("Chip-14", "278")
+D125[(nrow(D125)+1),] <- c("Chip-16", "241")
+D125[(nrow(D125)+1),] <- c("INHS-6271", "252")
+D125[(nrow(D125)+1),] <- c("m-07-03", "271")
+D125[(nrow(D125)+1),] <- c("m-07-06", "256")
+D125[(nrow(D125)+1),] <- c("MS14", "256")
+D125[(nrow(D125)+1),] <- c("MS22", "260")
+D125[(nrow(D125)+1),] <- c("MS29", "256")
+D125[(nrow(D125)+1),] <- c("MS3", "252")
+D125[(nrow(D125)+1),] <- c("MS9", "274")
+D125[(nrow(D125)+1),] <- c("Oil-City-A", "267")
+D125[(nrow(D125)+1),] <- c("PMC-8", "267")
+D125[(nrow(D125)+1),] <- c("WI93", "249")
+# Change incorrect Sample_IDs
+D125$Sample_ID <- gsub("CHIP-19", "Chip19", D125$Sample_ID)
+D125$Sample_ID <- gsub("Oil-City-B-", "Oil-City-B", D125$Sample_ID)
+D125$Sample_ID <- gsub("TN2", "Pcyph-TN-2", D125$Sample_ID)
+# Remove duplicates
+D125 <- D125[-c(145:147),] # m-07-07
+D125 <- D125[-c(147),] # m-07-07
+########Remove Chip-05, PMX-2 duplicate!
+# Order spreadsheet
+D125 <- D125[order(D125$Sample_ID),]
 #Spread data
 #A115$high_low <- rep.int(dummy, nrow(A115)/2)
 #A115$new_genos <- paste(A115$loci, "_", A115$high_low)
