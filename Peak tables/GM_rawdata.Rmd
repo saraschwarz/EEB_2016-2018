@@ -264,6 +264,21 @@ A103_wis <- A103_wis[order(A103_wis$Sample_ID),]
 View(A103_wis)
 ```
 
+## A115
+```{r}
+A115_wisraw <- read.table("A115_wis_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
+A115_wis <- A115_wisraw[,-c(2:6)] #cut out unnecessary columns
+A115_wis <- A115_wis[,-c(3:8)] #cut out unnecessary columns
+names(A115_wis) <- c("Sample_ID", "A115") #rename columns
+A115_wis[A115_wis == "Sample"] <- NA #convert sample to NAs so they can be omitted
+A115_wis[A115_wis == "OL"] <- NA #convert sample to NAs so they can be omitted
+A115_wis = A115_wis %>% na.omit() #omit NAs again
+A115_wis$Sample_ID <- str_sub(A115_wis$Sample, 5, 17) #Remove lane name and underscore
+A115_wis$Sample_ID <- strapplyc(A115_wis$Sample_ID, "(.*)_", simplify = T) #Remove lab ID after underscore
+A115_wis <- A115_wis[order(A115_wis$Sample_ID),]
+
+View(A115_wis)
+```
 
 ## A120
 ```{r}
@@ -329,6 +344,22 @@ View(C105_wis)
 ```
 
 
+## C125
+```{r}
+C125_wisraw <- read.table("C125_wis_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
+C125_wis <- C125_wisraw[,-c(2:6)] #cut out unnecessary columns
+C125_wis <- C125_wis[,-c(3:8)] #cut out unnecessary columns
+names(C125_wis) <- c("Sample_ID", "C125") #rename columns
+C125_wis[C125_wis == "Sample"] <- NA #convert sample to NAs so they can be omitted
+C125_wis = C125_wis %>% na.omit() #omit NAs again
+C125_wis$Sample_ID <- str_sub(C125_wis$Sample, 5, 18) #Remove lane name and underscore
+C125_wis$Sample_ID <- strapplyc(C125_wis$Sample_ID, "(.*)_", simplify = T) #Reomve lab ID after underscore
+C125_wis <- C125_wis[order(C125_wis$Sample_ID),]
+
+View(C125_wis)
+```
+
+
 ## D4
 ```{r}
 D4_wisraw <- read.table("D4_wis_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
@@ -361,6 +392,55 @@ View(D10_wis)
 ```
 
 
+## D113
+```{r}
+D113_wisraw <- read.table("D113_wis_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
+D113_wis <- D113_wisraw[,-c(2:6)] #cut out unnecessary columns
+D113_wis <- D113_wis[,-c(3:8)] #cut out unnecessary columns
+names(D113_wis) <- c("Sample_ID", "D113") #rename columns
+D113_wis[D113_wis == "Sample"] <- NA #convert sample to NAs so they can be omitted
+D113_wis = D113_wis %>% na.omit() #omit NAs again
+D113_wis$Sample_ID <- str_sub(D113_wis$Sample, 5, 18) #Remove lane name and underscore
+D113_wis$Sample_ID <- strapplyc(D113_wis$Sample_ID, "(.*)_", simplify = T) #Remove lab ID after underscore
+D113_wis <- D113_wis[order(D113_wis$Sample_ID),]
+
+View(D113_wis)
+```
+
+
+## D114
+```{r}
+D114_wisraw <- read.table("D114_wis_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
+D114_wis <- D114_wisraw[,-c(2:6)] #cut out unnecessary columns
+D114_wis <- D114_wis[,-c(3:8)] #cut out unnecessary columns
+names(D114_wis) <- c("Sample_ID", "D114") #rename columns
+D114_wis[D114_wis == "Sample"] <- NA #convert sample to NAs so they can be omitted
+D114_wis = D114_wis %>% na.omit() #omit NAs again
+D114_wis$Sample_ID <- str_sub(D114_wis$Sample, 5, 18) #Remove lane name and underscore
+D114_wis$Sample_ID <- strapplyc(D114_wis$Sample_ID, "(.*)_", simplify = T) #Remove lab ID after underscore
+D114_wis <- D114_wis[order(D114_wis$Sample_ID),]
+
+View(D114_wis)
+```
+
+
+## D119
+```{r}
+D119_wisraw <- read.table("D119_wis_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
+D119_wis <- D119_wisraw[,-c(2:6)] #cut out unnecessary columns
+D119_wis <- D119_wis[,-c(3:8)] #cut out unnecessary columns
+names(D119_wis) <- c("Sample_ID", "D119") #rename columns
+D119_wis[D119_wis == "Sample"] <- NA #convert sample to NAs so they can be omitted
+D119_wis = D119_wis %>% na.omit() #omit NAs again
+D119_wis$Sample_ID <- str_sub(D119_wis$Sample, 5, 18) #Remove lane name and underscore
+D119_wis$Sample_ID <- strapplyc(D119_wis$Sample_ID, "(.*)_", simplify = T) #Remove lab ID after underscore
+D119_wis <- D119_wis[order(D119_wis$Sample_ID),]
+
+View(D119_wis)
+```
+
+
+
 ## D106
 ```{r}
 D106_wisraw <- read.table("D106_wis_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
@@ -375,6 +455,23 @@ D106_wis <- D106_wis[order(D106_wis$Sample_ID),]
 
 View(D106_wis)
 ```
+
+
+## D125
+```{r}
+D125_wisraw <- read.table("D125_wis_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
+D125_wis <- D125_wisraw[,-c(2:6)] #cut out unnecessary columns
+D125_wis <- D125_wis[,-c(3:8)] #cut out unnecessary columns
+names(D125_wis) <- c("Sample_ID", "D125") #rename columns
+D125_wis[D125_wis == "Sample"] <- NA #convert sample to NAs so they can be omitted
+D125_wis = D125_wis %>% na.omit() #omit NAs again
+D125_wis$Sample_ID <- str_sub(D125_wis$Sample, 5, 18) #Remove lane name and underscore
+D125_wis$Sample_ID <- strapplyc(D125_wis$Sample_ID, "(.*)_", simplify = T) #Remove lab ID after underscore
+D125_wis <- D125_wis[order(D125_wis$Sample_ID),]
+
+View(D125_wis)
+```
+
 
 
 
@@ -1167,6 +1264,224 @@ D125 <- D125[order(D125$Sample_ID),]
 #test_wide <- spread(test2, new_genos, genotypes, fill = 0)
 ```
 
+
+# Add duplicate row for second homozygous allele and spread data of Wisconsin samples
+```{r}
+## Must be done by locus
+# A103_wis
+A103_wis[(nrow(A103_wis)+1),] <- c("PCP2", "251")
+A103_wis[(nrow(A103_wis)+1),] <- c("PWO5", "249")
+# Order data
+A103_wis <- A103_wis[order(A103_wis$Sample_ID),]
+# Spread data
+#dummy <- c("high", "low")
+#A115$high_low <- rep.int(dummy, nrow(A115)/2)
+#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
+#test <- gather(A115, key = "loci", value = "genotypes",
+                      #colnames(A115[,-1]))
+#test2 <- test[,-c(2,4)]
+#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+
+
+# A115_wis
+A115_wis[(nrow(A115_wis)+1),] <- c("PWO10", "299")
+A115_wis[(nrow(A115_wis)+1),] <- c("PWO3", "289")
+# Order data
+A115_wis <- A115_wis[order(A115_wis$Sample_ID),]
+# Spread data
+#dummy <- c("high", "low")
+#A115$high_low <- rep.int(dummy, nrow(A115)/2)
+#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
+#test <- gather(A115, key = "loci", value = "genotypes",
+                      #colnames(A115[,-1]))
+#test2 <- test[,-c(2,4)]
+#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+
+# A120_wis
+A120_wis[(nrow(A120_wis)+1),] <- c("PCP1", "226")
+A120_wis[(nrow(A120_wis)+1),] <- c("PCP2", "226")
+A120_wis[(nrow(A120_wis)+1),] <- c("PWO10", "226")
+# Order data
+A120_wis <- A120_wis[order(A120_wis$Sample_ID),]
+# Spread data
+#dummy <- c("high", "low")
+#A115$high_low <- rep.int(dummy, nrow(A115)/2)
+#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
+#test <- gather(A115, key = "loci", value = "genotypes",
+                      #colnames(A115[,-1]))
+#test2 <- test[,-c(2,4)]
+#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+
+
+# C1_wis
+C1_wis[(nrow(C1_wis)+1),] <- c("PCP1", "331")
+C1_wis[(nrow(C1_wis)+1),] <- c("PCP2", "339")
+C1_wis[(nrow(C1_wis)+1),] <- c("PWO3", "335")
+# Order data
+C1_wis <- C1_wis[order(C1_wis$Sample_ID),]
+# Spread data
+#dummy <- c("high", "low")
+#A115$high_low <- rep.int(dummy, nrow(A115)/2)
+#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
+#test <- gather(A115, key = "loci", value = "genotypes",
+                      #colnames(A115[,-1]))
+#test2 <- test[,-c(2,4)]
+#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+
+
+# C6_wis
+C6_wis[(nrow(C6_wis)+1),] <- c("PCP1", "218")
+C6_wis[(nrow(C6_wis)+1),] <- c("PWO1", "213")
+C6_wis[(nrow(C6_wis)+1),] <- c("PWO3", "213")
+C6_wis[(nrow(C6_wis)+1),] <- c("PWO5", "218")
+C6_wis[(nrow(C6_wis)+1),] <- c("PWO6", "213")
+C6_wis[(nrow(C6_wis)+1),] <- c("PWO7", "218")
+C6_wis[(nrow(C6_wis)+1),] <- c("PWO9", "218")
+# Order data
+C6_wis <- C6_wis[order(C6_wis$Sample_ID),]
+# Spread data
+#dummy <- c("high", "low")
+#A115$high_low <- rep.int(dummy, nrow(A115)/2)
+#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
+#test <- gather(A115, key = "loci", value = "genotypes",
+                      #colnames(A115[,-1]))
+#test2 <- test[,-c(2,4)]
+#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+
+
+# C105_wis
+C105_wis[(nrow(C105_wis)+1),] <- c("PWO10", "283")
+# Order data
+C105_wis <- C105_wis[order(C105_wis$Sample_ID),]
+# Spread data
+#dummy <- c("high", "low")
+#A115$high_low <- rep.int(dummy, nrow(A115)/2)
+#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
+#test <- gather(A115, key = "loci", value = "genotypes",
+                      #colnames(A115[,-1]))
+#test2 <- test[,-c(2,4)]
+#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+
+
+# C125_wis
+C125_wis[(nrow(C125_wis)+1),] <- c("PWO3", "249")
+C125_wis[(nrow(C125_wis)+1),] <- c("PWO6", "268")
+# Order data
+C125_wis <- C125_wis[order(C125_wis$Sample_ID),]
+# Spread data
+#dummy <- c("high", "low")
+#A115$high_low <- rep.int(dummy, nrow(A115)/2)
+#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
+#test <- gather(A115, key = "loci", value = "genotypes",
+                      #colnames(A115[,-1]))
+#test2 <- test[,-c(2,4)]
+#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+
+
+# D4_wis
+D4_wis[(nrow(D4_wis)+1),] <- c("PWO10", "283")
+# Order data
+D4_wis <- D4_wis[order(D4_wis$Sample_ID),]
+# Spread data
+#dummy <- c("high", "low")
+#A115$high_low <- rep.int(dummy, nrow(A115)/2)
+#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
+#test <- gather(A115, key = "loci", value = "genotypes",
+                      #colnames(A115[,-1]))
+#test2 <- test[,-c(2,4)]
+#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+
+
+# D10_wis
+D10_wis[(nrow(D10_wis)+1),] <- c("PWO3", "194")
+D10_wis[(nrow(D10_wis)+1),] <- c("PWO9", "232")
+# Order data
+D10_wis <- D10_wis[order(D10_wis$Sample_ID),]
+# Spread data
+#dummy <- c("high", "low")
+#A115$high_low <- rep.int(dummy, nrow(A115)/2)
+#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
+#test <- gather(A115, key = "loci", value = "genotypes",
+                      #colnames(A115[,-1]))
+#test2 <- test[,-c(2,4)]
+#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+
+
+# D106_wis
+D106_wis[(nrow(D106_wis)+1),] <- c("PWO1", "284")
+# Order data
+D106_wis <- D106_wis[order(D106_wis$Sample_ID),]
+# Spread data
+#dummy <- c("high", "low")
+#A115$high_low <- rep.int(dummy, nrow(A115)/2)
+#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
+#test <- gather(A115, key = "loci", value = "genotypes",
+                      #colnames(A115[,-1]))
+#test2 <- test[,-c(2,4)]
+#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+
+
+# D113_wis
+D113_wis[(nrow(D113_wis)+1),] <- c("PWO10", "300")
+D113_wis[(nrow(D113_wis)+1),] <- c("PWO3", "300")
+D113_wis[(nrow(D113_wis)+1),] <- c("PWO4", "296")
+D113_wis[(nrow(D113_wis)+1),] <- c("PWO7", "296")
+D113_wis[(nrow(D113_wis)+1),] <- c("PWO8", "296")
+# Order data
+D113_wis <- D113_wis[order(D113_wis$Sample_ID),]
+# Spread data
+#dummy <- c("high", "low")
+#A115$high_low <- rep.int(dummy, nrow(A115)/2)
+#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
+#test <- gather(A115, key = "loci", value = "genotypes",
+                      #colnames(A115[,-1]))
+#test2 <- test[,-c(2,4)]
+#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+
+
+# D114_wis
+D114_wis[(nrow(D114_wis)+1),] <- c("PWO5", "244")
+# Order data
+D114_wis <- D114_wis[order(D114_wis$Sample_ID),]
+# Spread data
+#dummy <- c("high", "low")
+#A115$high_low <- rep.int(dummy, nrow(A115)/2)
+#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
+#test <- gather(A115, key = "loci", value = "genotypes",
+                      #colnames(A115[,-1]))
+#test2 <- test[,-c(2,4)]
+#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+
+
+# D119_wis
+D119_wis[(nrow(D119_wis)+1),] <- c("PWO10", "323")
+D119_wis[(nrow(D119_wis)+1),] <- c("PWO3", "332")
+# Order data
+D119_wis <- D119_wis[order(D119_wis$Sample_ID),]
+# Spread data
+#dummy <- c("high", "low")
+#A115$high_low <- rep.int(dummy, nrow(A115)/2)
+#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
+#test <- gather(A115, key = "loci", value = "genotypes",
+                      #colnames(A115[,-1]))
+#test2 <- test[,-c(2,4)]
+#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+
+
+# D125_wis
+D125_wis[(nrow(D125_wis)+1),] <- c("PWO7", "278")
+# Order data
+D125_wis <- D125_wis[order(D125_wis$Sample_ID),]
+# Spread data
+#dummy <- c("high", "low")
+#A115$high_low <- rep.int(dummy, nrow(A115)/2)
+#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
+#test <- gather(A115, key = "loci", value = "genotypes",
+                      #colnames(A115[,-1]))
+#test2 <- test[,-c(2,4)]
+#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+
+```
 
 
 

@@ -1,0 +1,92 @@
+Peak Table,,,,,,,,,,,
+Software Package: SoftGenetics GeneMarker 1.95,,,,,,,,,,,
+Date/Time: 1/15/2018 12:17:54 PM,,,,,,,,,,,
+,,,,,,,,,,,
+Project: E:\Microsat files\WIS\D114\D114_wis.SGF,,,,,,,,,,,
+Panel: Pc D114,,,,,,,,,,,
+Size: GS500,,,,,,,,,,,
+Analysis Type: Fragment (Animal),,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 1: A03_PWO3_544299.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+A03_PWO3_544299.fsa,Green,240.5,13743,86601,240,240,0.1,Pass,500,,
+A03_PWO3_544299.fsa,Green,244.7,13033,83510,244,244,0.3,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 2: B03_PWO4_544300.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+B03_PWO4_544300.fsa,Green,244.5,17514,134926,244,244,0.1,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+B03_PWO4_544300.fsa,Green,256.6,19983,130317,257,257,0.2,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 3: C03_PWO5_544301.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+C03_PWO5_544301.fsa,Green,244.8,14492,97553,244,244,0.4,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 4: D03_PWO6_544302.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+D03_PWO6_544302.fsa,Green,240.6,430,4094,240,240,1,Pass,12.3,[<Confirmed><Inserted>],LS
+D03_PWO6_544302.fsa,Green,252.9,502,3858,253,253,1,Pass,31.7,[<Confirmed><Inserted>],
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 5: E02_PCP1_544295.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+E02_PCP1_544295.fsa,Green,218.9,16842,150610,219,219,0.1,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+E02_PCP1_544295.fsa,Green,244.3,16102,128359,244,244,0.1,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 6: E03_PWO7_544303.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+E03_PWO7_544303.fsa,Green,244.6,10188,63264,244,244,0.2,Pass,500,,
+E03_PWO7_544303.fsa,Green,256.7,9058,51041,257,257,0.1,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 7: F02_PCP2_544296.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+F02_PCP2_544296.fsa,Green,240.2,11793,73265,240,240,0.2,Pass,500,,
+F02_PCP2_544296.fsa,Green,244.3,11087,71624,244,244,0.1,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 8: F03_PWO8_544304.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+F03_PWO8_544304.fsa,Green,240.4,16887,155255,240,240,0,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+F03_PWO8_544304.fsa,Green,244.7,17966,168273,244,244,0.3,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 9: G02_PWO1_544297.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+G02_PWO1_544297.fsa,Green,244.9,232,5674,244,244,1,Pass,0,[<Confirmed><Inserted>],LS
+G02_PWO1_544297.fsa,Green,248.9,317,5271,249,249,1,Pass,2.4,[<Confirmed><Inserted>],LS
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 10: G03_PWO9_544305.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+G03_PWO9_544305.fsa,Green,236.3,17331,137801,236,236,0.2,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+G03_PWO9_544305.fsa,Green,240.6,16467,125058,240,240,0.2,Pass,500,[<SAT (Repaired)><Confirmed>],SR
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 11: H02_PWO2_544298.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+H02_PWO2_544298.fsa,Green,240.2,13293,92881,240,240,0.2,Pass,500,,
+H02_PWO2_544298.fsa,Green,252.6,13292,79298,253,253,0.1,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 12: H03_PWO10_544306.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+H03_PWO10_544306.fsa,Green,244.8,9843,62324,244,244,0.4,Pass,500,,
+H03_PWO10_544306.fsa,Green,249,6547,43020,249,249,0.1,Pass,500,,

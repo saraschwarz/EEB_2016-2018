@@ -1,0 +1,89 @@
+Peak Table,,,,,,,,,,,
+Software Package: SoftGenetics GeneMarker 1.95,,,,,,,,,,,
+Date/Time: 1/15/2018 12:13:27 PM,,,,,,,,,,,
+,,,,,,,,,,,
+Project: E:\Microsat files\WIS\A115\A115_wis.SGF,,,,,,,,,,,
+Panel: Pc A115,,,,,,,,,,,
+Size: GS500,,,,,,,,,,,
+Analysis Type: Fragment (Animal),,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 1: A06_PWO3_544323.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+A06_PWO3_544323.fsa,Green,290.5,984,15233,289,289,1,Pass,22.2,[<Confirmed><Inserted>],
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 2: B06_PWO4_544324.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+B06_PWO4_544324.fsa,Green,291.1,1623,20464,292,292,1.1,Pass,51.8,,
+B06_PWO4_544324.fsa,Green,317.6,687,11292,318,318,1,Pass,2.4,[<Confirmed><Inserted>],LS
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 3: C06_PWO5_544325.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+C06_PWO5_544325.fsa,Green,284.4,170,2788,285,285,1,Pass,0.2,[<Confirmed><Inserted>],LS
+C06_PWO5_544325.fsa,Green,291.4,124,2078,292,292,1,Pass,0.4,[<Confirmed><Inserted>],LS
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 4: D06_PWO6_544326.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 5: E05_PCP1_544319.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+E05_PCP1_544319.fsa,Green,291.6,10455,63809,292,292,0.6,Pass,500,,
+E05_PCP1_544319.fsa,Green,302.8,5816,42161,303,303,0.3,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 6: E06_PWO7_544327.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+E06_PWO7_544327.fsa,Green,291.2,534,5937,292,292,1,Pass,14.4,[<Confirmed><Inserted>],LS
+E06_PWO7_544327.fsa,Green,300.3,354,3631,301,301,1,Pass,6.4,[<Confirmed><Inserted>],LS
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 7: F05_PCP2_544320.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+F05_PCP2_544320.fsa,Green,291.6,706,4602,292,292,1,Pass,81.5,[<Confirmed><Inserted>],
+F05_PCP2_544320.fsa,Green,303,580,4522,303,303,1,Pass,41.6,[<Confirmed><Inserted>],
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 8: F06_PWO8_544328.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+F06_PWO8_544328.fsa,Green,291.2,12814,112193,292,292,1,Pass,500,,
+F06_PWO8_544328.fsa,Green,298.3,9331,81396,299,299,0.6,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 9: G05_PWO1_544321.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+G05_PWO1_544321.fsa,Green,284.9,2523,17296,285,285,0.1,Pass,479.2,,
+G05_PWO1_544321.fsa,Green,296.7,2076,15881,297,297,0,Pass,306.4,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 10: G06_PWO9_544329.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+G06_PWO9_544329.fsa,Green,286.5,3076,20199,287,287,0.3,Pass,500,,
+G06_PWO9_544329.fsa,Green,300.3,2202,17404,301,301,0.4,Pass,302.4,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 11: H05_PWO2_544322.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+H05_PWO2_544322.fsa,Green,284.9,5813,34354,285,285,0.1,Pass,500,,
+H05_PWO2_544322.fsa,Green,291.7,4770,27654,292,292,0.5,Pass,500,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+Sample: 12: H06_PWO10_544330.fsa,,,,,,,,,,,
+,,,,,,,,,,,
+Sample,Dye,Size,Height,Area,Marker,Allele,Difference,Quality,Score,Comments,Quality Reasons
+H06_PWO10_544330.fsa,Green,298.5,606,6545,299,299,1,Pass,16.5,[<Confirmed><Inserted>],LS
