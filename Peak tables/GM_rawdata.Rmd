@@ -474,7 +474,7 @@ A115[(nrow(A115)+1),] <- c("PBH-3A", "297")
 A115[(nrow(A115)+1),] <- c("Pcyph-TN-1", "301")
 A115[(nrow(A115)+1),] <- c("PMC-9", "301")
 A115[(nrow(A115)+1),] <- c("WV1", "285")
-# Remove duplicates of MS29, MS30, MS33, MS34, MS36, MS42,
+# Remove duplicates of MS29, MS30, MS33, MS34, MS36, MS42, PBH5A
 A115 <- A115[-c(169,170),]
 A115 <- A115[-c(172,173),]
 A115 <- A115[-c(178,179),]
@@ -483,7 +483,7 @@ A115 <- A115[-c(184,185),]
 A115 <- A115[-c(195,196),]
 A115 <- A115[-c(271),]
 A115 <- A115[-c(109),]
-###########test <- A115[-c(220,221),] DUplicate of PBH5A
+A115 <- A115[-c(245,246),] # Remove 338 allele
 # Order spreadsheet
 A115 <- A115[order(A115$Sample_ID),]
 # Change incorrect Sample_IDs
@@ -526,13 +526,15 @@ A120[(nrow(A120)+1),] <- c("ALL14", "224")
 A120[(nrow(A120)+1),] <- c("ALL14", "224")
 A120[(nrow(A120)+1),] <- c("ALL14", "224")
 A120[(nrow(A120)+1),] <- c("ALL14", "224")
+A120[(nrow(A120)+1),] <- c("WI95", "226")
 # Change incorrect Sample_IDs
 A120$Sample_ID <- gsub("CHIP19", "Chip19", A120$Sample_ID)
 A120$Sample_ID <- gsub("MS36_536674", "MS36", A120$Sample_ID)
 A120$Sample_ID <- gsub("MS42_536676", "MS42", A120$Sample_ID)
 A120$Sample_ID <- gsub("Oil-City-B-", "Oil-City-B", A120$Sample_ID)
 A120$Sample_ID <- gsub("WV1_536678", "WV1", A120$Sample_ID)
-# Remove duplicates of Chip19, Chip6, MS30, MS34
+A120$Sample_ID <- gsub("MS33_536672", "MS33", A120$Sample_ID)
+# Remove duplicates of Chip19, Chip6, MS30, MS34, 16244, MS33
 A120 <- A120[-c(119,120),]
 A120 <- A120[-c(126),]
 A120 <- A120[-c(144,145),]
@@ -540,7 +542,11 @@ A120 <- A120[-c(198,199),]
 A120 <- A120[-c(209,210),]
 A120 <- A120[-c(208),]
 A120 <- A120[-c(252,253),]
-########Remove 16244, MS33, PMC7 duplicate!
+A120 <- A120[-c(127),]
+A120 <- A120[-c(201,202),]
+A120 <- A120[-c(267,268),]
+# Change ALL6 240 allele to 238
+A120[61,2] = 238
 # Order spreadsheet
 A120 <- A120[order(A120$Sample_ID),]
 #Spread data
@@ -559,6 +565,7 @@ C1[(nrow(C1)+1),] <- c("m-07-06", "0")
 C1[(nrow(C1)+1),] <- c("MS33", "339")
 C1[(nrow(C1)+1),] <- c("PMC-2", "286")
 C1[(nrow(C1)+1),] <- c("WI92", "362")
+C1[(nrow(C1)+1),] <- c("MS32", "339")
 # Change incorrect Sample_IDs
 C1$C1 <- gsub("OL", "0", C1$C1)
 C1$Sample_ID <- gsub("Chip-19", "Chip19", C1$Sample_ID)
@@ -569,6 +576,7 @@ C1$Sample_ID <- gsub("MS7_535643", "MS7", C1$Sample_ID)
 C1$Sample_ID <- gsub("Oil-City-B-", "Oil-City-B", C1$Sample_ID)
 C1$Sample_ID <- gsub("PBH2A_535648", "PBH-2A", C1$Sample_ID)
 C1$Sample_ID <- gsub("PBH4A_535647", "PBH-4A", C1$Sample_ID)
+C1$Sample_ID <- gsub("TIPP8", "TIPP6", C1$Sample_ID)
 # Remove duplicates of ALL11, ALL20, ALL4, MER4, MS6, WV1
 C1 <- C1[-c(33,34),]
 C1 <- C1[-c(53),]
@@ -576,7 +584,19 @@ C1 <- C1[-c(58),]
 C1 <- C1[-c(136,137),]
 C1 <- C1[-c(222,223),]
 C1 <- C1[-c(299:300),]
-########Remove MS2, MS32 duplicate!
+C1 <- C1[-c(159),]
+C1 <- C1[-c(187),]
+C1 <- C1[-c(187),]
+C1 <- C1[-c(275,276),]
+C1 <- C1[-c(275,276),]
+C1 <- C1[-c(277,278),]
+# Replace 0's with allele calls
+C1[11,2] = 289 # 237-1
+C1[243,2] = 386 # Pcyph-TN-2
+C1[273,2] = 286 # TIPP4
+# Replace 339 allele with 335 MS32
+C1[187,2] = 335 
+C1[188,2] = 335
 # Order spreadsheet
 C1 <- C1[order(C1$Sample_ID),]
 #Spread data
@@ -632,7 +652,8 @@ C6 <- C6[-c(15,16),] # 237-2
 C6 <- C6[-c(47),] #
 C6 <- C6[-c(125,126),] # Chip19
 C6 <- C6[-c(157,158),] # m-07-07
-########Remove 16244, m-07-05 duplicate!
+C6 <- C6[-c(129),] # 16244
+C6 <- C6[-c(149:152),] # m-07-05
 # Order spreadsheet
 C6 <- C6[order(C6$Sample_ID),]
 #Spread data
@@ -669,7 +690,16 @@ C105$Sample_ID <- gsub("PBH-2A_537803", "PBH-2A", C105$Sample_ID)
 # Remove duplicates
 C105 <- C105[-c(97),] # Chip-05
 C105 <- C105[-c(127),] # Chip6
-########Remove A1, BEF-07212-03, MS30, MS33, MS34, MS36, MS38, MS42, PBH-5A, WV1 duplicate!
+C105 <- C105[-c(25),] # A1
+C105 <- C105[-c(73),] # BEF-07212-03
+C105 <- C105[-c(195:198),] # MS30
+C105 <- C105[-c(199:202),] # MS33
+C105 <- C105[-c(199:202),] # MS34
+C105 <- C105[-c(201:203),] # MS36
+C105 <- C105[-c(204),] # MS38
+C105 <- C105[-c(213:215),] # MS42
+C105 <- C105[-c(237:240),] # PBH-5A
+C105 <- C105[-c(287:289),] # WV1
 # Order spreadsheet
 C105 <- C105[order(C105$Sample_ID),]
 #Spread data
@@ -710,7 +740,6 @@ C125[(nrow(C125)+1),] <- c("TIPP4", "264")
 C125$Sample_ID <- gsub("CHIP-19", "Chip19", C125$Sample_ID)
 C125$Sample_ID <- gsub("Oil-City-B-", "Oil-City-B", C125$Sample_ID)
 C125$Sample_ID <- gsub("TN2", "Pcyph-TN-2", C125$Sample_ID)
-########Remove  duplicate!
 # Order spreadsheet
 C125 <- C125[order(C125$Sample_ID),]
 #Spread data
@@ -750,6 +779,7 @@ D4$Sample_ID <- gsub("Oil-City-B-", "Oil-City-B", D4$Sample_ID)
 D4$Sample_ID <- gsub("TIPP5", "TIPP4", D4$Sample_ID)
 D4$Sample_ID <- gsub("TIPP8", "TIPP6", D4$Sample_ID)
 D4$Sample_ID <- gsub("TN7", "TN8", D4$Sample_ID)
+D4$Sample_ID <- gsub("PBH4A", "PBH-4A", D4$Sample_ID)
 # Remove duplicates
 D4 <- D4[-c(43,44),] # ALL15
 D4 <- D4[-c(55:59),] # ALL20
@@ -758,7 +788,12 @@ D4 <- D4[-c(125,126),] # Chip19
 D4 <- D4[-c(127,128),] # Chip6
 D4 <- D4[-c(165,166),] # MS16
 D4 <- D4[-c(313:318),] # MS16
-########Remove MS17, MS25, MS41, MS7,PBH4A duplicate!
+D4 <- D4[-c(165:168),] # MS17
+D4 <- D4[-c(181:183),] # MS25
+D4 <- D4[-c(215:218),] # MS41
+D4 <- D4[-c(226:229),] # MS7
+D4 <- D4[-c(223:225),] # MS6
+D4 <- D4[-c(237:240),] # PBH-4A
 # Order spreadsheet
 D4 <- D4[order(D4$Sample_ID),]
 #Spread data
@@ -850,12 +885,13 @@ D10[(nrow(D10)+1),] <- c("WV1", "201")
 D10$Sample_ID <- gsub("CHIP-19", "Chip19", D10$Sample_ID)
 D10$Sample_ID <- gsub("Oil-City-B-", "Oil-City-B", D10$Sample_ID)
 D10$Sample_ID <- gsub("TN2", "Pcyph-TN-2", D10$Sample_ID)
-
 # Remove duplicates
 D10 <- D10[-c(90),] # Chip-05
 D10 <- D10[-c(269,270),] # PMC-3
 D10 <- D10[-c(294),] # TIPP6
-########Remove 14795,6271, duplicate!
+D10 <- D10[-c(127:129),] # INHS-14795
+D10 <- D10[-c(133:135),] # INHS-6271
+D10 <- D10[-c(305),] # 130-1
 # Order spreadsheet
 D10 <- D10[order(D10$Sample_ID),]
 #Spread data
@@ -908,7 +944,6 @@ D106$Sample_ID <- gsub("TN2", "Pcyph-TN-2", D106$Sample_ID)
 # Remove duplicates
 D106 <- D106[-c(150),] # MS13
 D106 <- D106[-c(9),] # 236-1
-########Remove duplicate!
 # Order spreadsheet
 D106 <- D106[order(D106$Sample_ID),]
 #Spread data
@@ -930,6 +965,7 @@ D113[(nrow(D113)+1),] <- c("A2", "296")
 D113[(nrow(D113)+1),] <- c("ALL11", "281")
 D113[(nrow(D113)+1),] <- c("ALL12", "277")
 D113[(nrow(D113)+1),] <- c("ALL14", "277")
+D113[(nrow(D113)+1),] <- c("ALL15", "281")
 D113[(nrow(D113)+1),] <- c("ALL17", "269")
 D113[(nrow(D113)+1),] <- c("ALL18", "289")
 D113[(nrow(D113)+1),] <- c("ALL6", "296")
@@ -991,7 +1027,7 @@ D113 <- D113[-c(211,212),] # MS34
 D113 <- D113[-c(287,288),] # TIPP4
 D113 <- D113[-c(291,292),] # Pcyph-TN-2
 D113 <- D113[-c(293,294),] # TN8
-########Remove 9470 duplicate!
+D113 <- D113[-c(135:137),] # INHS-9470
 # Order spreadsheet
 D113 <- D113[order(D113$Sample_ID),]
 #Spread data
@@ -1042,7 +1078,7 @@ D114$Sample_ID <- gsub("TN2", "Pcyph-TN-2", D114$Sample_ID)
 # Remove duplicates
 D114 <- D114[-c(94),] # Chip-05
 D114 <- D114[-c(149),] # m-07-07
-########Remove 6271 duplicate!
+D114 <- D114[-c(135:137),] # INHS-6271
 # Order spreadsheet
 D114 <- D114[order(D114$Sample_ID),]
 #Spread data
@@ -1117,7 +1153,9 @@ D125$Sample_ID <- gsub("TN2", "Pcyph-TN-2", D125$Sample_ID)
 # Remove duplicates
 D125 <- D125[-c(145:147),] # m-07-07
 D125 <- D125[-c(147),] # m-07-07
-########Remove Chip-05, PMX-2 duplicate!
+D125 <- D125[-c(93:96),] # Chip-05
+D125 <- D125[-c(275:280),] # PMX-2
+########Remove PMX-2 duplicate!
 # Order spreadsheet
 D125 <- D125[order(D125$Sample_ID),]
 #Spread data
