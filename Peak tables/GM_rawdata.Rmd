@@ -475,39 +475,6 @@ View(D125_wis)
 
 
 
-# Merge loci genotypes together and edit data
-```{r}
-# Merge genos of a few and edit before adding more
-genos <- merge(A103, A115, all= T, sort=T) 
-genos <- merge(genos, A120, by="Sample_ID", all=T)
-genos <- merge(genos, C1, by="Sample_ID", all=T)
-genos <- merge(genos, C6, by="Sample_ID", all=T)
-genos <- merge(genos, C105, by="Sample_ID", all=T)
-genos <- merge(genos, C125, by="Sample_ID", all=T)
-# Remove duplicates
-genos1 <- genos[duplicated(genos,)]
-genos <- merge(genos, D4, by="Sample_ID", all=T)
-genos <- merge(genos, D10, by="Sample_ID", all=T)
-genos <- merge(genos, D106, by="Sample_ID", all=T)
-genos <- merge(genos, D113, by="Sample_ID", all=T)
-genos <- merge(genos, D114, by="Sample_ID", all=T)
-genos <- merge(genos, D119, by="Sample_ID", all=T)
-genos <- merge(genos, D125, by="Sample_ID", all=T)
-
-#genos <- merge(genos, A103_wis, by="Sample_ID", all=T)
-#genos <- merge(genos, A120_wis, by="Sample_ID", all=T)
-#genos <- merge(genos, C1_wis, by="Sample_ID", all=T)
-#genos <- merge(genos, C6_wis, by="Sample_ID", all=T)
-#genos <- merge(genos, C105_wis, by="Sample_ID", all=T)
-#genos <- merge(genos, D4_wis, by="Sample_ID", all=T)
-#genos <- merge(genos, D10_wis, by="Sample_ID", all=T)
-#genos <- merge(genos, D106_wis, by="Sample_ID", all=T)
-
-View(genos)
-#genos[is.na(genos)] <- 0
-
-```
-
 # Add duplicate row for second homozygous allele and spread data
 ```{r}
 # Must be done at each locus
@@ -533,13 +500,16 @@ A103 <- A103[-c(129),]
 # Replace incorrect Sample_IDs
 A103$Sample_ID <- gsub("Oil-City-B-", "Oil-City-B", A103$Sample_ID)
 # Spread data
-#dummy <- c("high", "low")
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+A103_new <- A103 # Create new dataframe 
+A103_new$high_low <- rep.int(dummy, nrow(A103_new)/2) # Add extra column delineating high and low alleles
+A103_new <- gather(A103_new, key = "loci", value = "genotypes",
+                      colnames(A103_new[,-1])) # Gather data
+A103_new$high_low <- rep.int(dummy, nrow(A103_new)/2) # Reallocate high and low designations
+A103_new <- A103_new[,-c(2)] # Remove loci column
+A103_new <- A103_new[-c(311:620),] # Remove doubles? Not sure where they came from
+A103_new_wide <- spread(A103_new, high_low, genotypes, fill = 0) # Spread data
+names(A103_new_wide) <- c("Sample_ID", "A103_high", "A103_low") # Rename columns
 
 # A115 locus
 A115[(nrow(A115)+1),] <- c("130-3", "310")
@@ -588,12 +558,16 @@ A115$Sample_ID <- gsub("Oil-City-B-", "Oil-City-B", A115$Sample_ID)
 A115$Sample_ID <- gsub("Chip19_537305", "Chip19", A115$Sample_ID)
 A115$Sample_ID <- gsub("Chip6_537304", "Chip6", A115$Sample_ID)
 # Spread data
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+A115_new <- A115 # Create new dataframe 
+A115_new$high_low <- rep.int(dummy, nrow(A115_new)/2) # Add extra column delineating high and low alleles
+A115_new <- gather(A115_new, key = "loci", value = "genotypes",
+                      colnames(A115_new[,-1])) # Gather data
+A115_new$high_low <- rep.int(dummy, nrow(A115_new)/2) # Reallocate high and low designations
+A115_new <- A115_new[,-c(2)] # Remove loci column
+A115_new <- A115_new[-c(297:620),] # Remove doubles? Not sure where they came from
+A115_new_wide <- spread(A115_new, high_low, genotypes, fill = 0) # Spread data
+names(A115_new_wide) <- c("Sample_ID", "A115_high", "A115_low") # Rename columns
 
 # A120
 A120[(nrow(A120)+1),] <- c("236-1", "224")
@@ -647,12 +621,16 @@ A120[61,2] = 238
 # Order spreadsheet
 A120 <- A120[order(A120$Sample_ID),]
 #Spread data
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+A120_new <- A120 # Create new dataframe 
+A120_new$high_low <- rep.int(dummy, nrow(A120_new)/2) # Add extra column delineating high and low alleles
+A120_new <- gather(A120_new, key = "loci", value = "genotypes",
+                      colnames(A120_new[,-1])) # Gather data
+A120_new$high_low <- rep.int(dummy, nrow(A120_new)/2) # Reallocate high and low designations
+A120_new <- A120_new[,-c(2)] # Remove loci column
+A120_new <- A120_new[-c(301:620),] # Remove doubles? Not sure where they came from
+A120_new_wide <- spread(A120_new, high_low, genotypes, fill = 0) # Spread data
+names(A120_new_wide) <- c("Sample_ID", "A120_high", "A120_low") # Rename columns
 
 # C1
 C1[(nrow(C1)+1),] <- c("Chip-05", "318")
@@ -665,6 +643,7 @@ C1[(nrow(C1)+1),] <- c("WI92", "362")
 C1[(nrow(C1)+1),] <- c("MS32", "339")
 # Change incorrect Sample_IDs
 C1$C1 <- gsub("OL", "0", C1$C1)
+C1$Sample_ID <- gsub("Chip-06", "Chip6", C1$Sample_ID)
 C1$Sample_ID <- gsub("Chip-19", "Chip19", C1$Sample_ID)
 C1$Sample_ID <- gsub("MS17_535644", "MS17", C1$Sample_ID)
 C1$Sample_ID <- gsub("MS25_535645", "MS25", C1$Sample_ID)
@@ -697,12 +676,18 @@ C1[188,2] = 335
 # Order spreadsheet
 C1 <- C1[order(C1$Sample_ID),]
 #Spread data
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+C1_new <- C1 # Create new dataframe 
+C1_new$high_low <- rep.int(dummy, nrow(C1_new)/2) # Add extra column delineating high and low alleles
+C1_new <- gather(C1_new, key = "loci", value = "genotypes",
+                      colnames(C1_new[,-1])) # Gather data
+C1_new$high_low <- rep.int(dummy, nrow(C1_new)/2) # Reallocate high and low designations
+C1_new <- C1_new[,-c(2)] # Remove loci column
+C1_new <- C1_new[-c(291:620),] # Remove doubles? Not sure where they came from
+C1_new_wide <- spread(C1_new, high_low, genotypes, fill = 0) # Spread data
+names(C1_new_wide) <- c("Sample_ID", "C1_high", "C1_low") # Rename columns
+C1_new_wide$Sample_ID <- gsub("Chip-06", "Chip6", C1_new_wide$Sample_ID)
+
 
 # C6
 C6[(nrow(C6)+1),] <- c("ALL1", "218")
@@ -726,6 +711,7 @@ C6[(nrow(C6)+1),] <- c("MS2", "204")
 C6[(nrow(C6)+1),] <- c("MS28", "213")
 C6[(nrow(C6)+1),] <- c("MS31", "222")
 C6[(nrow(C6)+1),] <- c("MS36", "218")
+C6[(nrow(C6)+1),] <- c("Oil-City-A", "204")
 C6[(nrow(C6)+1),] <- c("PBH-1A", "176")
 C6[(nrow(C6)+1),] <- c("PBH-2A", "176")
 C6[(nrow(C6)+1),] <- c("PBH-3A", "176")
@@ -754,12 +740,16 @@ C6 <- C6[-c(149:152),] # m-07-05
 # Order spreadsheet
 C6 <- C6[order(C6$Sample_ID),]
 #Spread data
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+C6_new <- C6 # Create new dataframe 
+C6_new$high_low <- rep.int(dummy, nrow(C6_new)/2) # Add extra column delineating high and low alleles
+C6_new <- gather(C6_new, key = "loci", value = "genotypes",
+                      colnames(C6_new[,-1])) # Gather data
+C6_new$high_low <- rep.int(dummy, nrow(C6_new)/2) # Reallocate high and low designations
+C6_new <- C6_new[,-c(2)] # Remove loci column
+C6_new <- C6_new[-c(313:650),] # Remove doubles? Not sure where they came from
+C6_new_wide <- spread(C6_new, high_low, genotypes, fill = 0) # Spread data
+names(C6_new_wide) <- c("Sample_ID", "C6_high", "C6_low") # Rename columns
 
 # C105
 C105[(nrow(C105)+1),] <- c("ALL14", "272")
@@ -800,12 +790,17 @@ C105 <- C105[-c(287:289),] # WV1
 # Order spreadsheet
 C105 <- C105[order(C105$Sample_ID),]
 #Spread data
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+C105_new <- C105 # Create new dataframe 
+C105_new$high_low <- rep.int(dummy, nrow(C105_new)/2) # Add extra column delineating high and low alleles
+C105_new <- gather(C105_new, key = "loci", value = "genotypes",
+                      colnames(C105_new[,-1])) # Gather data
+C105_new$high_low <- rep.int(dummy, nrow(C105_new)/2) # Reallocate high and low designations
+C105_new <- C105_new[,-c(2)] # Remove loci column
+C105_new <- C105_new[-c(287:650),] # Remove doubles? Not sure where they came from
+C105_new_wide <- spread(C105_new, high_low, genotypes, fill = 0) # Spread data
+names(C105_new_wide) <- c("Sample_ID", "C105_high", "C105_low") # Rename columns
+
 
 # C125
 C125[(nrow(C125)+1),] <- c("238-4", "253")
@@ -840,12 +835,16 @@ C125$Sample_ID <- gsub("TN2", "Pcyph-TN-2", C125$Sample_ID)
 # Order spreadsheet
 C125 <- C125[order(C125$Sample_ID),]
 #Spread data
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+C125_new <- C125 # Create new dataframe 
+C125_new$high_low <- rep.int(dummy, nrow(C125_new)/2) # Add extra column delineating high and low alleles
+C125_new <- gather(C125_new, key = "loci", value = "genotypes",
+                      colnames(C125_new[,-1])) # Gather data
+C125_new$high_low <- rep.int(dummy, nrow(C125_new)/2) # Reallocate high and low designations
+C125_new <- C125_new[,-c(2)] # Remove loci column
+C125_new <- C125_new[-c(295:650),] # Remove doubles? Not sure where they came from
+C125_new_wide <- spread(C125_new, high_low, genotypes, fill = 0) # Spread data
+names(C125_new_wide) <- c("Sample_ID", "C125_high", "C125_low") # Rename columns
 
 
 # D4
@@ -894,12 +893,16 @@ D4 <- D4[-c(237:240),] # PBH-4A
 # Order spreadsheet
 D4 <- D4[order(D4$Sample_ID),]
 #Spread data
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+D4_new <- D4 # Create new dataframe 
+D4_new$high_low <- rep.int(dummy, nrow(D4_new)/2) # Add extra column delineating high and low alleles
+D4_new <- gather(D4_new, key = "loci", value = "genotypes",
+                      colnames(D4_new[,-1])) # Gather data
+D4_new$high_low <- rep.int(dummy, nrow(D4_new)/2) # Reallocate high and low designations
+D4_new <- D4_new[,-c(2)] # Remove loci column
+D4_new <- D4_new[-c(291:650),] # Remove doubles? Not sure where they came from
+D4_new_wide <- spread(D4_new, high_low, genotypes, fill = 0) # Spread data
+names(D4_new_wide) <- c("Sample_ID", "D4_high", "D4_low") # Rename columns
 
 
 # D10
@@ -992,12 +995,17 @@ D10 <- D10[-c(305),] # 130-1
 # Order spreadsheet
 D10 <- D10[order(D10$Sample_ID),]
 #Spread data
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+D10_new <- D10 # Create new dataframe 
+D10_new$high_low <- rep.int(dummy, nrow(D10_new)/2) # Add extra column delineating high and low alleles
+D10_new <- gather(D10_new, key = "loci", value = "genotypes",
+                      colnames(D10_new[,-1])) # Gather data
+D10_new$high_low <- rep.int(dummy, nrow(D10_new)/2) # Reallocate high and low designations
+D10_new <- D10_new[,-c(2)] # Remove loci column
+D10_new <- D10_new[-c(305:650),] # Remove doubles? Not sure where they came from
+D10_new_wide <- spread(D10_new, high_low, genotypes, fill = 0) # Spread data
+names(D10_new_wide) <- c("Sample_ID", "D10_high", "D10_low") # Rename columns
+
 
 # D106
 D106[(nrow(D106)+1),] <- c("236-1", "272")
@@ -1044,12 +1052,16 @@ D106 <- D106[-c(9),] # 236-1
 # Order spreadsheet
 D106 <- D106[order(D106$Sample_ID),]
 #Spread data
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+D106_new <- D106 # Create new dataframe 
+D106_new$high_low <- rep.int(dummy, nrow(D106_new)/2) # Add extra column delineating high and low alleles
+D106_new <- gather(D106_new, key = "loci", value = "genotypes",
+                      colnames(D106_new[,-1])) # Gather data
+D106_new$high_low <- rep.int(dummy, nrow(D106_new)/2) # Reallocate high and low designations
+D106_new <- D106_new[,-c(2)] # Remove loci column
+D106_new <- D106_new[-c(293:650),] # Remove doubles? Not sure where they came from
+D106_new_wide <- spread(D106_new, high_low, genotypes, fill = 0) # Spread data
+names(D106_new_wide) <- c("Sample_ID", "D106_high", "D106_low") # Rename columns
 
 # D113
 D113[(nrow(D113)+1),] <- c("236-1", "274")
@@ -1128,12 +1140,16 @@ D113 <- D113[-c(135:137),] # INHS-9470
 # Order spreadsheet
 D113 <- D113[order(D113$Sample_ID),]
 #Spread data
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+D113_new <- D113 # Create new dataframe 
+D113_new$high_low <- rep.int(dummy, nrow(D113_new)/2) # Add extra column delineating high and low alleles
+D113_new <- gather(D113_new, key = "loci", value = "genotypes",
+                      colnames(D113_new[,-1])) # Gather data
+D113_new$high_low <- rep.int(dummy, nrow(D113_new)/2) # Reallocate high and low designations
+D113_new <- D113_new[,-c(2)] # Remove loci column
+D113_new <- D113_new[-c(303:650),] # Remove doubles? Not sure where they came from
+D113_new_wide <- spread(D113_new, high_low, genotypes, fill = 0) # Spread data
+names(D113_new_wide) <- c("Sample_ID", "D113_high", "D113_low") # Rename columns
 
 # D114
 D114[(nrow(D114)+1),] <- c("ALL12", "244")
@@ -1179,12 +1195,16 @@ D114 <- D114[-c(135:137),] # INHS-6271
 # Order spreadsheet
 D114 <- D114[order(D114$Sample_ID),]
 #Spread data
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+D114_new <- D114 # Create new dataframe 
+D114_new$high_low <- rep.int(dummy, nrow(D114_new)/2) # Add extra column delineating high and low alleles
+D114_new <- gather(D114_new, key = "loci", value = "genotypes",
+                      colnames(D114_new[,-1])) # Gather data
+D114_new$high_low <- rep.int(dummy, nrow(D114_new)/2) # Reallocate high and low designations
+D114_new <- D114_new[,-c(2)] # Remove loci column
+D114_new <- D114_new[-c(307:650),] # Remove doubles? Not sure where they came from
+D114_new_wide <- spread(D114_new, high_low, genotypes, fill = 0) # Spread data
+names(D114_new_wide) <- c("Sample_ID", "D114_high", "D114_low") # Rename columns
 
 # D119
 D119[(nrow(D119)+1),] <- c("130-3", "298")
@@ -1217,12 +1237,16 @@ D119$Sample_ID <- gsub("TN2", "Pcyph-TN-2", D119$Sample_ID)
 # Order spreadsheet
 D119 <- D119[order(D119$Sample_ID),]
 #Spread data
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+D119_new <- D119 # Create new dataframe 
+D119_new$high_low <- rep.int(dummy, nrow(D119_new)/2) # Add extra column delineating high and low alleles
+D119_new <- gather(D119_new, key = "loci", value = "genotypes",
+                      colnames(D119_new[,-1])) # Gather data
+D119_new$high_low <- rep.int(dummy, nrow(D119_new)/2) # Reallocate high and low designations
+D119_new <- D119_new[,-c(2)] # Remove loci column
+D119_new <- D119_new[-c(297:650),] # Remove doubles? Not sure where they came from
+D119_new_wide <- spread(D119_new, high_low, genotypes, fill = 0) # Spread data
+names(D119_new_wide) <- c("Sample_ID", "D119_high", "D119_low") # Rename columns
 
 # D125
 D125[(nrow(D125)+1),] <- c("130-1", "278")
@@ -1242,6 +1266,7 @@ D125[(nrow(D125)+1),] <- c("MS3", "252")
 D125[(nrow(D125)+1),] <- c("MS9", "274")
 D125[(nrow(D125)+1),] <- c("Oil-City-A", "267")
 D125[(nrow(D125)+1),] <- c("PMC-8", "267")
+D125[(nrow(D125)+1),] <- c("UAUC3157", "245")
 D125[(nrow(D125)+1),] <- c("WI93", "249")
 # Change incorrect Sample_IDs
 D125$Sample_ID <- gsub("CHIP-19", "Chip19", D125$Sample_ID)
@@ -1252,16 +1277,19 @@ D125 <- D125[-c(145:147),] # m-07-07
 D125 <- D125[-c(147),] # m-07-07
 D125 <- D125[-c(93:96),] # Chip-05
 D125 <- D125[-c(275:280),] # PMX-2
-########Remove PMX-2 duplicate!
 # Order spreadsheet
 D125 <- D125[order(D125$Sample_ID),]
 #Spread data
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+D125_new <- D125 # Create new dataframe 
+D125_new$high_low <- rep.int(dummy, nrow(D125_new)/2) # Add extra column delineating high and low alleles
+D125_new <- gather(D125_new, key = "loci", value = "genotypes",
+                      colnames(D125_new[,-1])) # Gather data
+D125_new$high_low <- rep.int(dummy, nrow(D125_new)/2) # Reallocate high and low designations
+D125_new <- D125_new[,-c(2)] # Remove loci column
+D125_new <- D125_new[-c(299:650),] # Remove doubles? Not sure where they came from
+D125_new_wide <- spread(D125_new, high_low, genotypes, fill = 0) # Spread data
+names(D125_new_wide) <- c("Sample_ID", "D125_high", "D125_low") # Rename columns
 ```
 
 
@@ -1274,13 +1302,16 @@ A103_wis[(nrow(A103_wis)+1),] <- c("PWO5", "249")
 # Order data
 A103_wis <- A103_wis[order(A103_wis$Sample_ID),]
 # Spread data
-#dummy <- c("high", "low")
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+A103new <- A103_wis # Create new dataframe 
+A103new$high_low <- rep.int(dummy, nrow(A103new)/2) # Add extra column delineating high and low alleles
+A103new <- gather(A103new, key = "loci", value = "genotypes",
+                      colnames(A103new[,-1])) # Gather data
+A103new$high_low <- rep.int(dummy, nrow(A103new)/2) # Reallocate high and low designations
+A103new <- A103new[,-c(2)] # Remove loci column
+A103new <- A103new[-c(25:48),] # Remove doubles? Not sure where they came from
+A103new_wide <- spread(A103new, high_low, genotypes, fill = 0) # Spread data
+names(A103new_wide) <- c("Sample_ID", "A103_high", "A103_low") # Rename columns
 
 
 # A115_wis
@@ -1289,13 +1320,16 @@ A115_wis[(nrow(A115_wis)+1),] <- c("PWO3", "289")
 # Order data
 A115_wis <- A115_wis[order(A115_wis$Sample_ID),]
 # Spread data
-#dummy <- c("high", "low")
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+A115new <- A115_wis # Create new dataframe 
+A115new$high_low <- rep.int(dummy, nrow(A115new)/2) # Add extra column delineating high and low alleles
+A115new <- gather(A115new, key = "loci", value = "genotypes",
+                      colnames(A115new[,-1])) # Gather data
+A115new$high_low <- rep.int(dummy, nrow(A115new)/2) # Reallocate high and low designations
+A115new <- A115new[,-c(2)] # Remove loci column
+A115new <- A115new[-c(23:48),] # Remove doubles? Not sure where they came from
+A115new_wide <- spread(A115new, high_low, genotypes, fill = 0) # Spread data
+names(A115new_wide) <- c("Sample_ID", "A115_high", "A115_low") # Rename columns
 
 # A120_wis
 A120_wis[(nrow(A120_wis)+1),] <- c("PCP1", "226")
@@ -1304,13 +1338,16 @@ A120_wis[(nrow(A120_wis)+1),] <- c("PWO10", "226")
 # Order data
 A120_wis <- A120_wis[order(A120_wis$Sample_ID),]
 # Spread data
-#dummy <- c("high", "low")
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+A120new <- A120_wis # Create new dataframe 
+A120new$high_low <- rep.int(dummy, nrow(A120new)/2) # Add extra column delineating high and low alleles
+A120new <- gather(A120new, key = "loci", value = "genotypes",
+                      colnames(A120new[,-1])) # Gather data
+A120new$high_low <- rep.int(dummy, nrow(A120new)/2) # Reallocate high and low designations
+A120new <- A120new[,-c(2)] # Remove loci column
+A120new <- A120new[-c(19:48),] # Remove doubles? Not sure where they came from
+A120new_wide <- spread(A120new, high_low, genotypes, fill = 0) # Spread data
+names(A120new_wide) <- c("Sample_ID", "A120_high", "A120_low") # Rename columns
 
 
 # C1_wis
@@ -1320,13 +1357,16 @@ C1_wis[(nrow(C1_wis)+1),] <- c("PWO3", "335")
 # Order data
 C1_wis <- C1_wis[order(C1_wis$Sample_ID),]
 # Spread data
-#dummy <- c("high", "low")
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+C1new <- C1_wis # Create new dataframe 
+C1new$high_low <- rep.int(dummy, nrow(C1new)/2) # Add extra column delineating high and low alleles
+C1new <- gather(C1new, key = "loci", value = "genotypes",
+                      colnames(C1new[,-1])) # Gather data
+C1new$high_low <- rep.int(dummy, nrow(C1new)/2) # Reallocate high and low designations
+C1new <- C1new[,-c(2)] # Remove loci column
+C1new <- C1new[-c(25:48),] # Remove doubles? Not sure where they came from
+C1new_wide <- spread(C1new, high_low, genotypes, fill = 0) # Spread data
+names(C1new_wide) <- c("Sample_ID", "C1_high", "C1_low") # Rename columns
 
 
 # C6_wis
@@ -1340,13 +1380,16 @@ C6_wis[(nrow(C6_wis)+1),] <- c("PWO9", "218")
 # Order data
 C6_wis <- C6_wis[order(C6_wis$Sample_ID),]
 # Spread data
-#dummy <- c("high", "low")
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+C6new <- C6_wis # Create new dataframe 
+C6new$high_low <- rep.int(dummy, nrow(C6new)/2) # Add extra column delineating high and low alleles
+C6new <- gather(C6new, key = "loci", value = "genotypes",
+                      colnames(C6new[,-1])) # Gather data
+C6new$high_low <- rep.int(dummy, nrow(C6new)/2) # Reallocate high and low designations
+C6new <- C6new[,-c(2)] # Remove loci column
+C6new <- C6new[-c(25:48),] # Remove doubles? Not sure where they came from
+C6new_wide <- spread(C6new, high_low, genotypes, fill = 0) # Spread data
+names(C6new_wide) <- c("Sample_ID", "C6_high", "C6_low") # Rename columns
 
 
 # C105_wis
@@ -1354,13 +1397,16 @@ C105_wis[(nrow(C105_wis)+1),] <- c("PWO10", "283")
 # Order data
 C105_wis <- C105_wis[order(C105_wis$Sample_ID),]
 # Spread data
-#dummy <- c("high", "low")
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+C105new <- C105_wis # Create new dataframe 
+C105new$high_low <- rep.int(dummy, nrow(C105new)/2) # Add extra column delineating high and low alleles
+C105new <- gather(C105new, key = "loci", value = "genotypes",
+                      colnames(C105new[,-1])) # Gather data
+C105new$high_low <- rep.int(dummy, nrow(C105new)/2) # Reallocate high and low designations
+C105new <- C105new[,-c(2)] # Remove loci column
+C105new <- C105new[-c(25:48),] # Remove doubles? Not sure where they came from
+C105new_wide <- spread(C105new, high_low, genotypes, fill = 0) # Spread data
+names(C105new_wide) <- c("Sample_ID", "C105_high", "C105_low") # Rename column
 
 
 # C125_wis
@@ -1369,13 +1415,16 @@ C125_wis[(nrow(C125_wis)+1),] <- c("PWO6", "268")
 # Order data
 C125_wis <- C125_wis[order(C125_wis$Sample_ID),]
 # Spread data
-#dummy <- c("high", "low")
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+C125new <- C125_wis # Create new dataframe 
+C125new$high_low <- rep.int(dummy, nrow(C125new)/2) # Add extra column delineating high and low alleles
+C125new <- gather(C125new, key = "loci", value = "genotypes",
+                      colnames(C125new[,-1])) # Gather data
+C125new$high_low <- rep.int(dummy, nrow(C125new)/2) # Reallocate high and low designations
+C125new <- C125new[,-c(2)] # Remove loci column
+C125new <- C125new[-c(25:48),] # Remove doubles? Not sure where they came from
+C125new_wide <- spread(C125new, high_low, genotypes, fill = 0) # Spread data
+names(C125new_wide) <- c("Sample_ID", "C125_high", "C125_low") # Rename column
 
 
 # D4_wis
@@ -1383,13 +1432,16 @@ D4_wis[(nrow(D4_wis)+1),] <- c("PWO10", "283")
 # Order data
 D4_wis <- D4_wis[order(D4_wis$Sample_ID),]
 # Spread data
-#dummy <- c("high", "low")
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+D4new <- D4_wis # Create new dataframe 
+D4new$high_low <- rep.int(dummy, nrow(D4new)/2) # Add extra column delineating high and low alleles
+D4new <- gather(D4new, key = "loci", value = "genotypes",
+                      colnames(D4new[,-1])) # Gather data
+D4new$high_low <- rep.int(dummy, nrow(D4new)/2) # Reallocate high and low designations
+D4new <- D4new[,-c(2)] # Remove loci column
+D4new <- D4new[-c(25:48),] # Remove doubles? Not sure where they came from
+D4new_wide <- spread(D4new, high_low, genotypes, fill = 0) # Spread data
+names(D4new_wide) <- c("Sample_ID", "D4_high", "D4_low") # Rename column
 
 
 # D10_wis
@@ -1398,13 +1450,16 @@ D10_wis[(nrow(D10_wis)+1),] <- c("PWO9", "232")
 # Order data
 D10_wis <- D10_wis[order(D10_wis$Sample_ID),]
 # Spread data
-#dummy <- c("high", "low")
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+D10new <- D10_wis # Create new dataframe 
+D10new$high_low <- rep.int(dummy, nrow(D10new)/2) # Add extra column delineating high and low alleles
+D10new <- gather(D10new, key = "loci", value = "genotypes",
+                      colnames(D10new[,-1])) # Gather data
+D10new$high_low <- rep.int(dummy, nrow(D10new)/2) # Reallocate high and low designations
+D10new <- D10new[,-c(2)] # Remove loci column
+D10new <- D10new[-c(25:48),] # Remove doubles? Not sure where they came from
+D10new_wide <- spread(D10new, high_low, genotypes, fill = 0) # Spread data
+names(D10new_wide) <- c("Sample_ID", "D10_high", "D10_low") # Rename column
 
 
 # D106_wis
@@ -1412,13 +1467,16 @@ D106_wis[(nrow(D106_wis)+1),] <- c("PWO1", "284")
 # Order data
 D106_wis <- D106_wis[order(D106_wis$Sample_ID),]
 # Spread data
-#dummy <- c("high", "low")
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+D106new <- D106_wis # Create new dataframe 
+D106new$high_low <- rep.int(dummy, nrow(D106new)/2) # Add extra column delineating high and low alleles
+D106new <- gather(D106new, key = "loci", value = "genotypes",
+                      colnames(D106new[,-1])) # Gather data
+D106new$high_low <- rep.int(dummy, nrow(D106new)/2) # Reallocate high and low designations
+D106new <- D106new[,-c(2)] # Remove loci column
+D106new <- D106new[-c(25:48),] # Remove doubles? Not sure where they came from
+D106new_wide <- spread(D106new, high_low, genotypes, fill = 0) # Spread data
+names(D106new_wide) <- c("Sample_ID", "D106_high", "D106_low") # Rename column
 
 
 # D113_wis
@@ -1430,13 +1488,16 @@ D113_wis[(nrow(D113_wis)+1),] <- c("PWO8", "296")
 # Order data
 D113_wis <- D113_wis[order(D113_wis$Sample_ID),]
 # Spread data
-#dummy <- c("high", "low")
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+D113new <- D113_wis # Create new dataframe 
+D113new$high_low <- rep.int(dummy, nrow(D113new)/2) # Add extra column delineating high and low alleles
+D113new <- gather(D113new, key = "loci", value = "genotypes",
+                      colnames(D113new[,-1])) # Gather data
+D113new$high_low <- rep.int(dummy, nrow(D113new)/2) # Reallocate high and low designations
+D113new <- D113new[,-c(2)] # Remove loci column
+D113new <- D113new[-c(25:48),] # Remove doubles? Not sure where they came from
+D113new_wide <- spread(D113new, high_low, genotypes, fill = 0) # Spread data
+names(D113new_wide) <- c("Sample_ID", "D113_high", "D113_low") # Rename column
 
 
 # D114_wis
@@ -1444,13 +1505,16 @@ D114_wis[(nrow(D114_wis)+1),] <- c("PWO5", "244")
 # Order data
 D114_wis <- D114_wis[order(D114_wis$Sample_ID),]
 # Spread data
-#dummy <- c("high", "low")
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+D114new <- D114_wis # Create new dataframe 
+D114new$high_low <- rep.int(dummy, nrow(D114new)/2) # Add extra column delineating high and low alleles
+D114new <- gather(D114new, key = "loci", value = "genotypes",
+                      colnames(D114new[,-1])) # Gather data
+D114new$high_low <- rep.int(dummy, nrow(D114new)/2) # Reallocate high and low designations
+D114new <- D114new[,-c(2)] # Remove loci column
+D114new <- D114new[-c(25:48),] # Remove doubles? Not sure where they came from
+D114new_wide <- spread(D114new, high_low, genotypes, fill = 0) # Spread data
+names(D114new_wide) <- c("Sample_ID", "D114_high", "D114_low") # Rename column
 
 
 # D119_wis
@@ -1459,13 +1523,16 @@ D119_wis[(nrow(D119_wis)+1),] <- c("PWO3", "332")
 # Order data
 D119_wis <- D119_wis[order(D119_wis$Sample_ID),]
 # Spread data
-#dummy <- c("high", "low")
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
+dummy <- c("high", "low") # Create dummy vector
+D119new <- D119_wis # Create new dataframe 
+D119new$high_low <- rep.int(dummy, nrow(D119new)/2) # Add extra column delineating high and low alleles
+D119new <- gather(D119new, key = "loci", value = "genotypes",
+                      colnames(D119new[,-1])) # Gather data
+D119new$high_low <- rep.int(dummy, nrow(D119new)/2) # Reallocate high and low designations
+D119new <- D119new[,-c(2)] # Remove loci column
+D119new <- D119new[-c(25:48),] # Remove doubles? Not sure where they came from
+D119new_wide <- spread(D119new, high_low, genotypes, fill = 0) # Spread data
+names(D119new_wide) <- c("Sample_ID", "D119_high", "D119_low") # Rename column
 
 
 # D125_wis
@@ -1473,16 +1540,70 @@ D125_wis[(nrow(D125_wis)+1),] <- c("PWO7", "278")
 # Order data
 D125_wis <- D125_wis[order(D125_wis$Sample_ID),]
 # Spread data
-#dummy <- c("high", "low")
-#A115$high_low <- rep.int(dummy, nrow(A115)/2)
-#A115$new_genos <- paste(A115$loci, "_", A115$high_low)
-#test <- gather(A115, key = "loci", value = "genotypes",
-                      #colnames(A115[,-1]))
-#test2 <- test[,-c(2,4)]
-#test_wide <- spread(test2, new_genos, genotypes, fill = 0)
-
+dummy <- c("high", "low") # Create dummy vector
+D125new <- D125_wis # Create new dataframe 
+D125new$high_low <- rep.int(dummy, nrow(D125new)/2) # Add extra column delineating high and low alleles
+D125new <- gather(D125new, key = "loci", value = "genotypes",
+                      colnames(D125new[,-1])) # Gather data
+D125new$high_low <- rep.int(dummy, nrow(D125new)/2) # Reallocate high and low designations
+D125new <- D125new[,-c(2)] # Remove loci column
+D125new <- D125new[-c(25:48),] # Remove doubles? Not sure where they came from
+D125new_wide <- spread(D125new, high_low, genotypes, fill = 0) # Spread data
+names(D125new_wide) <- c("Sample_ID", "D125_high", "D125_low") # Rename column
 ```
 
+
+# Merge loci genotypes together 
+```{r}
+# Merge genos of a few and edit before adding more
+genos <- merge(A103_new_wide, A115_new_wide, all= T) 
+genos <- merge(genos, A120_new_wide, by="Sample_ID", all=T)
+genos <- merge(genos, C1_new_wide, by="Sample_ID", all=T)
+genos <- merge(genos, C6_new_wide, by="Sample_ID", all=T)
+genos <- merge(genos, C105_new_wide, by="Sample_ID", all=T)
+genos <- merge(genos, C125_new_wide, by="Sample_ID", all=T)
+genos <- merge(genos, D4_new_wide, by="Sample_ID", all=T)
+genos <- merge(genos, D10_new_wide, by="Sample_ID", all=T)
+genos <- merge(genos, D106_new_wide, by="Sample_ID", all=T)
+genos <- merge(genos, D113_new_wide, by="Sample_ID", all=T)
+genos <- merge(genos, D114_new_wide, by="Sample_ID", all=T)
+genos <- merge(genos, D119_new_wide, by="Sample_ID", all=T)
+original_genos <- merge(genos, D125_new_wide, by="Sample_ID", all=T)
+original_genos[is.na(original_genos)] <- 0
+View(original_genos)
+
+
+genos <- merge(A103new_wide, A115new_wide, by="Sample_ID", all=T)
+genos <- merge(genos, A120new_wide, by="Sample_ID", all=T)
+genos <- merge(genos, C1new_wide, by="Sample_ID", all=T)
+genos <- merge(genos, C6new_wide, by="Sample_ID", all=T)
+genos <- merge(genos, C105new_wide, by="Sample_ID", all=T)
+genos <- merge(genos, C125new_wide, by="Sample_ID", all=T)
+genos <- merge(genos, D4new_wide, by="Sample_ID", all=T)
+genos <- merge(genos, D10new_wide, by="Sample_ID", all=T)
+genos <- merge(genos, D106new_wide, by="Sample_ID", all=T)
+genos <- merge(genos, D113new_wide, by="Sample_ID", all=T)
+genos <- merge(genos, D114new_wide, by="Sample_ID", all=T)
+genos <- merge(genos, D119new_wide, by="Sample_ID", all=T)
+genos <- merge(genos, D125new_wide, by="Sample_ID", all=T)
+View(genos)
+genos[is.na(genos)] <- 0
+Wisconsin_genos <- genos
+```
+
+
+# Edit original genos and Wisconsin genos and merge
+```{r}
+# Remove duplicate Chip6
+original_genos <- original_genos[-c(63),]
+# Merge oringal genos and Wisconsin genos
+master_genos <- merge(original_genos, Wisconsin_genos, all=T)
+# Change names 
+master_genos$Sample_ID <- gsub("Chip6", "Chip-06", master_genos$Sample_ID)
+master_genos$Sample_ID <- gsub("Chip19", "Chip-19", master_genos$Sample_ID)
+# Order master list
+master_genos <- master_genos[order(master_genos$Sample_ID),]
+```
 
 
 
