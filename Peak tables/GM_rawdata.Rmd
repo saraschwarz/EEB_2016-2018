@@ -1606,6 +1606,72 @@ master_genos <- master_genos[order(master_genos$Sample_ID),]
 ```
 
 
+# Add new sample IDs to master list
+```{r}
+# Allegheny
+ALL <- master_genos[-c(1:14),]
+ALL <- ALL[-c(21:110),]
+ALL <- ALL[-c(23:65),]
+View(ALL)
+#tester <- c("ALL")
+#ALL$New_ID <- 1:nrow(ALL)
+
+
+# Chippewa
+CHIP <- master_genos[-c(1:42),]
+CHIP <- CHIP[-c(22:127),]
+View(CHIP)
+
+
+# Meramec
+MER <- master_genos[-c(1:71),]
+MER <- MER[-c(10:55),]
+MER <- MER[-c(15:18),]
+MER <- MER[-c(30:48),]
+View(MER)
+
+
+# Mississippi
+MISS <- master_genos[-c(1:12),]
+MISS <- MISS[-c(3:51),]
+MISS <- MISS[-c(7:9),]
+MISS <- MISS[-c(8:16),]
+MISS <- MISS[-c(52:98),]
+View(MISS)
+
+
+# Ohio
+OH <- master_genos[-c(1:69),]
+OH <- OH[-c(2:99),]
+View(OH)
+
+
+# Tippecanoe
+TIPP <- master_genos[-c(13:34),]
+TIPP <- TIPP[-c(17:46),]
+TIPP <- TIPP[-c(18:108),]
+TIPP <- TIPP[-c(20:26),]
+View(TIPP)
+
+
+# Tennessee
+TN <- master_genos[-c(1:38),]
+TN <- TN[-c(5:95),]
+TN <- TN[-c(7:34),]
+TN <- TN[-c(8:12),]
+View(TN)
+
+
+# Wisconsin
+WIS <- master_genos[-c(1:67),]
+WIS <- WIS[-c(2:64),]
+WIS <- WIS[-c(4:20),]
+WIS <- WIS[-c(14:17),]
+WIS <- WIS[-c(18),]
+View(WIS)
+```
+
+
 
 
 
