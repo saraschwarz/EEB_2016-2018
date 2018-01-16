@@ -1614,7 +1614,7 @@ ALL <- ALL[-c(21:110),]
 ALL <- ALL[-c(23:65),]
 View(ALL)
 ALL$New_ID <- 1:nrow(ALL) # Create New_ID column
-ALL <- ALL[c(1,30,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,28,29)] # Reorder columns
+ALL <- ALL[c(1,30,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29)] # Reorder columns
 ALLvec <- c("ALL1", "ALL2","ALL3", "ALL4", "ALL5", "ALL6", "ALL7", "ALL8", "ALL9", "ALL10", "ALL11", "ALL12", "ALL13", "ALL14", "ALL15", "ALL16", "ALL17", "ALL18", "ALL19", "ALL20", "ALL21", "ALL22") # Create a vector of new sample IDs
 ALL$New_ID <- rep.int(ALLvec, nrow(ALL)/22) # Allocate new IDs
 
@@ -1623,7 +1623,7 @@ CHIP <- master_genos[-c(1:42),]
 CHIP <- CHIP[-c(22:127),]
 View(CHIP)
 CHIP$New_ID <- 1:nrow(CHIP) # Create New_ID column
-CHIP <- CHIP[c(1,30,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,28,29)] # Reorder columns
+CHIP <- CHIP[c(1,30,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29)] # Reorder columns
 CHIPvec <- c("CHIP1", "CHIP2","CHIP3", "CHIP4", "CHIP5", "CHIP6", "CHIP7", "CHIP8", "CHIP9", "CHIP10", "CHIP11", "CHIP12", "CHIP13", "CHIP14", "CHIP15", "CHIP16", "CHIP17", "CHIP18", "CHIP19", "CHIP20", "CHIP21") # Create a vector of new sample IDs
 CHIP$New_ID <- rep.int(CHIPvec, nrow(CHIP)/21) # CHIPocate new IDs
 
@@ -1634,7 +1634,7 @@ MER <- MER[-c(15:18),]
 MER <- MER[-c(30:48),]
 View(MER)
 MER$New_ID <- 1:nrow(MER) # Create New_ID column
-MER <- MER[c(1,30,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,28,29)] # Reorder columns
+MER <- MER[c(1,30,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29)] # Reorder columns
 MERvec <- c("MER1", "MER2","MER3", "MER4", "MER5", "MER6", "MER7", "MER8", "MER9", "MER10", "MER11", "MER12", "MER13", "MER14", "MER15", "MER16", "MER17", "MER18", "MER19", "MER20", "MER21", "MER22", "MER23", "MER24", "MER25", "MER26", "MER27", "MER28", "MER29") # Create a vector of new sample IDs
 MER$New_ID <- rep.int(MERvec, nrow(MER)/29) # MERocate new IDs
 
@@ -1646,7 +1646,7 @@ MISS <- MISS[-c(8:16),]
 MISS <- MISS[-c(52:98),]
 View(MISS)
 MISS$New_ID <- 1:nrow(MISS) # Create New_ID column
-MISS <- MISS[c(1,30,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,28,29)] # Reorder columns
+MISS <- MISS[c(1,30,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29)] # Reorder columns
 MISSvec <- c("MISS1", "MISS2","MISS3", "MISS4", "MISS5", "MISS6", "MISS7", "MISS8", "MISS9", "MISS10", "MISS11", "MISS12", "MISS13", "MISS14", "MISS15", "MISS16", "MISS17", "MISS18", "MISS19", "MISS20", "MISS21", "MISS22", "MISS23", "MISS24", "MISS25", "MISS26", "MISS27", "MISS28", "MISS29", "MISS30", "MISS31","MISS32", "MISS33", "MISS34", "MISS35", "MISS36", "MISS37", "MISS38", "MISS39", "MISS40", "MISS41", "MISS42", "MISS43", "MISS44", "MISS45", "MISS46", "MISS47", "MISS48", "MISS49", "MISS50", "MISS51") # Create a vector of new sample IDs
 MISS$New_ID <- rep.int(MISSvec, nrow(MISS)/51) # MISSocate new IDs
 
@@ -1656,7 +1656,7 @@ OH <- master_genos[-c(1:69),]
 OH <- OH[-c(2:99),]
 View(OH)
 OH$New_ID <- 1:nrow(OH) # Create New_ID column
-OH <- OH[c(1,30,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,28,29)] # Reorder columns
+OH <- OH[c(1,30,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29)] # Reorder columns
 OHvec <- c("OH1", "OH2") # Create a vector of new sample IDs
 OH$New_ID <- rep.int(OHvec, nrow(OH)/2) # Allocate new IDs
 
@@ -1667,20 +1667,20 @@ TIPP <- TIPP[-c(18:108),]
 TIPP <- TIPP[-c(20:26),]
 View(TIPP)
 TIPP$New_ID <- 1:nrow(TIPP) # Create New_ID column
-TIPP <- TIPP[c(1,30,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,28,29)] # Reorder columns
+TIPP <- TIPP[c(1,30,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29)] # Reorder columns
 TIPPvec <- c("TIPP1", "TIPP2","TIPP3", "TIPP4", "TIPP5", "TIPP6", "TIPP7", "TIPP8", "TIPP9", "TIPP10", "TIPP11", "TIPP12", "TIPP13", "TIPP14", "TIPP15", "TIPP16", "TIPP17", "TIPP18", "TIPP19") # Create a vector of new sample IDs
 TIPP$New_ID <- rep.int(TIPPvec, nrow(TIPP)/19) # TIPPocate new IDs
 
 # Tennessee
 TN <- master_genos[-c(1:38),]
 TN <- TN[-c(5:95),]
-TN <- TN[-c(7:34),]
-TN <- TN[-c(8:12),]
+TN <- TN[-c(7:33),]
+TN <- TN[-c(9:13),]
 View(TN)
 TN$New_ID <- 1:nrow(TN) # Create New_ID column
-TN <- TN[c(1,30,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,28,29)] # Reorder columns
-TNvec <- c("TN1", "TN2", "TN3", "TN4", "TN5", "TN6", "TN7") # Create a vector of new sample IDs
-TN$New_ID <- rep.int(TNvec, nrow(TN)/7) # Allocate new IDs
+TN <- TN[c(1,30,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29)] # Reorder columns
+TNvec <- c("TN1", "TN2", "TN3", "TN4", "TN5", "TN6", "TN7", "TN8") # Create a vector of new sample IDs
+TN$New_ID <- rep.int(TNvec, nrow(TN)/8) # Allocate new IDs
 
 # Wisconsin
 WIS <- master_genos[-c(1:67),] # Trim dataset to only WIS samples
@@ -1690,7 +1690,7 @@ WIS <- WIS[-c(14:17),]
 WIS <- WIS[-c(18),]
 View(WIS)
 WIS$New_ID <- 1:nrow(WIS) # Create New_ID column
-WIS <- WIS[c(1,30,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,28,29)] # Reorder columns
+WIS <- WIS[c(1,30,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29)] # Reorder columns
 WISvec <- c("WIS1", "WIS2","WIS3", "WIS4", "WIS5", "WIS6", "WIS7", "WIS8", "WIS9", "WIS10", "WIS11", "WIS12", "WIS13", "WIS14", "WIS15", "WIS16", "WIS17") # Create a vector of new sample IDs
 WIS$New_ID <- rep.int(WISvec, nrow(WIS)/17) # WISocate new IDs
 ```
@@ -1699,15 +1699,24 @@ WIS$New_ID <- rep.int(WISvec, nrow(WIS)/17) # WISocate new IDs
 # Merge datasets with new sample IDs
 ```{r}
 genos <- merge(ALL, CHIP, all= T) 
-genos <- merge(genos, MER, by="Sample_ID", all=T)
-genos <- merge(genos, C1_new_wide, by="Sample_ID", all=T)
-genos <- merge(genos, C6_new_wide, by="Sample_ID", all=T)
-genos <- merge(genos, C105_new_wide, by="Sample_ID", all=T)
-genos <- merge(genos, C125_new_wide, by="Sample_ID", all=T)
+genos <- merge(genos, MER, all=T)
+genos <- merge(genos, MISS, all=T)
+genos <- merge(genos, OH, all=T)
+genos <- merge(genos, TIPP, all=T)
+genos <- merge(genos, TN, all=T)
+newID_genos <- merge(genos, WIS, all=T)
 
-original_genos <- merge(genos, D125_new_wide, by="Sample_ID", all=T)
-original_genos[is.na(original_genos)] <- 0
-View(original_genos)
+View(newID_genos)
+newID_genos <- newID_genos[order(newID_genos$New_ID),]
+
+names(newID_genos) <- c("Sample_ID", "New_ID", "A103", "", "A115", "", "A120", "", "C1", "", "C6", "", "C105", "", "C125", "", "D4", "", "D10", "", "D106", "", "D113", "", "D114", "", "D119", "", "D125", "")
+
+write.csv(newID_genos, "Master_with_Sample_ID.csv")
+
+NewID <- newID_genos[,-c(1)]
+names(NewID) <- c("New_ID", "A103", "", "A115", "", "A120", "", "C1", "", "C6", "", "C105", "", "C125", "", "D4", "", "D10", "", "D106", "", "D113", "", "D114", "", "D119", "", "D125", "")
+
+write.csv(NewID, "Master_with_New_ID.csv")
 ```
 
 
