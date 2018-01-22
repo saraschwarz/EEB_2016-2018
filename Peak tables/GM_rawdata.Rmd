@@ -1720,6 +1720,106 @@ write.csv(NewID, "Master_with_New_ID.csv")
 ```
 
 
+# Edit master (QC from GeneMarker)
+```{r}
+# A103
+example <- newID_genos # Create new dataframe
+example[106,4] <- 242 # 244 to 242 - INHS-16244
+
+# A115
+example2 <- example
+example2[125,6] <- 346 # 285 to 346 - WV1
+example2[40,5:6] <- 0 # 285 to 0 - Chip-06
+
+# A120
+example12 <- example11
+example12[102,7:8] <- 226 # - MS35 
+example12[154,7] <- 222 # 0 to 222 - PWO6
+example12[154,8] <- 255 # 0 to 222 - PWO6
+example12[155,7] <- 214 # 0 to 222 - PWO7
+example12[155,8] <- 226 # 0 to 222 - PWO7
+
+#C1
+example3 <- example2
+example3[20,9] <- 339 # 335 to 339 - ALL15
+example3[73,9:10] <- 366 # 0 to 366 - A1
+example3[152,9] <- 289 # 290 to 289 - UAUC3157
+example3[39,10] <- 358 # 318 to 358 - Chip-05
+example3[29,9] <- 335 # 331 to 335 - Chip-15
+example3[31,9] <- 335 # 331 to 335 - Chip-17
+example3[167,10] <- 397 # 335 to 397 - PW03
+example3[7,9] <- 382 # 378 to 382 - ALL4
+
+#C6
+example4 <- example3
+example4[53,11] <- 226 # 222 to 226 - PMC-3
+example4[106,11:12] <- 0 #  0s - INHS-16244
+
+#C105
+example5 <- example4
+example5[105,13] <- 269 # 265 to 269 - MS38
+# Ran some reamps because there were conflicting genotype calls. Figured out samples were added to the wrong Genemarker file. This section is designed to fix the errors.
+example13 <- example12
+example13[97,13] <- 269 # reamp showed that 0 is 269 - MS30
+example13[97,14] <- 291 # reamp showed that 0 is 291 - MS30
+example13[100,13] <- 280 # reamp showed that 0 is 280 - MS33
+example13[100,14] <- 310 # reamp showed that 0 is 310 - MS33
+example13[101,13] <- 276 # reamp showed that 0 is 276 - MS34
+example13[101,14] <- 315 # reamp showed that 0 is 315 - MS34
+example13[103,13] <- 287 # reamp showed that 0 is 287 - MS36
+example13[103,14] <- 315 # reamp showed that 0 is 287 - MS36
+example13[111,13] <- 276 # reamp showed that 0 is 276 - MS42
+example13[111,14] <- 280 # reamp showed that 0 is 280 - MS42
+example13[49,13] <- 283 # reamp showed that 0 is 283 - PBH-5A
+example13[49,14] <- 291 # reamp showed that 0 is 291 - PBH-5A
+
+#C125
+example6 <- example5
+example6[110,15:16] <- 0 # 0s - MS41
+example6[91,15:16] <- 0 # 0s - MS26
+example6[45,15:16] <- 0 # 0s - PBH1A
+example6[47,15:16] <- 0 # 0s - PBH3A
+
+#D4
+example7 <- example6
+example7[144,18] <- 259 # 257 to 259 - 238-1
+example7[39,17:18] <- 0 # 0s - Chip-05
+# Ran some reamps because there were conflicting genotype calls. Figured out samples were added to the wrong Genemarker file. This section is designed to fix the errors.
+example14 <- example13
+example14[110,17] <- 266 # reamp showed that 0 is 266 - MS41
+example14[110,18] <- 277 # reamp showed that 0 is 266 - MS41
+example14[80,17] <- 270 # reamp showed that 0 is 270 - MS17
+example14[80,18] <- 305 # reamp showed that 0 is 305 - MS17
+example14[90,17:18] <- 317 # reamp showed that 0 is 317 - MS25
+example14[115,17:18] <- 305 # reamp showed that 0 is 305 - MS6
+example14[116,17] <- 305 # reamp showed that 0 is 305 - MS7
+example14[116,18] <- 317 # reamp showed that 0 is 305 - MS7
+example14[48,17] <- 277 # reamp showed that 0 is 277 - PBH-4A
+example14[48,18] <- 309 # reamp showed that 0 is 277 - PBH-4A
+
+#D10
+example8 <- example7
+example8[117,19:20] <- 0 # 0s - INHS-22893
+
+#D106
+example9 <- example8
+example9[98,21] <- 276 # 280 to 276 - MS31
+
+#D114
+example10 <- example9
+example10[106,25:26] <- 0 # 0 - INHS-16244
+
+#D119
+example11 <- example10
+example11[134,27] <- 302 # 0 to 302 - INHS-3531
+example11[134,27] <- 310 # 0 to 310 - INHS-3531
+
+
+# Write CSV file
+names(example14) <- c("Sample_ID", "New_ID", "A103", "", "A115", "", "A120", "", "C1", "", "C6", "", "C105", "", "C125", "", "D4", "", "D10", "", "D106", "", "D113", "", "D114", "", "D119", "", "D125", "")
+write.csv(example14, "Master_with_Sample_ID_reamps.csv")
+```
+
 
 
 
