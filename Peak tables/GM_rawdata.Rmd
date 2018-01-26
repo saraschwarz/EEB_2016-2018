@@ -1813,13 +1813,38 @@ example10[106,25:26] <- 0 # 0 - INHS-16244
 example11 <- example10
 example11[134,27] <- 302 # 0 to 302 - INHS-3531
 example11[134,27] <- 310 # 0 to 310 - INHS-3531
+```
 
-
+# Wrtie csv file from altered genotype dataset 1/23/2018
+```{r}
 # Write CSV file
 names(example14) <- c("Sample_ID", "New_ID", "A103", "", "A115", "", "A120", "", "C1", "", "C6", "", "C105", "", "C125", "", "D4", "", "D10", "", "D106", "", "D113", "", "D114", "", "D119", "", "D125", "")
 write.csv(example14, "Master_with_Sample_ID_reamps.csv")
-```
 
+# Write csv file for GenAlex
+genv1 <- example14
+genv1 <- genv1[,-c(1)]
+genv1$Pop <- 1:nrow(genv1) # Create New_ID column
+genv1 <- genv1[c(1,30,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29)]
+genv1[1:22,2] <- "1"
+genv1[23:43,2] <- "2"
+genv1[44:72,2] <- "3"
+genv1[73:123,2] <- "4"
+genv1[124:125,2] <- "5"
+genv1[126:144,2] <- "6"
+genv1[145:152,2] <- "7"
+genv1[153:169,2] <- "8"
+names(genv1) <- c("Individual", "Pop", "A103", "", "A115", "", "A120", "", "C1", "", "C6", "", "C105", "", "C125", "", "D4", "", "D10", "", "D106", "", "D113", "", "D114", "", "D119", "", "D125", "")
+
+write.csv(genv1, "GenAlex.csv")
+# In excel add two rows above microsatellite headings with information about number of loci, number of individuals, number of sample sites, and number of individuals at each sampling site.
+
+# Write csv file for Microchecker
+microchecker1 <- genv1[,-c(2)]
+names(microchecker1) <- c("Sample no.", "A103", "", "A115", "", "A120", "", "C1", "", "C6", "", "C105", "", "C125", "", "D4", "", "D10", "", "D106", "", "D113", "", "D114", "", "D119", "", "D125", "")
+
+write.csv(microchecker1, "Microchecker.csv")
+```
 
 
 
