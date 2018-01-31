@@ -1,0 +1,24 @@
+Results of Pairwise Population Fst Analysis,,,,,,,,,
+Input as Allelic Distance Matrix for F-Statistics Analysis,,,,,,,,,
+Data Sheet,GenAlex_1.29.18,,,,,,,,
+Data Title,,,,,,,,,
+,,,,,,,,,
+No. Samples,169,,,,,,,,
+No. Pops,8,,,,,,,,
+No. Regions,1,,,,,,,,
+No. Permutations,999,,,,,,,,
+,,,,,,,,,
+Pairwise Population Fst Values,,,,,,,,,
+,,,,,,,,,
+,ALL,CHIP,MER,MISS,OH,TIPP,TN,WIS,
+ALL,0.000,,,,,,,,ALL
+CHIP,0.080,0.000,,,,,,,CHIP
+MER,0.090,0.036,0.000,,,,,,MER
+MISS,0.077,0.015,0.034,0.000,,,,,MISS
+OH,0.138,0.157,0.112,0.108,0.000,,,,OH
+TIPP,0.024,0.052,0.051,0.054,0.106,0.000,,,TIPP
+TN,0.108,0.079,0.058,0.061,0.155,0.062,0.000,,TN
+WIS,0.086,0.010,0.031,0.010,0.150,0.058,0.067,0.000,WIS
+,ALL,CHIP,MER,MISS,OH,TIPP,TN,WIS,
+,,,,,,,,,
+Fst Values below diagonal.,,,,,,,,,

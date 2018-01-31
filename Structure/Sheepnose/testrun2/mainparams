@@ -1,4 +1,4 @@
-#define OUTFILE C:\Users\Sara\Documents\EEB_2016-2018\Structure\Sheepnose\testrun2\Results\testrun2_run_9
+#define OUTFILE C:\Users\Sara\Documents\EEB_2016-2018\Structure\Sheepnose\testrun2\Results\testrun2_run_110
 #define INFILE C:\Users\Sara\Documents\EEB_2016-2018\Structure\Sheepnose\project_data
 #define NUMINDS 169
 #define NUMLOCI 14
@@ -16,7 +16,7 @@
 #define EXTRACOLS 0
 #define MISSING 0
 #define PLOIDY 2
-#define MAXPOPS 3
+#define MAXPOPS 8
 #define BURNIN 100000
 #define NUMREPS 1000000
 

@@ -1,0 +1,34 @@
+# This code is used for using Structure files for Clumpp and Distruct analysis. 
+
+## Set working directory
+```{r}
+setwd("~/EEB_2016-2018/Peak tables")
+```
+
+## Load packages
+```{r}
+if (!require("devtools")) install.packages("devtools")
+library(devtools)
+
+if (!require("Cairo")) install.packages("Cairo")
+library(Cairo)
+
+if (!require("devtools")) install.packages("devtools")
+library(devtools)
+
+if (!require("ggplot2")) install.packages("ggplot2")
+library(ggplot2)
+
+if (!require("gridExtra")) install.packages("gridExtra")
+library(gridExtra)
+
+if (!require("gtable")) install.packages("gtable")
+library(gtable)
+
+if (!require("tidyr")) install.packages("tidyr")
+library(tidry)
+
+install_github('royfrancis/pophelper')
+library(pophelper)
+```
+
