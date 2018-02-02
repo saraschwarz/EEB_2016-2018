@@ -1,28 +1,23 @@
----
-title: "mtDNA"
-output: html_document
----
+# This code was used manipulate data the older mtDNA dataset.
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+## Set working directory
+```{r}
+setwd("~/EEB_2016-2018/mtDNA")
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+## Load libraries
+```{r}
+library(readr)
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
+## Formatting for Structure
+```{r}
+mtDNA1 <- read_csv("Sheepnose MTDNA_genalex.csv")
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+mtDNA2 <- mtDNA1[,-c(2)]
+names(mtDNA2) <- c("Sample", "Sequence")
+mtDNA3 <- mtDNA2[-c(1:2),]
+mtDNA3 <- mtDNA3[order(mtDNA3$Sample),]
+write.csv(mtDNA3, "mtDNA_old.csv")
 ```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
