@@ -1,0 +1,45 @@
+# DEMO
+```{r}
+if (!require("devtools")) install.packages("devtools")
+library(devtools)
+if (!require("ggmap")) install.packages("ggmap")
+library(ggmap)
+if (!require("popgraph")) install.packages("popgraph")
+library(popgraph)
+install_github("dyerlab/popgraph")
+
+# Load data
+data(lopho)
+lopho
+# Upgrade it to the current igraph version
+class(lopho)
+lopho
+# Add more information to the graph object
+data(baja)
+summary(baja)
+lopho <-  decorate_graph(lopho, baja, stratum="Population")
+lopho
+# Plot
+library(ggplot2)
+p <- ggplot()
+p <- p +  geom_nodeset( aes(x=Longitude, y=Latitude), lopho, size=4)
+p
+#
+p <- ggplot() + geom_edgeset( aes(x=Longitude,y=Latitude), lopho, color="darkgrey" )
+p <- p + geom_nodeset( aes(x=Longitude, y=Latitude, color=Region, size=size), lopho) 
+p <- p + xlab("Longitude") + ylab("Latitude") 
+p + theme_empty()
+#
+library(igraph)
+c <- layout.fruchterman.reingold( lopho )
+V(lopho)$x <- c[,1]
+V(lopho)$y <- c[,2]
+p <- ggplot() + geom_edgeset( aes(x,y), lopho, color="darkgrey" )
+p <- p + geom_nodeset( aes(x, y, color=Region, size=size), lopho) 
+p + theme_empty()
+#
+library(gstudio)
+library(popgraph)
+```
+
+

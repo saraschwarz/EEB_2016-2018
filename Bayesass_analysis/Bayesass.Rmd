@@ -1,0 +1,85 @@
+# calculateDeviance.R; Patrick G. Meirmans (2013) Non-convergence in Bayesian estimation of migration rates, Molecular Ecology Resources; Supplementary Material
+
+# This script will calculate the Bayesian Deviance from the output of BayesAss (Wilson & Rannala 2003)
+# For more information on the use of the deviance, see Faubet et al. (2007)
+
+# To use this script, run BayesAss version 3 with the -t flag to produce a trace-file
+# Then set the working directory of R to the folder with the output from BayesAss
+
+## Run 1
+```{r}
+# Change this value to the actual burnin used for your MCMC run
+burnin1 <- 1000000 
+# Change this value to the actual sampling interval used for your MCMC run
+sampling.interval1 <- 100 
+# Read the data from the trace file
+trace1 <- read.table("BA3trace1.txt", header=TRUE) 
+# Plotting the likelihoods is always a good idea
+plot(trace1$State,trace1$LogProb, xlab="State", ylab="LogProb", type="l", lwd=2, col="firebrick3", font.lab=2)
+# Draw a vertical line to indicate the end of the burnin
+abline(v=burnin1, col="grey70", lty=2)
+# Calculate the deviance
+range1 <- (trace1$State > burnin1 & trace1$State %% sampling.interval1 == 0)
+Dev1 <- -2*mean(trace1$LogProb[range1])
+# Print the result to the console
+print(Dev1)
+```
+
+## Run 2
+```{r}
+# Change this value to the actual burnin used for your MCMC run
+burnin2 <- 5000000 
+# Change this value to the actual sampling interval used for your MCMC run
+sample.interval2 <- 100 
+# Read the data from the trace file
+trace2 <- read.table("BA3trace2.txt", header=TRUE) 
+# Plotting the likelihoods is always a good idea
+plot(trace2$State,trace2$LogProb, xlab="State", ylab="LogProb", type="l", lwd=2, col="firebrick3", font.lab=2)
+# Draw a vertical line to indicate the end of the burnin
+abline(v=burnin2, col="grey70", lty=2)
+# Calculate the deviance
+range2 <- (trace2$State > burnin2 & trace2$State %% sample.interval2 == 0)
+Dev2 <- -2*mean(trace2$LogProb[range2])
+# Print the result to the console
+print(Dev2)
+```
+
+## Run 3
+```{r}
+# Change this value to the actual burnin used for your MCMC run
+burnin3 <- 1000000 
+# Change this value to the actual sampling interval used for your MCMC run
+sampling.interval3 <- 2000
+# Read the data from the trace file
+trace3 <- read.table("BA3trace3.txt", header=TRUE) 
+# Plotting the likelihoods is always a good idea
+plot(trace3$State,trace3$LogProb, xlab="State", ylab="LogProb", type="l", lwd=2, col="firebrick3", font.lab=2)
+# Draw a vertical line to indicate the end of the burnin
+abline(v=burnin3, col="grey70", lty=2)
+# Calculate the deviance
+range3 <- (trace3$State > burnin3 & trace3$State %% sampling.interval3 == 0)
+Dev3 <- -2*mean(trace3$LogProb[range3])
+# Print the result to the console
+print(Dev3)
+```
+
+## Run 4
+```{r}
+# Change this value to the actual burnin used for your MCMC run
+burnin4 <- 5000000 
+# Change this value to the actual sampling interval used for your MCMC run
+sampling.interval4 <- 100
+# Read the data from the trace file
+trace4 <- read.table("BA3trace4.txt", header=TRUE) 
+# Plotting the likelihoods is always a good idea
+plot(trace4$State,trace4$LogProb, xlab="State", ylab="LogProb", type="l", lwd=2, col="firebrick3", font.lab=2)
+# Draw a vertical line to indicate the end of the burnin
+abline(v=burnin4, col="grey70", lty=2)
+# Calculate the deviance
+range4 <- (trace4$State > burnin4 & trace4$State %% sampling.interval4 == 0)
+Dev4 <- -2*mean(trace4$LogProb[range4])
+# Print the result to the console
+print(Dev4)
+```
+
+

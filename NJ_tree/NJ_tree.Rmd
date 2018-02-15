@@ -1,0 +1,127 @@
+setwd("~/EEB_2016-2018/NJ_tree")
+
+```{r}
+if (!require("ape")) install.packages("ape")
+library(ape)
+
+if (!require("ggpubr")) install.packages("ggpubr")
+library(ggpubr)
+
+```
+
+
+```{r}
+# Used genetic distances by individual generated in GenALex to show tree
+m <- (read.table("GD_indiv.csv", sep = ",", header = T, row.names=168))
+m <- as.matrix(m)
+sheepnose <- nj(as.dist(m))
+plot(sheepnose, type="phylogram")
+
+# Used genetic distances by site generated in GenALex to show tree
+n <- (read.table("GD_pop.csv", sep = ",", header = T, row.names=8))
+n <- as.matrix(n)
+sheepnose2 <- nj(as.dist(n))
+plot(sheepnose2, type="unrooted")
+
+# Using Nei Genetic Distance
+nei <- (read.table("GD_pop_Nei.csv", sep = ",", header = T, row.names=8))
+nei <- as.matrix(nei)
+sheepnose3 <- nj(as.dist(nei))
+attach(sheepnose3)
+par(mfrow=c(1,3)) 
+plot(sheepnose3, type="unrooted")
+plot(sheepnose3, type="cladogram")
+plot(sheepnose3, type="phylogram")
+```
+
+
+```{r}
+install_github("dyerlab/gstudio")
+install_github("dyerlab/popgraph")
+
+library(networkD3)
+d <- genetic_distance(genalex,stratum = "Population", mode="Nei")
+d <- as.dist( d )
+hc <- hclust(d)
+dendroNetwork(hc, height=600, 
+              zoom=TRUE, 
+              textColour = c("red","green","orange","blue")[ cutree(hc,4)])
+```
+
+
+
+
+
+
+# Pop Gen in R tutorial
+```{r}
+install.packages(c("poppr", "mmod", "magrittr", "treemap"), repos = "http://cran.rstudio.com", dependencies = TRUE)
+library("poppr")
+library("pegas")
+library("lattice")
+library("magrittr")
+
+genalex <- read.genalex("GenAlex_genos.csv")
+genalexK4 <- read.genalex("GenAlex_K4analysis.csv")
+genalex
+
+# Genotype curve
+gac <- genotype_curve(genalex, sample = 1000, quiet = TRUE)
+
+# Allele frequencies
+genlt <- locus_table(genalex)
+write.table(genlt, file = "allele_freqs.csv", sep = ",", quote = FALSE, row.names = T)
+
+
+# Percent missing data per locus
+info_table(genalex, type = "missing", plot = TRUE)
+
+# Test for HWE
+nanhwe.pop <- seppop(genalex) %>% lapply(hw.test, B = 0)
+nanhwe.mat <- sapply(nanhwe.pop, "[", i = TRUE, j = 3)
+alpha  <- 0.05
+newmat <- nanhwe.mat
+newmat[newmat > alpha] <- 1
+## Heat map of loci that are out of HWE
+levelplot(t(newmat))
+
+# Test for linkage disequilibrium
+LG1 <- popsub(genalex, "1")
+ia(LG1, sample = 999)
+## 
+LG2 <- popsub(genalex, "2")
+ia(LG2, sample = 999)
+## 
+LG3 <- popsub(genalex, "3")
+ia(LG3, sample = 999)
+## 
+LG4 <- popsub(genalex, "4")
+ia(LG4, sample = 999)
+## 
+LG5 <- popsub(genalex, "5")
+ia(LG5, sample = 999)
+## Potential for LD?
+LG6 <- popsub(genalex, "6")
+ia(LG6, sample = 999)
+##
+LG7 <- popsub(genalex, "7")
+ia(LG7, sample = 999)
+##
+
+# AMOVA by site
+genAM <- as.genclone(genalex)
+table(strata(genAM, ~Pop))
+genAM <- poppr.amova(genAM, ~Pop)
+set.seed(1999)
+genAMsignif   <- randtest(genAM, nrepet = 999)
+plot(genAMsignif)
+
+# AMOVA with K=4 regions
+genAMK4 <- as.genclone(genalexK4)
+table(strata(genAMK4, ~Pop))
+genAMK4 <- poppr.amova(genAMK4, ~Pop)
+set.seed(1999)
+genAMK4signif   <- randtest(genAMK4, nrepet = 999)
+plot(genAMK4signif)
+```
+
