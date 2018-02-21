@@ -6,8 +6,9 @@
 # To use this script, run BayesAss version 3 with the -t flag to produce a trace-file
 # Then set the working directory of R to the folder with the output from BayesAss
 
-## Run 1
+## Calculting bayesian deviance and visualizing convergence
 ```{r}
+## Run 1
 # Change this value to the actual burnin used for your MCMC run
 burnin1 <- 1000000 
 # Change this value to the actual sampling interval used for your MCMC run
@@ -23,10 +24,8 @@ range1 <- (trace1$State > burnin1 & trace1$State %% sampling.interval1 == 0)
 Dev1 <- -2*mean(trace1$LogProb[range1])
 # Print the result to the console
 print(Dev1)
-```
 
 ## Run 2
-```{r}
 # Change this value to the actual burnin used for your MCMC run
 burnin2 <- 5000000 
 # Change this value to the actual sampling interval used for your MCMC run
@@ -42,10 +41,8 @@ range2 <- (trace2$State > burnin2 & trace2$State %% sample.interval2 == 0)
 Dev2 <- -2*mean(trace2$LogProb[range2])
 # Print the result to the console
 print(Dev2)
-```
 
 ## Run 3
-```{r}
 # Change this value to the actual burnin used for your MCMC run
 burnin3 <- 1000000 
 # Change this value to the actual sampling interval used for your MCMC run
@@ -61,10 +58,8 @@ range3 <- (trace3$State > burnin3 & trace3$State %% sampling.interval3 == 0)
 Dev3 <- -2*mean(trace3$LogProb[range3])
 # Print the result to the console
 print(Dev3)
-```
 
 ## Run 4
-```{r}
 # Change this value to the actual burnin used for your MCMC run
 burnin4 <- 5000000 
 # Change this value to the actual sampling interval used for your MCMC run
@@ -80,6 +75,161 @@ range4 <- (trace4$State > burnin4 & trace4$State %% sampling.interval4 == 0)
 Dev4 <- -2*mean(trace4$LogProb[range4])
 # Print the result to the console
 print(Dev4)
+
+## Run 5
+# Change this value to the actual burnin used for your MCMC run
+burnin5 <- 5000000 
+# Change this value to the actual sampling interval used for your MCMC run
+sampling.interval5 <- 100
+# Read the data from the trace file
+trace5 <- read.table("BA3trace5.txt", header=TRUE) 
+# Plotting the likelihoods is always a good idea
+plot(trace5$State,trace5$LogProb, xlab="State", ylab="LogProb", type="l", lwd=2, col="firebrick3", font.lab=2)
+# Draw a vertical line to indicate the end of the burnin
+abline(v=burnin5, col="grey70", lty=2)
+# Calculate the deviance
+range5 <- (trace5$State > burnin5 & trace5$State %% sampling.interval5 == 0)
+Dev5 <- -2*mean(trace5$LogProb[range5])
+# Print the result to the console
+print(Dev5)
+
+## Run 6
+# Change this value to the actual burnin used for your MCMC run
+burnin6 <- 5000000 
+# Change this value to the actual sampling interval used for your MCMC run
+sampling.interval6 <- 100
+# Read the data from the trace file
+trace6 <- read.table("BA3trace6.txt", header=TRUE) 
+# Plotting the likelihoods is always a good idea
+plot(trace6$State,trace6$LogProb, xlab="State", ylab="LogProb", type="l", lwd=2, col="firebrick3", font.lab=2)
+# Draw a vertical line to indicate the end of the burnin
+abline(v=burnin6, col="grey70", lty=2)
+# Calculate the deviance
+range6 <- (trace6$State > burnin6 & trace6$State %% sampling.interval6 == 0)
+Dev6 <- -2*mean(trace6$LogProb[range6])
+# Print the result to the console
+print(Dev6)
+
+## Run 7
+# Change this value to the actual burnin used for your MCMC run
+burnin7 <- 5000000 
+# Change this value to the actual sampling interval used for your MCMC run
+sampling.interval7 <- 100
+# Read the data from the trace file
+trace7 <- read.table("BA3trace7.txt", header=TRUE) 
+# Plotting the likelihoods is always a good idea
+plot(trace7$State,trace7$LogProb, xlab="State", ylab="LogProb", type="l", lwd=2, col="firebrick3", font.lab=2)
+# Draw a vertical line to indicate the end of the burnin
+abline(v=burnin7, col="grey70", lty=2)
+# Calculate the deviance
+range7 <- (trace7$State > burnin7 & trace7$State %% sampling.interval7 == 0)
+Dev7 <- -2*mean(trace7$LogProb[range7])
+# Print the result to the console
+print(Dev7)
+
+## Run 8
+# Change this value to the actual burnin used for your MCMC run
+burnin8 <- 5000000 
+# Change this value to the actual sampling interval used for your MCMC run
+sampling.interval8 <- 100
+# Read the data from the trace file
+trace8 <- read.table("BA3trace8.txt", header=TRUE) 
+# Plotting the likelihoods is always a good idea
+plot(trace8$State,trace8$LogProb, xlab="State", ylab="LogProb", type="l", lwd=2, col="firebrick3", font.lab=2)
+# Draw a vertical line to indicate the end of the burnin
+abline(v=burnin8, col="grey70", lty=2)
+# Calculate the deviance
+range8 <- (trace8$State > burnin8 & trace8$State %% sampling.interval8 == 0)
+Dev8 <- -2*mean(trace8$LogProb[range8])
+# Print the result to the console
+print(Dev8)
+
+## Run 9
+# Change this value to the actual burnin used for your MCMC run
+burnin9 <- 5000000 
+# Change this value to the actual sampling interval used for your MCMC run
+sampling.interval9 <- 100
+# Read the data from the trace file
+trace9 <- read.table("BA3trace9.txt", header=TRUE) 
+# Plotting the likelihoods is always a good idea
+plot(trace9$State,trace9$LogProb, xlab="State", ylab="LogProb", type="l", lwd=2, col="firebrick3", font.lab=2)
+# Draw a vertical line to indicate the end of the burnin
+abline(v=burnin9, col="grey70", lty=2)
+# Calculate the deviance
+range9 <- (trace9$State > burnin9 & trace9$State %% sampling.interval9 == 0)
+Dev9 <- -2*mean(trace9$LogProb[range9])
+# Print the result to the console
+print(Dev9)
+
+## Run 10
+# Change this value to the actual burnin used for your MCMC run
+burnin10 <- 5000000 
+# Change this value to the actual sampling interval used for your MCMC run
+sampling.interval10 <- 100
+# Read the data from the trace file
+trace10 <- read.table("BA3trace10.txt", header=TRUE) 
+# Plotting the likelihoods is always a good idea
+plot(trace10$State,trace10$LogProb, xlab="State", ylab="LogProb", type="l", lwd=2, col="firebrick3", font.lab=2)
+# Draw a vertical line to indicate the end of the burnin
+abline(v=burnin10, col="grey70", lty=2)
+# Calculate the deviance
+range10 <- (trace10$State > burnin10 & trace10$State %% sampling.interval10 == 0)
+Dev10 <- -2*mean(trace10$LogProb[range10])
+# Print the result to the console
+print(Dev10)
+
+## Run 11
+# Change this value to the actual burnin used for your MCMC run
+burnin11 <- 10000000 
+# Change this value to the actual sampling interval used for your MCMC run
+sampling.interval11 <- 200
+# Read the data from the trace file
+trace11 <- read.table("BA3trace11.txt", header=TRUE) 
+# Plotting the likelihoods is always a good idea
+plot(trace11$State,trace11$LogProb, xlab="State", ylab="LogProb", type="l", lwd=2, col="firebrick3", font.lab=2)
+# Draw a vertical line to indicate the end of the burnin
+abline(v=burnin11, col="grey70", lty=2)
+# Calculate the deviance
+range11 <- (trace11$State > burnin11 & trace11$State %% sampling.interval11 == 0)
+Dev11 <- -2*mean(trace11$LogProb[range11])
+# Print the result to the console
+print(Dev11)
 ```
 
+
+## Visualizing transition plots of migration
+```{r}
+# Load required packages
+if (!require("Gmisc")) install.packages("Gmisc")
+library(Gmisc)
+if (!require("DiagrammeR")) install.packages("DiagrammeR")
+library(DiagrammeR)
+
+# Load matrix
+trans2 <- read.table("example_matrixrun2.csv", sep = ",", header = T, row.names = (1))
+e <- read.table("example_matrixrun2_withzs.csv", sep = ",", header = T, row.names = (1))
+
+transmatrix2 <- data.matrix(trans2, rownames.force = NA)
+ematrix <- data.matrix(e, rownames.force = NA)
+
+transitionPlot(transmatrix2)
+transitionPlot(ematrix)
+
+#################################
+a_graph <-
+  create_graph() %>%
+  add_node() %>%
+  add_node() %>%
+  add_edge(
+    from = 1,
+    to = 2)
+render_graph(a_graph, layout = "kk")
+
+graph <-
+  open_graph(
+    system.file(
+      "extdata/example_graphs_dgr/repository.dgr",
+      package = "DiagrammeR"))
+render_graph(graph, layout = "kk")
+```
 
