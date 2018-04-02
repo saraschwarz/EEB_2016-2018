@@ -4,42 +4,137 @@ if (!require("devtools")) install.packages("devtools")
 library(devtools)
 if (!require("ggmap")) install.packages("ggmap")
 library(ggmap)
+if (!require("ggplot2")) install.packages("ggplot2")
+library(ggplot2)
 if (!require("popgraph")) install.packages("popgraph")
 library(popgraph)
 install_github("dyerlab/popgraph")
+install_github("dyerlab/gstudio")
+library(gstudio)
+if (!require("fields")) install.packages("fields")
+library(fields)
 
 # Load data
-data(lopho)
-lopho
-# Upgrade it to the current igraph version
-class(lopho)
-lopho
-# Add more information to the graph object
-data(baja)
-summary(baja)
-lopho <-  decorate_graph(lopho, baja, stratum="Population")
-lopho
-# Plot
-library(ggplot2)
-p <- ggplot()
-p <- p +  geom_nodeset( aes(x=Longitude, y=Latitude), lopho, size=4)
-p
-#
-p <- ggplot() + geom_edgeset( aes(x=Longitude,y=Latitude), lopho, color="darkgrey" )
-p <- p + geom_nodeset( aes(x=Longitude, y=Latitude, color=Region, size=size), lopho) 
+sheepnosepg <-  read_population("popgraphv2.csv", type = "column", locus.columns = 5:30)
+
+# Extract populations as factor
+populations <-  as.factor(sheepnosepg[,2])
+
+# Store dataset as numerical matrix
+sheep.mv = to_mv(sheepnosepg)
+head(sheep.mv, 10)
+
+# Create popgraph and plot
+sheep.pg <-  popgraph(sheep.mv, populations, alpha = 0.05, tol = 1e-04)
+class(sheep.pg)
+plot(sheep.pg)
+
+# Import and decorate graph with geographic data
+sheep.geo <-  read.csv(file="geographic.csv", head=TRUE, sep=",")
+sheep.geo
+class(sheep.geo)
+sheep.pg <-  decorate_graph(sheep.pg, sheep.geo, stratum="Population")
+plot(sheep.pg)
+
+# Finding location on a map
+location <- c(-85.79076280111326, 40.7875930160244) # Centroid of sample area
+location
+map <-  get_map(location,maptype="hybrid",source="google", zoom = 6)
+dim(map)
+
+# Plotting on map
+p <- ggmap(map) 
+p <- p + geom_edgeset(aes(x=Longitude,y=Latitude), sheep.pg, color="black") 
+p <- p +  geom_nodeset( aes(x=Longitude, y=Latitude,size=size), sheep.pg, size=4, color="black")
 p <- p + xlab("Longitude") + ylab("Latitude") 
-p + theme_empty()
-#
-library(igraph)
-c <- layout.fruchterman.reingold( lopho )
-V(lopho)$x <- c[,1]
-V(lopho)$y <- c[,2]
-p <- ggplot() + geom_edgeset( aes(x,y), lopho, color="darkgrey" )
-p <- p + geom_nodeset( aes(x, y, color=Region, size=size), lopho) 
-p + theme_empty()
-#
-library(gstudio)
-library(popgraph)
+p
+
+# Matrix of connecting nodes
+connect_matrix <- to_matrix(sheep.pg, mode = "adjacency")
+connect_matrix
+
+# Isolation by shortest graph distance
+shortestdist <-  to_matrix(sheep.pg, mode = "shortest path")
+shortestdist
+write.table(shortestdist, file = "shortestdist.csv", sep = ",", quote = FALSE, row.names = T)
+
+# Geographic distance
+pDist <- rdist.earth( cbind( sheep.geo$Longitude, sheep.geo$Latitude ))
+pDist
+
+# IBD test
+df <- data.frame( shortestdist=shortestdist[upper.tri(shortestdist)], Phys=pDist[upper.tri(pDist)])
+IBDtest <- cor.test( df$Phys, df$shortestdist, method="spearman")
+IBDtest
+
+# Plot IBD
+IBD_plot <- qplot( Phys, shortestdist, geom="point", data=df) + stat_smooth(method="loess") + xlab("Physical Distance") + ylab("Conditional Genetic Distance")
+IBD_plot
+
+# Allele Frequencies by locus
+freqs.loci <- frequencies(sheepnosepg)
+freqs.loci[1:10, ]
+
+# Allele frequences by site
+freqs.strata <- frequencies(sheepnosepg, stratum = "Pop")
+freqs.strata[1:10, ]
+
+# Plot frequencies by site
+ggplot() + geom_locus(aes(x = A103, fill = Pop), data = sheepnosepg)
+
+# Frequencies of alleles plotted by site
+f <- freqs.strata[freqs.strata$Locus %in% c("D4"), ]
+summary(f)
+ggplot(f) + geom_frequencies(f) + facet_grid(Stratum ~ .) + theme(legend.position = "none")
+
+# Plot sites!
+require(ggmap)
+data <- unique(sheepnosepg[, c(2, 4, 3)])
+centroid <- apply(data[, 2:3], 1, mean)
+map <- population_map(data)
+ggmap(map) + geom_point(aes(x = Longitude, y = Latitude, color = Pop), data = data, 
+    size = 5)
+
+# Plot allele frequency pies
+pies_on_map(sheepnosepg, stratum = "Pop", locus = "D10")
+
+# Mantel test between Bayesass results and 
+install.packages("vegan")
+library(vegan)
+
+Baye <- read.table("BayesassMigrationRates.csv", sep = ",", header = T, row.names = 1)
+Baye <- Baye[-c(8),]
+
+Baye_nonoverlapping <- read.table("BayesassMigrationRates_wnonoverlappingzeros.csv", sep = ",", header = T, row.names = 1)
+
+Popgraph <- read.csv(file="shortestdist.csv", head=TRUE, sep=",", row.names = 1)
+
+Migrate <- read.csv(file="Migrate_migration_rates_w_mutation.csv", head=TRUE, sep=",", row.names = 1)
+
+Baye_symmetrical <- read.csv(file="BayesassMigrationRates_symmetrical.csv", head=TRUE, sep=",", row.names = 1)
+
+#Baye <- read.table("BayesassMigrationRates_upper.csv", sep = ",", header = T, row.names = 1)
+
+#Popgraph <- read.csv(file="shortestdist_upper.csv", head=TRUE, sep=",", row.names = 1)
+
+Baye.dist <- dist(Baye)
+Migrate.dist <- dist(Migrate)
+Popgraph.dist <- dist(Popgraph)
+Baye_nonoverlapping.dist <- dist(Baye_nonoverlapping)
+Baye_sym.dist <- dist(Baye_symmetrical)
+
+mantel(Baye.dist, Popgraph.dist, method="pearson", permutations=10000)
+mantel(Baye.dist, Popgraph.dist, method="spearman", permutations=10000)
+
+mantel(Baye.dist, Migrate.dist, method="pearson", permutations=10000)
+
+mantel(Baye_nonoverlapping.dist, Popgraph.dist, method="pearson", permutations=10000)
+
+mantel(Baye_nonoverlapping.dist, Migrate.dist, method="pearson", permutations=10000)
+
+mantel(Baye_sym.dist, Popgraph.dist, method="pearson", permutations=10000)
+
+mantel(Baye_sym.dist, Migrate.dist, method="pearson", permutations=10000)
 ```
 
 

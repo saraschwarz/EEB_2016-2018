@@ -12,13 +12,13 @@ library(ggpubr)
 
 ```{r}
 # Used genetic distances by individual generated in GenALex to show tree
-m <- (read.table("GD_indiv.csv", sep = ",", header = T, row.names=168))
+m <- read.table("GD_indiv.csv", sep = ",", header = T, row.names=165)
 m <- as.matrix(m)
 sheepnose <- nj(as.dist(m))
 plot(sheepnose, type="phylogram")
 
 # Used genetic distances by site generated in GenALex to show tree
-n <- (read.table("GD_pop.csv", sep = ",", header = T, row.names=8))
+n <- read.table("GD_pop.csv", sep = ",", header = T, row.names=8)
 n <- as.matrix(n)
 sheepnose2 <- nj(as.dist(n))
 plot(sheepnose2, type="unrooted")
@@ -35,24 +35,6 @@ plot(sheepnose3, type="phylogram")
 ```
 
 
-```{r}
-install_github("dyerlab/gstudio")
-install_github("dyerlab/popgraph")
-
-library(networkD3)
-d <- genetic_distance(genalex,stratum = "Population", mode="Nei")
-d <- as.dist( d )
-hc <- hclust(d)
-dendroNetwork(hc, height=600, 
-              zoom=TRUE, 
-              textColour = c("red","green","orange","blue")[ cutree(hc,4)])
-```
-
-
-
-
-
-
 # Pop Gen in R tutorial
 ```{r}
 install.packages(c("poppr", "mmod", "magrittr", "treemap"), repos = "http://cran.rstudio.com", dependencies = TRUE)
@@ -60,9 +42,10 @@ library("poppr")
 library("pegas")
 library("lattice")
 library("magrittr")
+library("hierfstat")
+library("mmod")
 
 genalex <- read.genalex("GenAlex_genos.csv")
-genalexK4 <- read.genalex("GenAlex_K4analysis.csv")
 genalex
 
 # Genotype curve
@@ -70,8 +53,8 @@ gac <- genotype_curve(genalex, sample = 1000, quiet = TRUE)
 
 # Allele frequencies
 genlt <- locus_table(genalex)
+genlt
 write.table(genlt, file = "allele_freqs.csv", sep = ",", quote = FALSE, row.names = T)
-
 
 # Percent missing data per locus
 info_table(genalex, type = "missing", plot = TRUE)
@@ -86,26 +69,26 @@ newmat[newmat > alpha] <- 1
 levelplot(t(newmat))
 
 # Test for linkage disequilibrium
-LG1 <- popsub(genalex, "1")
-ia(LG1, sample = 999)
+ALL <- popsub(genalex, "ALL")
+ia(ALL, sample = 999)
 ## 
-LG2 <- popsub(genalex, "2")
-ia(LG2, sample = 999)
+CHIP <- popsub(genalex, "CHIP")
+ia(CHIP, sample = 999)
 ## 
-LG3 <- popsub(genalex, "3")
-ia(LG3, sample = 999)
+MER <- popsub(genalex, "MER")
+ia(MER, sample = 999)
 ## 
-LG4 <- popsub(genalex, "4")
-ia(LG4, sample = 999)
+MISS <- popsub(genalex, "MISS")
+ia(MISS, sample = 999)
 ## 
-LG5 <- popsub(genalex, "5")
-ia(LG5, sample = 999)
+TIPP <- popsub(genalex, "TIPP")
+ia(TIPP, sample = 999)
 ## Potential for LD?
-LG6 <- popsub(genalex, "6")
-ia(LG6, sample = 999)
+TN <- popsub(genalex, "TN")
+ia(TN, sample = 999)
 ##
-LG7 <- popsub(genalex, "7")
-ia(LG7, sample = 999)
+WIS <- popsub(genalex, "WIS")
+ia(WIS, sample = 999)
 ##
 
 # AMOVA by site
@@ -116,12 +99,50 @@ set.seed(1999)
 genAMsignif   <- randtest(genAM, nrepet = 999)
 plot(genAMsignif)
 
-# AMOVA with K=4 regions
-genAMK4 <- as.genclone(genalexK4)
-table(strata(genAMK4, ~Pop))
-genAMK4 <- poppr.amova(genAMK4, ~Pop)
-set.seed(1999)
-genAMK4signif   <- randtest(genAMK4, nrepet = 999)
-plot(genAMK4signif)
+# Private alleles
+private_alleles(genalex, locus ~ Pop, count.alleles = TRUE)
+pal <- private_alleles(genalex, locus ~ Pop, count.alleles = FALSE)
+sweep(pal, 2, nAll(genalex)[colnames(pal)], FUN = "/")
+library("ggplot2")
+priv <- private_alleles(genalex, report = "data.frame")
+ggplot(priv) + geom_tile(aes(x = population, y = allele, fill = count))
+
+# Observed and expected Het
+div <- summary(genalex)
+div
+
+# Plot Obs and loci number
+plot(div$Hobs, xlab="Loci number", ylab="Observed Heterozygosity", 
+     main="Observed heterozygosity per locus")
+
+# Plot OBs and Expected
+plot(div$Hobs, div$Hexp, xlab="Observed Heterozygosity", ylab="Expected Heterozygosity", 
+     main="Expected heterozygosity as a function of observed heterozygosity per locus")
+
+# Plot bartlett test of homogeneity between loci
+bartlett.test(list(div$Hexp, div$Hobs))
+
+#
+genalex.hfstat <- genind2hierfstat(genalex)
+basicstat <- basic.stats(genalex, diploid = TRUE, digits = 2)
+basicstat
+names(basicstat)
+boot.ppfis(genalex.hfstat) 
+
+#
+x <- indpca(genalex.hfstat) 
+plot(x, cex = 0.7)
+
+# HWE
+hw.test(genalex, B = 1000)
+
+# Pairwise Jost D
+install.packages("FinePop")
+library(FinePop)
+
+popdata <- read.genepop(genepop="Genepop_woPigtoe.txt")
+result.DJ <- DJ(popdata)
+write.csv(result.DJ, "result_DJ.csv", na="")
+print(as.dist(result.DJ))
 ```
 

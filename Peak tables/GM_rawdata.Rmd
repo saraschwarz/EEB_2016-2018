@@ -1815,7 +1815,7 @@ example11[134,27] <- 302 # 0 to 302 - INHS-3531
 example11[134,27] <- 310 # 0 to 310 - INHS-3531
 ```
 
-# Wrtie csv file from altered genotype dataset 1/23/2018
+# Write csv file from altered genotype dataset 1/23/2018
 ```{r}
 # Write CSV file
 names(example14) <- c("Sample_ID", "New_ID", "A103", "", "A115", "", "A120", "", "C1", "", "C6", "", "C105", "", "C125", "", "D4", "", "D10", "", "D106", "", "D113", "", "D114", "", "D119", "", "D125", "")
@@ -1844,6 +1844,13 @@ microchecker1 <- genv1[,-c(2)]
 names(microchecker1) <- c("Sample no.", "A103", "", "A115", "", "A120", "", "C1", "", "C6", "", "C105", "", "C125", "", "D4", "", "D10", "", "D106", "", "D113", "", "D114", "", "D119", "", "D125", "")
 
 write.csv(microchecker1, "Microchecker.csv")
+
+####################################################
+# Remove pigtoe samples!!
+pt <- read.table("GenAlex_woOH_woD113_1.30.18.csv", sep = ",", na.strings = c("", "NA"))
+v1 <- pt[-c(48:50),] # PBH1A, PBH2A, PBH3A are pigtoe samples not sheepnose
+
+write.csv(v1, "Genos_woPigtoe.csv")
 ```
 
 

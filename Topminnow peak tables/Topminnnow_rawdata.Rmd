@@ -94,6 +94,18 @@ F02[(nrow(F02)+1),] <- c("1D3", "160")
 F02[(nrow(F02)+1),] <- c("PT83", "170")
 F02[(nrow(F02)+1),] <- c("1A3", "160")
 F02 <- F02[-c(106:107),] # Remove FSMC1 replicate
+# Add reamps
+F02[(nrow(F02)+1),] <- c("1E8", "160")
+F02[(nrow(F02)+1),] <- c("1E8", "170")
+F02[(nrow(F02)+1),] <- c("1F8", "160")
+F02[(nrow(F02)+1),] <- c("1F8", "170")
+F02[(nrow(F02)+1),] <- c("1F9", "160")
+F02[(nrow(F02)+1),] <- c("1F9", "170")
+F02[(nrow(F02)+1),] <- c("PT59", "170")
+F02[(nrow(F02)+1),] <- c("PT59", "170")
+F02[(nrow(F02)+1),] <- c("PT60", "160")
+F02[(nrow(F02)+1),] <- c("PT60", "160")
+
 F02 <- F02[order(F02$Sample_ID),]
 
 # Spread data
@@ -104,7 +116,7 @@ F02new <- gather(F02new, key = "loci", value = "genotypes",
                       colnames(F02new[,-1])) # Gather data
 F02new$high_low <- rep.int(dummy, nrow(F02new)/2) # Reallocate high and low designations
 F02new <- F02new[,-c(2)] # Remove loci column
-F02new <- F02new[-c(301:608),] # Remove doubles? Not sure where they came from
+F02new <- F02new[-c(311:650),] # Remove doubles? Not sure where they came from
 F02new_wide <- spread(F02new, high_low, genotypes) # Spread data
 names(F02new_wide) <- c("Sample_ID", "F02_high", "F02_low") # Rename columns
 
@@ -164,6 +176,43 @@ F10[(nrow(F10)+1),] <- c("1D9", "205")
 F10[(nrow(F10)+1),] <- c("PT57", "218")
 F10[(nrow(F10)+1),] <- c("PT75", "240")
 F10[(nrow(F10)+1),] <- c("1E1", "205")
+# Add reamps
+F10[(nrow(F10)+1),] <- c("1E3", "218")
+F10[(nrow(F10)+1),] <- c("1E3", "223")
+F10[(nrow(F10)+1),] <- c("1E4", "205")
+F10[(nrow(F10)+1),] <- c("1E4", "205")
+F10[(nrow(F10)+1),] <- c("1E5", "205")
+F10[(nrow(F10)+1),] <- c("1E5", "223")
+F10[(nrow(F10)+1),] <- c("1E6", "205")
+F10[(nrow(F10)+1),] <- c("1E6", "205")
+F10[(nrow(F10)+1),] <- c("1E7", "205")
+F10[(nrow(F10)+1),] <- c("1E7", "205")
+F10[(nrow(F10)+1),] <- c("1E8", "205")
+F10[(nrow(F10)+1),] <- c("1E8", "205")
+F10[(nrow(F10)+1),] <- c("1E9", "205")
+F10[(nrow(F10)+1),] <- c("1E9", "210")
+F10[(nrow(F10)+1),] <- c("1F1", "205")
+F10[(nrow(F10)+1),] <- c("1F1", "205")
+F10[(nrow(F10)+1),] <- c("1F2", "218")
+F10[(nrow(F10)+1),] <- c("1F2", "240")
+F10[(nrow(F10)+1),] <- c("1F3", "210")
+F10[(nrow(F10)+1),] <- c("1F3", "240")
+F10[(nrow(F10)+1),] <- c("1F4", "205")
+F10[(nrow(F10)+1),] <- c("1F4", "240")
+F10[(nrow(F10)+1),] <- c("1F5", "205")
+F10[(nrow(F10)+1),] <- c("1F5", "240")
+F10[(nrow(F10)+1),] <- c("1F6", "205")
+F10[(nrow(F10)+1),] <- c("1F6", "210")
+F10[(nrow(F10)+1),] <- c("1F7", "205")
+F10[(nrow(F10)+1),] <- c("1F7", "205")
+F10[(nrow(F10)+1),] <- c("1F8", "205")
+F10[(nrow(F10)+1),] <- c("1F8", "205")
+F10[(nrow(F10)+1),] <- c("1F9", "205")
+F10[(nrow(F10)+1),] <- c("1F9", "240")
+F10[(nrow(F10)+1),] <- c("PT61", "214")
+F10[(nrow(F10)+1),] <- c("PT61", "227")
+F10[(nrow(F10)+1),] <- c("PT64", "218")
+F10[(nrow(F10)+1),] <- c("PT64", "223")
 
 F10 <- F10[order(F10$Sample_ID),]
 
@@ -175,7 +224,7 @@ F10new <- gather(F10new, key = "loci", value = "genotypes",
                       colnames(F10new[,-1])) # Gather data
 F10new$high_low <- rep.int(dummy, nrow(F10new)/2) # Reallocate high and low designations
 F10new <- F10new[,-c(2)] # Remove loci column
-F10new <- F10new[-c(271:600),] # Remove doubles? Not sure where they came from
+F10new <- F10new[-c(307:650),] # Remove doubles? Not sure where they came from
 F10new_wide <- spread(F10new, high_low, genotypes) # Spread data
 names(F10new_wide) <- c("Sample_ID", "F10_high", "F10_low") # Rename columns
 
@@ -199,6 +248,9 @@ View(F17)
 # Add homozygotes
 F17[(nrow(F17)+1),] <- c("PT67", "324")
 F17[(nrow(F17)+1),] <- c("SLRIN5", "299")
+# Add reamps
+F17[(nrow(F17)+1),] <- c("1C7", "378")
+F17[(nrow(F17)+1),] <- c("1C7", "378")
 
 F17 <- F17[order(F17$Sample_ID),]
 
@@ -210,7 +262,7 @@ F17new <- gather(F17new, key = "loci", value = "genotypes",
                       colnames(F17new[,-1])) # Gather data
 F17new$high_low <- rep.int(dummy, nrow(F17new)/2) # Reallocate high and low designations
 F17new <- F17new[,-c(2)] # Remove loci column
-F17new <- F17new[-c(299:600),] # Remove doubles? Not sure where they came from
+F17new <- F17new[-c(301:600),] # Remove doubles? Not sure where they came from
 F17new_wide <- spread(F17new, high_low, genotypes) # Spread data
 names(F17new_wide) <- c("Sample_ID", "F17_high", "F17_low") # Rename columns
 
@@ -281,6 +333,17 @@ F82[(nrow(F82)+1),] <- c("DCRN1", "130")
 F82[(nrow(F82)+1),] <- c("PT80", "132")
 F82[(nrow(F82)+1),] <- c("1E4", "138")
 F82[(nrow(F82)+1),] <- c("PT66", "138")
+# Add reamps
+F82[(nrow(F82)+1),] <- c("1A3", "132")
+F82[(nrow(F82)+1),] <- c("1A3", "138")
+F82[(nrow(F82)+1),] <- c("1A4", "138")
+F82[(nrow(F82)+1),] <- c("1A4", "138")
+F82[(nrow(F82)+1),] <- c("1A8", "138")
+F82[(nrow(F82)+1),] <- c("1A8", "138")
+F82[(nrow(F82)+1),] <- c("FSMC1", "102")
+F82[(nrow(F82)+1),] <- c("FSMC1", "132")
+F82[(nrow(F82)+1),] <- c("PT86", "132")
+F82[(nrow(F82)+1),] <- c("PT86", "132")
 
 F82 <- F82[order(F82$Sample_ID),]
 
@@ -292,7 +355,7 @@ F82new <- gather(F82new, key = "loci", value = "genotypes",
                       colnames(F82new[,-1])) # Gather data
 F82new$high_low <- rep.int(dummy, nrow(F82new)/2) # Reallocate high and low designations
 F82new <- F82new[,-c(2)] # Remove loci column
-F82new <- F82new[-c(297:600),] # Remove doubles? Not sure where they came from
+F82new <- F82new[-c(307:650),] # Remove doubles? Not sure where they came from
 F82new_wide <- spread(F82new, high_low, genotypes) # Spread data
 names(F82new_wide) <- c("Sample_ID", "F82_high", "F82_low") # Rename columns
 
@@ -325,6 +388,11 @@ F87[(nrow(F87)+1),] <- c("PT62", "149")
 F87[(nrow(F87)+1),] <- c("PT63", "149")
 F87[(nrow(F87)+1),] <- c("SLRN12", "149")
 F87[(nrow(F87)+1),] <- c("SLRN6", "149")
+# Add reamps
+F87[(nrow(F87)+1),] <- c("1C6", "133")
+F87[(nrow(F87)+1),] <- c("1C6", "146")
+F87[(nrow(F87)+1),] <- c("SLRN10", "144")
+F87[(nrow(F87)+1),] <- c("SLRN10", "144")
 
 F87 <- F87[order(F87$Sample_ID),]
 
@@ -336,7 +404,7 @@ F87new <- gather(F87new, key = "loci", value = "genotypes",
                       colnames(F87new[,-1])) # Gather data
 F87new$high_low <- rep.int(dummy, nrow(F87new)/2) # Reallocate high and low designations
 F87new <- F87new[,-c(2)] # Remove loci column
-F87new <- F87new[-c(303:610),] # Remove doubles? Not sure where they came from
+F87new <- F87new[-c(307:650),] # Remove doubles? Not sure where they came from
 F87new_wide <- spread(F87new, high_low, genotypes) # Spread data
 names(F87new_wide) <- c("Sample_ID", "F87_high", "F87_low") # Rename columns
 F87 <- F87[-c(2),]
@@ -466,6 +534,9 @@ F90[(nrow(F90)+1),] <- c("1B1", "141")
 F90[(nrow(F90)+1),] <- c("SLRN15", "145")
 F90[(nrow(F90)+1),] <- c("1B9", "141")
 F90[(nrow(F90)+1),] <- c("1A9", "141")
+# Add reamps
+F90[(nrow(F90)+1),] <- c("1A4", "141")
+F90[(nrow(F90)+1),] <- c("1A4", "141")
 
 F90 <- F90[order(F90$Sample_ID),]
 
@@ -477,7 +548,7 @@ F90new <- gather(F90new, key = "loci", value = "genotypes",
                       colnames(F90new[,-1])) # Gather data
 F90new$high_low <- rep.int(dummy, nrow(F90new)/2) # Reallocate high and low designations
 F90new <- F90new[,-c(2)] # Remove loci column
-F90new <- F90new[-c(309:650),] # Remove doubles? Not sure where they came from
+F90new <- F90new[-c(311:650),] # Remove doubles? Not sure where they came from
 F90new_wide <- spread(F90new, high_low, genotypes) # Spread data
 names(F90new_wide) <- c("Sample_ID", "F90_high", "F90_low") # Rename columns
 
@@ -576,6 +647,69 @@ F105[(nrow(F105)+1),] <- c("SLRN2", "144")
 F105[(nrow(F105)+1),] <- c("1F7", "144")
 F105[(nrow(F105)+1),] <- c("FSMC23", "144")
 F105[(nrow(F105)+1),] <- c("DCRN12", "144")
+# Add reamps to dataset
+F105[(nrow(F105)+1),] <- c("PT63", "142")
+F105[(nrow(F105)+1),] <- c("PT63", "144")
+F105[(nrow(F105)+1),] <- c("PT64", "144")
+F105[(nrow(F105)+1),] <- c("PT64", "149")
+F105[(nrow(F105)+1),] <- c("PT65", "144")
+F105[(nrow(F105)+1),] <- c("PT65", "149")
+F105[(nrow(F105)+1),] <- c("PT66", "142")
+F105[(nrow(F105)+1),] <- c("PT66", "144")
+F105[(nrow(F105)+1),] <- c("PT67", "144")
+F105[(nrow(F105)+1),] <- c("PT67", "144")
+F105[(nrow(F105)+1),] <- c("PT68", "144")
+F105[(nrow(F105)+1),] <- c("PT68", "149")
+F105[(nrow(F105)+1),] <- c("PT69", "144")
+F105[(nrow(F105)+1),] <- c("PT69", "149")
+F105[(nrow(F105)+1),] <- c("PT70", "144")
+F105[(nrow(F105)+1),] <- c("PT70", "149")
+F105[(nrow(F105)+1),] <- c("PT71", "142")
+F105[(nrow(F105)+1),] <- c("PT71", "149")
+F105[(nrow(F105)+1),] <- c("PT73", "144")
+F105[(nrow(F105)+1),] <- c("PT73", "144")
+F105[(nrow(F105)+1),] <- c("PT74", "144")
+F105[(nrow(F105)+1),] <- c("PT74", "144")
+F105[(nrow(F105)+1),] <- c("PT75", "142")
+F105[(nrow(F105)+1),] <- c("PT75", "144")
+F105[(nrow(F105)+1),] <- c("PT76", "144")
+F105[(nrow(F105)+1),] <- c("PT76", "144")
+F105[(nrow(F105)+1),] <- c("PT77", "144")
+F105[(nrow(F105)+1),] <- c("PT77", "144")
+F105[(nrow(F105)+1),] <- c("PT78", "144")
+F105[(nrow(F105)+1),] <- c("PT78", "144")
+F105[(nrow(F105)+1),] <- c("PT79", "135")
+F105[(nrow(F105)+1),] <- c("PT79", "144")
+F105[(nrow(F105)+1),] <- c("PT80", "144")
+F105[(nrow(F105)+1),] <- c("PT80", "144")
+F105[(nrow(F105)+1),] <- c("PT81", "135")
+F105[(nrow(F105)+1),] <- c("PT81", "144")
+F105[(nrow(F105)+1),] <- c("PT82", "135")
+F105[(nrow(F105)+1),] <- c("PT82", "135")
+F105[(nrow(F105)+1),] <- c("PT83", "144")
+F105[(nrow(F105)+1),] <- c("PT83", "144")
+F105[(nrow(F105)+1),] <- c("PT84", "135")
+F105[(nrow(F105)+1),] <- c("PT84", "147")
+F105[(nrow(F105)+1),] <- c("PT85", "144")
+F105[(nrow(F105)+1),] <- c("PT85", "144")
+F105[(nrow(F105)+1),] <- c("PT86", "144")
+F105[(nrow(F105)+1),] <- c("PT86", "144")
+F105[(nrow(F105)+1),] <- c("PT87", "135")
+F105[(nrow(F105)+1),] <- c("PT87", "144")
+F105[(nrow(F105)+1),] <- c("PT88", "144")
+F105[(nrow(F105)+1),] <- c("PT88", "147")
+F105[(nrow(F105)+1),] <- c("PT89", "144")
+F105[(nrow(F105)+1),] <- c("PT89", "144")
+F105[(nrow(F105)+1),] <- c("PT90", "144")
+F105[(nrow(F105)+1),] <- c("PT90", "144")
+F105[(nrow(F105)+1),] <- c("PT91", "144")
+F105[(nrow(F105)+1),] <- c("PT91", "144")
+F105[(nrow(F105)+1),] <- c("PT92", "144")
+F105[(nrow(F105)+1),] <- c("PT92", "144")
+
+# Add reamps
+F105[(nrow(F105)+1),] <- c("1A4", "142")
+F105[(nrow(F105)+1),] <- c("1A4", "144")
 
 F105 <- F105[order(F105$Sample_ID),]
 
@@ -587,11 +721,87 @@ F105new <- gather(F105new, key = "loci", value = "genotypes",
                       colnames(F105new[,-1])) # Gather data
 F105new$high_low <- rep.int(dummy, nrow(F105new)/2) # Reallocate high and low designations
 F105new <- F105new[,-c(2)] # Remove loci column
-F105new <- F105new[-c(251:650),] # Remove doubles? Not sure where they came from
+F105new <- F105new[-c(309:650),] # Remove doubles? Not sure where they came from
 F105new_wide <- spread(F105new, high_low, genotypes) # Spread data
 names(F105new_wide) <- c("Sample_ID", "F105_high", "F105_low") # Rename columns
 
 View(F105new_wide)
+```
+
+
+## Converting raw data B08
+```{r}
+B08_raw <- read.table("B08_raw.csv", sep = ",", na.strings = c("", "NA")) #read in data
+B08 <- B08_raw[,-c(2:6)] #cut out unnecessary columns
+B08 <- B08[,-c(3:8)] #cut out unnecessary columns
+names(B08) <- c("Sample_ID", "B08") #rename columns
+B08[B08 == "Sample"] <- NA #convert sample to NAs so they can be omitted
+B08 = B08 %>% na.omit() #omit all NAs
+B08$Sample_ID <- str_sub(B08$Sample, 5, 17) #Remove lane name and underscore
+B08$Sample_ID <- strapplyc(B08$Sample_ID, "(.*)_", simplify = T) #Reomve lab ID after underscore
+B08 <- B08[order(B08$Sample_ID),]
+
+View(B08)
+
+# Add homozygotes
+B08[(nrow(B08)+1),] <- c("SLRN3", "204")
+B08[(nrow(B08)+1),] <- c("SLRN11", "191")
+B08[(nrow(B08)+1),] <- c("DCRN9", "193")
+B08[(nrow(B08)+1),] <- c("FSMC9", "187")
+B08[(nrow(B08)+1),] <- c("1B1", "204")
+B08[(nrow(B08)+1),] <- c("1C8", "207")
+B08[(nrow(B08)+1),] <- c("PT81", "193")
+B08[(nrow(B08)+1),] <- c("FSMC2", "187")
+B08[(nrow(B08)+1),] <- c("PT89", "202")
+B08[(nrow(B08)+1),] <- c("FSMC10", "220")
+B08[(nrow(B08)+1),] <- c("FSMC27", "185")
+B08[(nrow(B08)+1),] <- c("SLRN13", "207")
+B08[(nrow(B08)+1),] <- c("1D8", "196")
+B08[(nrow(B08)+1),] <- c("PT57", "196")
+B08[(nrow(B08)+1),] <- c("PT65", "204")
+B08[(nrow(B08)+1),] <- c("FSMC28", "185")
+B08[(nrow(B08)+1),] <- c("PT66", "207")
+B08[(nrow(B08)+1),] <- c("PT91", "193")
+B08[(nrow(B08)+1),] <- c("FSMC12", "187")
+B08[(nrow(B08)+1),] <- c("FSMC20", "187")
+B08[(nrow(B08)+1),] <- c("SLRN7", "193")
+B08[(nrow(B08)+1),] <- c("FSMC5", "187")
+B08[(nrow(B08)+1),] <- c("FSMC13", "207")
+B08[(nrow(B08)+1),] <- c("1A6", "191")
+B08[(nrow(B08)+1),] <- c("SLRN8", "204")
+B08[(nrow(B08)+1),] <- c("FSMC22", "187")
+B08[(nrow(B08)+1),] <- c("SLRN17", "207")
+B08[(nrow(B08)+1),] <- c("DCRN7", "196")
+B08[(nrow(B08)+1),] <- c("1E3", "196")
+B08[(nrow(B08)+1),] <- c("FSMC15", "207")
+B08[(nrow(B08)+1),] <- c("SLRN10", "185")
+B08[(nrow(B08)+1),] <- c("1C6", "196")
+B08[(nrow(B08)+1),] <- c("SLRN18", "204")
+B08[(nrow(B08)+1),] <- c("1D5", "202")
+B08[(nrow(B08)+1),] <- c("PT62", "204")
+B08[(nrow(B08)+1),] <- c("DCRN4", "200")
+B08[(nrow(B08)+1),] <- c("PT87", "207")
+B08[(nrow(B08)+1),] <- c("DCRN2", "193")
+B08[(nrow(B08)+1),] <- c("DCRN8", "196")
+B08 <- B08[-c(100:101),] #Remove DCRN10
+B08 <- B08[-c(108:109),] #Remove DCRN14
+B08 <- B08[-c(218:219),] #Remove PT80
+
+B08 <- B08[order(B08$Sample_ID),]
+
+# Spread data
+dummy <- c("high", "low") # Create dummy vector
+B08new <- B08 # Create new dataframe 
+B08new$high_low <- rep.int(dummy, nrow(B08new)/2) # Add extra column delineating high and low alleles
+B08new <- gather(B08new, key = "loci", value = "genotypes",
+                      colnames(B08new[,-1])) # Gather data
+B08new$high_low <- rep.int(dummy, nrow(B08new)/2) # Reallocate high and low designations
+B08new <- B08new[,-c(2)] # Remove loci column
+B08new <- B08new[-c(181:650),] # Remove doubles? Not sure where they came from
+B08new_wide <- spread(B08new, high_low, genotypes) # Spread data
+names(B08new_wide) <- c("Sample_ID", "B08_high", "B08_low") # Rename columns
+
+View(B08new_wide)
 ```
 
 
@@ -603,10 +813,11 @@ topgenos <- merge(topgenos, F82new_wide, all = T)
 topgenos <- merge(topgenos, F87new_wide, all = T)
 topgenos <- merge(topgenos, F90new_wide, all = T)
 topgenos <- merge(topgenos, F105new_wide, all = T)
+topgenos <- merge(topgenos, B08new_wide, all = T)
 
 topgenos[is.na(topgenos)] <- 0
 
-names(topgenos) <- c("Sample", "F02", "", "F10", "", "F17", "", "F82", "", "F87", "", "F90", "", "F105", "")
+names(topgenos) <- c("Sample", "F02", "", "F10", "", "F17", "", "F82", "", "F87", "", "F90", "", "F105", "", "B08", "")
 
 write.table(topgenos, "Topminnow_genos.csv", sep = ",", row.names = F)
 
